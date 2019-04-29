@@ -6,7 +6,7 @@ class ComediansController < ApplicationController
   def index
     @comedians = Comedian.all
     @specials = Special.all
-    @comedians.
+
   end
 
   # GET /comedians/1
