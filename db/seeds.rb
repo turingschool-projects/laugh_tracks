@@ -16,14 +16,14 @@ comedian_list = [
 ]
 
 special_list = [
-  [ 1, "George in Utah", 18],
-  [ 2, "Bill", 22, ],
-  [ 3, "Kate in France", 33],
-  [ 4, "Jane in Alabama", 45],
-  [ 5, "Jane in Austin", 18],
-  [ 6, "Bill in England", 22],
+  [ 1, "George in Utah", 1],
+  [ 2, "Bill", 2 ],
+  [ 3, "Kate in France", 3],
+  [ 4, "Jane in Alabama", 4],
+  [ 5, "Jane in Austin", 4],
+  [ 6, "Bill in England", 2],
   [ 7, "Kate Never Stops", 33],
-  [ 8, "Jane's Best", 45]
+  [ 8, "Jane's Best", 4]
 ]
 comedian_list.each do | id, name, age, city|
   Comedian.create( id: id, name: name, age: age, city: city )
