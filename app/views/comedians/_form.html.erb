@@ -1,0 +1,32 @@
+<%= form_with(model: comedian, local: true) do |form| %>
+  <% if comedian.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comedian.errors.count, "error") %> prohibited this comedian from being saved:</h2>
+
+      <ul>
+      <% comedian.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :comedian_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.text_field :age, id: :comedian_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :comedian_city %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

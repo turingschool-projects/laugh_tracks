@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @comedian.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @comedian.age %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @comedian.city %>
+</p>
+
+<%= link_to 'Edit', edit_comedian_path(@comedian) %> |
+<%= link_to 'Back', comedians_path %>

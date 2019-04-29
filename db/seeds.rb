@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+comedian_list = [
+  [ 1, "George", 18, "Memphis"],
+  [ 2, "Bill", 22, "Albuquerque"],
+  [ 3, "Kate", 33, "Tucson"],
+  [ 4, "Jane", 45, "Salt Lake City"]
+]
+
+special_list = [
+  [ 1, "George in Utah", 18],
+  [ 2, "Bill", 22, ],
+  [ 3, "Kate in France", 33],
+  [ 4, "Jane in Alabama", 45],
+  [ 5, "Jane in Austin", 18],
+  [ 6, "Bill in England", 22],
+  [ 7, "Kate Never Stops", 33],
+  [ 8, "Jane's Best", 45]
+]
+comedian_list.each do | id, name, age, city|
+  Comedian.create( id: id, name: name, age: age, city: city )
+end
+
+special_list.each do |id, name, comedian_id|
+  Special.create( id: id, name: name, comedian_id: comedian_id)
+end
