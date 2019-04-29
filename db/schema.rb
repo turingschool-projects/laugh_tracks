@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20190429222810) do
 
   create_table "specials", force: :cascade do |t|
     t.string "name"
-    t.integer "comedian_id"
+    t.integer "ComedianID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

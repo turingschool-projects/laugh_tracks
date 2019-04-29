@@ -5,6 +5,8 @@ class ComediansController < ApplicationController
   # GET /comedians.json
   def index
     @comedians = Comedian.all
+    @specials = Special.all
+    @comedians.
   end
 
   # GET /comedians/1
