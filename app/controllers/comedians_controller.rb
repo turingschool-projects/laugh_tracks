@@ -5,6 +5,7 @@ class ComediansController < ApplicationController
   # GET /comedians.json
   def index
     @comedians = Comedian.all
+    @comedians = Comedian.where(age: params[:age]) if params[:age]
   end
 
   # GET /comedians/1
