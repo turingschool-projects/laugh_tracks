@@ -1,0 +1,10 @@
+<html>
+
+  <section>
+    <% @players.each do |player| %>
+      <h2><%= player.name %></h2>
+      <span><%= player.age %></span>
+      <span>Hometown: <%=player.hometown%></span>
+    <%end%>
+  </section>
+</html>
