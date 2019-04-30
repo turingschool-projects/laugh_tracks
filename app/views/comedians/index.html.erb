@@ -9,12 +9,13 @@
 </ul>
 <ul>
   <li>Born in <%= comedian.birthplace %></li>
+  <li><img class="img-thumbnail" src="<%= comedian.image_url %>"</li>
 </ul>
 <% comedian.specials.each do |special| %>
 <ul>
   <%= special.name %>
   <%= special.runtime_mins %>
-  <img class="img-thumbnail" src="<%= special.image_url %>">
+  <img class="img-thumbnail" src="<%= special.image_url %>" alt='comedian'>
 </ul>
 <% end %>
 <% end %>
