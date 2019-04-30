@@ -1,5 +1,6 @@
-require_relative '../app/models/comedian.rb'
-require_relative '../app/models/special.rb'
+require './app/models/comedian.rb'
+require './app/models/special.rb'
+
 Special.destroy_all
 Comedian.destroy_all
 
@@ -16,28 +17,49 @@ Comedian.create(name: "Ari Shaffir", age: 44, birthplace: "New York City, NY", i
 Comedian.create(name: "Theo Von", age: 38, birthplace: "Mandeville, LA", image_url: "https://uproxx.files.wordpress.com/2016/02/theo-von-no-offense-feature.jpg?quality=95")
 Comedian.create(name: "Jerry Seinfeld", age: 64, birthplace: "Brooklyn, NY", image_url: "https://www.gannett-cdn.com/-mm-/aec403ad632f33650ec1aa7926a673a5a6b987b8/c=420-0-2149-1300/local/-/media/2015/09/17/Westchester/Westchester/635780965457520146--ASBBrd-07-27-2012-PressMon-1-A002-2012-07-26-IMG-People-Seinfeld-7-1-4U1UD.jpg?width=534&height=401&fit=crop")
 
-Special.create(name: "Walk Your Way Out", runtime_mins: 77, image_url: "https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_.jpg")
-Special.create(name: "I'm Sorry You Feel That Way", runtime_mins: 80, image_url: "https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_SY1000_SX675_AL_.jpg")
-Special.create(name: "You People Are All The Same", runtime_mins: 69, image_url: "https://m.media-amazon.com/images/M/MV5BMjAyZTI1NjMtNjQ3OC00MDhhLTkxMDgtMDVmMThhNjE5M2NkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg")
-Special.create(name: "Strange Times", runtime_mins: 63, comedian_id: 2, image_url: "https://m.media-amazon.com/images/M/MV5BNzc2Mzg5YmMtMzM1NC00NDgwLTljYWQtZDdkNzBmNjZkNmJhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg")
-Special.create(name: "Triggered", runtime_mins: 63, comedian_id: 2, image_url: "https://m.media-amazon.com/images/M/MV5BYTE0M2FkNGMtYjYxNi00MDRkLWE0YWUtNWI4NWU3NWIzMWIzXkEyXkFqcGdeQXVyMzE5NzI0NjE@._V1_.jpg")
-Special.create(name: "Rocky Mountain High", runtime_mins: 63, comedian_id: 2, image_url: "https://m.media-amazon.com/images/M/MV5BNjI4OGY5MTktZjNiNC00MTgyLTlhZGMtMzBhYzcyZTI5YTljXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_SY1000_SX750_AL_.jpg")
-Special.create(name: "Oh My God", runtime_mins: 58, comedian_id: 3, image_url: "https://m.media-amazon.com/images/M/MV5BMjQ4NjQwOTYzNl5BMl5BanBnXkFtZTcwNjU2NjczOQ@@._V1_.jpg")
-Special.create(name: "Live At The Beacon Theater", runtime_mins: 63, comedian_id: 3, image_url: "https://m.media-amazon.com/images/M/MV5BNzIxMTUxMjYzMV5BMl5BanBnXkFtZTcwMDYwMjE0Nw@@._V1_.jpg")
-Special.create(name: "Hilarious", runtime_mins: 88, comedian_id: 3, image_url: "https://m.media-amazon.com/images/M/MV5BNTQyODYyNzcxN15BMl5BanBnXkFtZTgwOTA3MzcwMzE@._V1_.jpg")
-Special.create(name: "Sociably Unacceptable", runtime_mins: 57, comedian_id: 4, image_url: "https://m.media-amazon.com/images/M/MV5BZTAxNTViYmUtYWU0OC00YTNhLTg3YTYtMTkwMjgzOTFkZGFmL2ltYWdlXkEyXkFqcGdeQXVyMzcwMjcwNQ@@._V1_SY1000_CR0,0,666,1000_AL_.jpg")
-Special.create(name: "As Is", runtime_mins: 52, comedian_id: 5, image_url: "https://m.media-amazon.com/images/M/MV5BODY2OWIxYzMtYjEwOS00ZjRiLWI3ZGEtMWFmYTQxOTFiY2E1L2ltYWdlXkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_.jpg")
-Special.create(name: "I'm A Grown Little Man", runtime_mins: 73, comedian_id: 6, image_url: "https://m.media-amazon.com/images/M/MV5BMjI4MTYwNTUzMF5BMl5BanBnXkFtZTcwODk1Mjk3Mw@@._V1_.jpg")
-Special.create(name: "Let Me Explain", runtime_mins: 75, comedian_id: 6, image_url: "https://m.media-amazon.com/images/M/MV5BMTg4MjM2MjAxOF5BMl5BanBnXkFtZTcwMTAzOTEyOQ@@._V1_SY1000_CR0,0,673,1000_AL_.jpg")
-Special.create(name: "What Now?", runtime_mins: 96, comedian_id: 6, image_url: "https://m.media-amazon.com/images/M/MV5BNzI2MDk3OTA5N15BMl5BanBnXkFtZTgwMDU1MDgxMDI@._V1_SY1000_CR0,0,674,1000_AL_.jpg")
-Special.create(name: "Equaniminity", runtime_mins: 60, comedian_id: 7, image_url: "https://m.media-amazon.com/images/M/MV5BODJkMTAxNmYtZDg4OS00NzA2LTlmZTUtMDc2MjIwMzE4ZDMxXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_.jpg")
-Special.create(name: "Killin' Them Softly", runtime_mins: 57, comedian_id: 7, image_url: "https://m.media-amazon.com/images/M/MV5BMTcyOGMxN2MtYzUwYy00YzQxLTgwZTItZjAxZTIzYWM1YzEyXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_.jpg")
-Special.create(name: "Kill The Messanger", runtime_mins: 79, comedian_id: 8, image_url: "https://m.media-amazon.com/images/M/MV5BMjAwMjQxNDA5OF5BMl5BanBnXkFtZTcwNTE3MzM5MQ@@._V1_.jpg")
-Special.create(name: "Bigger & Blacker", runtime_mins: 65, comedian_id: 8, image_url: "https://m.media-amazon.com/images/M/MV5BODQzOWExYjktZDQ2OC00YTA5LWI3YzctMDFjNjc3ZTM5NTA0XkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_.jpg")
-Special.create(name: "Never Scared", runtime_mins: 80, comedian_id: 8, image_url: "https://m.media-amazon.com/images/M/MV5BMTlhYzMzNzItNWMyYy00ZGRlLWI1N2UtOGI2YjIwOGEwYTViXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_SY1000_CR0,0,666,1000_AL_.jpg")
-Special.create(name: "Mostly Stories", runtime_mins: 73, comedian_id: 9, image_url: "https://m.media-amazon.com/images/M/MV5BZWE2Nzc5N2YtOWM0OS00ZWVmLThhOTctNjNlNGI0NTQzMTU5XkEyXkFqcGdeQXVyMzAzODY0NzE@._V1_.jpg")
-Special.create(name: "Completely Normal", runtime_mins: 74, comedian_id: 9, image_url: "https://m.media-amazon.com/images/M/MV5BMTcyODE0Mzk1Nl5BMl5BanBnXkFtZTgwMDk4ODE0NDE@._V1_.jpg")
-Special.create(name: "Paid Regular", runtime_mins: 73, comedian_id: 10, image_url: "https://m.media-amazon.com/images/M/MV5BMjBlMGE4ZWUtZmExOC00NzcxLWFkMjMtNDYwMzczOGQ0NzRlXkEyXkFqcGdeQXVyNTMxMjgxMzA@._V1_.jpg")
-Special.create(name: "Passive Aggressive", runtime_mins: 60, comedian_id: 10, image_url: "https://m.media-amazon.com/images/M/MV5BMTYzNDUyMjE4M15BMl5BanBnXkFtZTcwMTQ3NzQxOQ@@._V1_SY1000_CR0,0,647,1000_AL_.jpg")
-Special.create(name: "No Offense", runtime_mins: 66, comedian_id: 11, image_url: "https://m.media-amazon.com/images/M/MV5BODMyZjU2NWQtMTI2ZC00Y2ZkLTllYjItNjNiM2Y1NTIyMmIyXkEyXkFqcGdeQXVyNjYzMDA4MTI@._V1_.jpg")
-Special.create(name: "Jerry Before Seinfeld", runtime_mins: 62, comedian_id: 12, image_url: "https://m.media-amazon.com/images/M/MV5BOTc2N2I0Y2UtOTgyYy00MTU3LTk1YzItZGIwMDcxY2JkMGQzXkEyXkFqcGdeQXVyMjQzNzk2ODk@._V1_.jpg")
+Special.create(name: "Walk Your Way Out", runtime_mins: 77, image_url: "https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_.jpg", comedian: Comedian.find_by(name: "Bill Burr"))
+Special.create(name: "I'm Sorry You Feel That Way", runtime_mins: 80, image_url: "https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_SY1000_SX675_AL_.jpg", comedian: Comedian.find_by(name: "Bill Burr"))
+Special.create(name: "You People Are All The Same", runtime_mins: 69, image_url: "https://m.media-amazon.com/images/M/MV5BMjAyZTI1NjMtNjQ3OC00MDhhLTkxMDgtMDVmMThhNjE5M2NkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", comedian: Comedian.find_by(name: "Bill Burr"))
+
+
+Special.create(name: "Strange Times", runtime_mins: 63, comedian_id: 2, image_url: "https://m.media-amazon.com/images/M/MV5BNzc2Mzg5YmMtMzM1NC00NDgwLTljYWQtZDdkNzBmNjZkNmJhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", comedian: Comedian.find_by(name: "Joe Rogan"))
+Special.create(name: "Triggered", runtime_mins: 63, comedian_id: 2, image_url: "https://m.media-amazon.com/images/M/MV5BYTE0M2FkNGMtYjYxNi00MDRkLWE0YWUtNWI4NWU3NWIzMWIzXkEyXkFqcGdeQXVyMzE5NzI0NjE@._V1_.jpg", comedian: Comedian.find_by(name: "Joe Rogan"))
+Special.create(name: "Rocky Mountain High", runtime_mins: 63, comedian_id: 2, image_url: "https://m.media-amazon.com/images/M/MV5BNjI4OGY5MTktZjNiNC00MTgyLTlhZGMtMzBhYzcyZTI5YTljXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_SY1000_SX750_AL_.jpg", comedian: Comedian.find_by(name: "Joe Rogan"))
+
+
+Special.create(name: "Oh My God", runtime_mins: 58, image_url: "https://m.media-amazon.com/images/M/MV5BMjQ4NjQwOTYzNl5BMl5BanBnXkFtZTcwNjU2NjczOQ@@._V1_.jpg", comedian: Comedian.find_by("Louis C.K."))
+Special.create(name: "Live At The Beacon Theater", runtime_mins: 63, image_url: "https://m.media-amazon.com/images/M/MV5BNzIxMTUxMjYzMV5BMl5BanBnXkFtZTcwMDYwMjE0Nw@@._V1_.jpg", comedian: Comedian.find_by("Louis C.K."))
+Special.create(name: "Hilarious", runtime_mins: 88, image_url: "https://m.media-amazon.com/images/M/MV5BNTQyODYyNzcxN15BMl5BanBnXkFtZTgwOTA3MzcwMzE@._V1_.jpg", comedian: Comedian.find_by("Louis C.K."))
+
+
+Special.create(name: "Sociably Unacceptable", runtime_mins: 57, image_url: "https://m.media-amazon.com/images/M/MV5BZTAxNTViYmUtYWU0OC00YTNhLTg3YTYtMTkwMjgzOTFkZGFmL2ltYWdlXkEyXkFqcGdeQXVyMzcwMjcwNQ@@._V1_SY1000_CR0,0,666,1000_AL_.jpg", comedian: Comedian.find_by(name: "Joey Diaz"))
+
+
+Special.create(name: "As Is", runtime_mins: 52, image_url: "https://m.media-amazon.com/images/M/MV5BODY2OWIxYzMtYjEwOS00ZjRiLWI3ZGEtMWFmYTQxOTFiY2E1L2ltYWdlXkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_.jpg", comedian: Comedian.find_by(name: "Chad Daniels"))
+
+
+Special.create(name: "I'm A Grown Little Man", runtime_mins: 73, image_url: "https://m.media-amazon.com/images/M/MV5BMjI4MTYwNTUzMF5BMl5BanBnXkFtZTcwODk1Mjk3Mw@@._V1_.jpg", comedian: Comedian.find_by(name: "Kevin Hart")
+Special.create(name: "Let Me Explain", runtime_mins: 75, image_url: "https://m.media-amazon.com/images/M/MV5BMTg4MjM2MjAxOF5BMl5BanBnXkFtZTcwMTAzOTEyOQ@@._V1_SY1000_CR0,0,673,1000_AL_.jpg", comedian: Comedian.find_by(name: "Kevin Hart")
+Special.create(name: "What Now?", runtime_mins: 96, image_url: "https://m.media-amazon.com/images/M/MV5BNzI2MDk3OTA5N15BMl5BanBnXkFtZTgwMDU1MDgxMDI@._V1_SY1000_CR0,0,674,1000_AL_.jpg", comedian: Comedian.find_by(name: "Kevin Hart")
+
+
+Special.create(name: "Equaniminity", runtime_mins: 60, image_url: "https://m.media-amazon.com/images/M/MV5BODJkMTAxNmYtZDg4OS00NzA2LTlmZTUtMDc2MjIwMzE4ZDMxXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_.jpg", comedian: "Dave Chappelle")
+Special.create(name: "Killin' Them Softly", runtime_mins: 57, image_url: "https://m.media-amazon.com/images/M/MV5BMTcyOGMxN2MtYzUwYy00YzQxLTgwZTItZjAxZTIzYWM1YzEyXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_.jpg", comedian: "Dave Chappelle")
+
+
+Special.create(name: "Kill The Messanger", runtime_mins: 79, image_url: "https://m.media-amazon.com/images/M/MV5BMjAwMjQxNDA5OF5BMl5BanBnXkFtZTcwNTE3MzM5MQ@@._V1_.jpg", comedian: Comedian.find_by(name: "Chris Rock"))
+Special.create(name: "Bigger & Blacker", runtime_mins: 65, image_url: "https://m.media-amazon.com/images/M/MV5BODQzOWExYjktZDQ2OC00YTA5LWI3YzctMDFjNjc3ZTM5NTA0XkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_.jpg", comedian: Comedian.find_by(name: "Chris Rock"))
+Special.create(name: "Never Scared", runtime_mins: 80, image_url: "https://m.media-amazon.com/images/M/MV5BMTlhYzMzNzItNWMyYy00ZGRlLWI1N2UtOGI2YjIwOGEwYTViXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_SY1000_CR0,0,666,1000_AL_.jpg", comedian: Comedian.find_by(name: "Chris Rock"))
+
+
+Special.create(name: "Mostly Stories", runtime_mins: 73, image_url: "https://m.media-amazon.com/images/M/MV5BZWE2Nzc5N2YtOWM0OS00ZWVmLThhOTctNjNlNGI0NTQzMTU5XkEyXkFqcGdeQXVyMzAzODY0NzE@._V1_.jpg", comedian: Comedian.find_by(name: "Tom Segura"))
+Special.create(name: "Completely Normal", runtime_mins: 74, image_url: "https://m.media-amazon.com/images/M/MV5BMTcyODE0Mzk1Nl5BMl5BanBnXkFtZTgwMDk4ODE0NDE@._V1_.jpg", comedian: Comedian.find_by(name: "Tom Segura"))
+
+
+Special.create(name: "Paid Regular", runtime_mins: 73, image_url: "https://m.media-amazon.com/images/M/MV5BMjBlMGE4ZWUtZmExOC00NzcxLWFkMjMtNDYwMzczOGQ0NzRlXkEyXkFqcGdeQXVyNTMxMjgxMzA@._V1_.jpg" comedian: "Ari Shaffir")
+Special.create(name: "Passive Aggressive", runtime_mins: 60, image_url: "https://m.media-amazon.com/images/M/MV5BMTYzNDUyMjE4M15BMl5BanBnXkFtZTcwMTQ3NzQxOQ@@._V1_SY1000_CR0,0,647,1000_AL_.jpg" comedian: "Ari Shaffir")
+
+
+Special.create(name: "No Offense", runtime_mins: 66, image_url: "https://m.media-amazon.com/images/M/MV5BODMyZjU2NWQtMTI2ZC00Y2ZkLTllYjItNjNiM2Y1NTIyMmIyXkEyXkFqcGdeQXVyNjYzMDA4MTI@._V1_.jpg", comedian: Comedian.find_by(name: "Theo Von"))
+
+Special.create(name: "Jerry Before Seinfeld", runtime_mins: 62, image_url: "https://m.media-amazon.com/images/M/MV5BOTc2N2I0Y2UtOTgyYy00MTU3LTk1YzItZGIwMDcxY2JkMGQzXkEyXkFqcGdeQXVyMjQzNzk2ODk@._V1_.jpg", comedian: Comedian.find_by(name: "Jerry Seinfeld"))
