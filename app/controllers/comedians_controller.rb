@@ -1,2 +1,3 @@
 class ComediansController < ApplicationController
+  
 end
