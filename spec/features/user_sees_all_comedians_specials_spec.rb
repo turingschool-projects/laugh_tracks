@@ -11,7 +11,6 @@ describe "user sees all comedians " do
       special_3 = Special.create!(id:3, name: "Jane one", comedian_id: 2)
 
       visit '/comedians'
-      require "pry"; binding.pry
 
       expect(page).to have_content(special_1.name)
       expect(page).to have_content(special_2.name)
