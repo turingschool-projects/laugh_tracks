@@ -27,9 +27,9 @@ Special.create(name: "Triggered", runtime_mins: 63, comedian_id: 2, image_url: "
 Special.create(name: "Rocky Mountain High", runtime_mins: 63, comedian_id: 2, image_url: "https://m.media-amazon.com/images/M/MV5BNjI4OGY5MTktZjNiNC00MTgyLTlhZGMtMzBhYzcyZTI5YTljXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_SY1000_SX750_AL_.jpg", comedian: Comedian.find_by(name: "Joe Rogan"))
 
 
-Special.create(name: "Oh My God", runtime_mins: 58, image_url: "https://m.media-amazon.com/images/M/MV5BMjQ4NjQwOTYzNl5BMl5BanBnXkFtZTcwNjU2NjczOQ@@._V1_.jpg", comedian: Comedian.find_by("Louis C.K."))
-Special.create(name: "Live At The Beacon Theater", runtime_mins: 63, image_url: "https://m.media-amazon.com/images/M/MV5BNzIxMTUxMjYzMV5BMl5BanBnXkFtZTcwMDYwMjE0Nw@@._V1_.jpg", comedian: Comedian.find_by("Louis C.K."))
-Special.create(name: "Hilarious", runtime_mins: 88, image_url: "https://m.media-amazon.com/images/M/MV5BNTQyODYyNzcxN15BMl5BanBnXkFtZTgwOTA3MzcwMzE@._V1_.jpg", comedian: Comedian.find_by("Louis C.K."))
+Special.create(name: "Oh My God", runtime_mins: 58, image_url: "https://m.media-amazon.com/images/M/MV5BMjQ4NjQwOTYzNl5BMl5BanBnXkFtZTcwNjU2NjczOQ@@._V1_.jpg", comedian: Comedian.find_by(name: "Louis C.K."))
+Special.create(name: "Live At The Beacon Theater", runtime_mins: 63, image_url: "https://m.media-amazon.com/images/M/MV5BNzIxMTUxMjYzMV5BMl5BanBnXkFtZTcwMDYwMjE0Nw@@._V1_.jpg", comedian: Comedian.find_by(name: "Louis C.K."))
+Special.create(name: "Hilarious", runtime_mins: 88, image_url: "https://m.media-amazon.com/images/M/MV5BNTQyODYyNzcxN15BMl5BanBnXkFtZTgwOTA3MzcwMzE@._V1_.jpg", comedian: Comedian.find_by(name: "Louis C.K."))
 
 
 Special.create(name: "Sociably Unacceptable", runtime_mins: 57, image_url: "https://m.media-amazon.com/images/M/MV5BZTAxNTViYmUtYWU0OC00YTNhLTg3YTYtMTkwMjgzOTFkZGFmL2ltYWdlXkEyXkFqcGdeQXVyMzcwMjcwNQ@@._V1_SY1000_CR0,0,666,1000_AL_.jpg", comedian: Comedian.find_by(name: "Joey Diaz"))
@@ -38,13 +38,13 @@ Special.create(name: "Sociably Unacceptable", runtime_mins: 57, image_url: "http
 Special.create(name: "As Is", runtime_mins: 52, image_url: "https://m.media-amazon.com/images/M/MV5BODY2OWIxYzMtYjEwOS00ZjRiLWI3ZGEtMWFmYTQxOTFiY2E1L2ltYWdlXkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_.jpg", comedian: Comedian.find_by(name: "Chad Daniels"))
 
 
-Special.create(name: "I'm A Grown Little Man", runtime_mins: 73, image_url: "https://m.media-amazon.com/images/M/MV5BMjI4MTYwNTUzMF5BMl5BanBnXkFtZTcwODk1Mjk3Mw@@._V1_.jpg", comedian: Comedian.find_by(name: "Kevin Hart")
-Special.create(name: "Let Me Explain", runtime_mins: 75, image_url: "https://m.media-amazon.com/images/M/MV5BMTg4MjM2MjAxOF5BMl5BanBnXkFtZTcwMTAzOTEyOQ@@._V1_SY1000_CR0,0,673,1000_AL_.jpg", comedian: Comedian.find_by(name: "Kevin Hart")
-Special.create(name: "What Now?", runtime_mins: 96, image_url: "https://m.media-amazon.com/images/M/MV5BNzI2MDk3OTA5N15BMl5BanBnXkFtZTgwMDU1MDgxMDI@._V1_SY1000_CR0,0,674,1000_AL_.jpg", comedian: Comedian.find_by(name: "Kevin Hart")
+Special.create(name: "I'm A Grown Little Man", runtime_mins: 73, image_url: "https://m.media-amazon.com/images/M/MV5BMjI4MTYwNTUzMF5BMl5BanBnXkFtZTcwODk1Mjk3Mw@@._V1_.jpg", comedian: Comedian.find_by(name: "Kevin Hart"))
+Special.create(name: "Let Me Explain", runtime_mins: 75, image_url: "https://m.media-amazon.com/images/M/MV5BMTg4MjM2MjAxOF5BMl5BanBnXkFtZTcwMTAzOTEyOQ@@._V1_SY1000_CR0,0,673,1000_AL_.jpg", comedian: Comedian.find_by(name: "Kevin Hart"))
+Special.create(name: "What Now?", runtime_mins: 96, image_url: "https://m.media-amazon.com/images/M/MV5BNzI2MDk3OTA5N15BMl5BanBnXkFtZTgwMDU1MDgxMDI@._V1_SY1000_CR0,0,674,1000_AL_.jpg", comedian: Comedian.find_by(name: "Kevin Hart"))
 
 
-Special.create(name: "Equaniminity", runtime_mins: 60, image_url: "https://m.media-amazon.com/images/M/MV5BODJkMTAxNmYtZDg4OS00NzA2LTlmZTUtMDc2MjIwMzE4ZDMxXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_.jpg", comedian: "Dave Chappelle")
-Special.create(name: "Killin' Them Softly", runtime_mins: 57, image_url: "https://m.media-amazon.com/images/M/MV5BMTcyOGMxN2MtYzUwYy00YzQxLTgwZTItZjAxZTIzYWM1YzEyXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_.jpg", comedian: "Dave Chappelle")
+Special.create(name: "Equaniminity", runtime_mins: 60, image_url: "https://m.media-amazon.com/images/M/MV5BODJkMTAxNmYtZDg4OS00NzA2LTlmZTUtMDc2MjIwMzE4ZDMxXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_.jpg", comedian: Comedian.find_by(name: "Dave Chappelle"))
+Special.create(name: "Killin' Them Softly", runtime_mins: 57, image_url: "https://m.media-amazon.com/images/M/MV5BMTcyOGMxN2MtYzUwYy00YzQxLTgwZTItZjAxZTIzYWM1YzEyXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_.jpg", comedian: Comedian.find_by(name: "Dave Chappelle"))
 
 
 Special.create(name: "Kill The Messanger", runtime_mins: 79, image_url: "https://m.media-amazon.com/images/M/MV5BMjAwMjQxNDA5OF5BMl5BanBnXkFtZTcwNTE3MzM5MQ@@._V1_.jpg", comedian: Comedian.find_by(name: "Chris Rock"))
@@ -56,8 +56,8 @@ Special.create(name: "Mostly Stories", runtime_mins: 73, image_url: "https://m.m
 Special.create(name: "Completely Normal", runtime_mins: 74, image_url: "https://m.media-amazon.com/images/M/MV5BMTcyODE0Mzk1Nl5BMl5BanBnXkFtZTgwMDk4ODE0NDE@._V1_.jpg", comedian: Comedian.find_by(name: "Tom Segura"))
 
 
-Special.create(name: "Paid Regular", runtime_mins: 73, image_url: "https://m.media-amazon.com/images/M/MV5BMjBlMGE4ZWUtZmExOC00NzcxLWFkMjMtNDYwMzczOGQ0NzRlXkEyXkFqcGdeQXVyNTMxMjgxMzA@._V1_.jpg" comedian: "Ari Shaffir")
-Special.create(name: "Passive Aggressive", runtime_mins: 60, image_url: "https://m.media-amazon.com/images/M/MV5BMTYzNDUyMjE4M15BMl5BanBnXkFtZTcwMTQ3NzQxOQ@@._V1_SY1000_CR0,0,647,1000_AL_.jpg" comedian: "Ari Shaffir")
+Special.create(name: "Paid Regular", runtime_mins: 73, image_url: "https://m.media-amazon.com/images/M/MV5BMjBlMGE4ZWUtZmExOC00NzcxLWFkMjMtNDYwMzczOGQ0NzRlXkEyXkFqcGdeQXVyNTMxMjgxMzA@._V1_.jpg", comedian: Comedian.find_by(name: "Ari Shaffir"))
+Special.create(name: "Passive Aggressive", runtime_mins: 60, image_url: "https://m.media-amazon.com/images/M/MV5BMTYzNDUyMjE4M15BMl5BanBnXkFtZTcwMTQ3NzQxOQ@@._V1_SY1000_CR0,0,647,1000_AL_.jpg", comedian: Comedian.find_by(name: "Ari Shaffir"))
 
 
 Special.create(name: "No Offense", runtime_mins: 66, image_url: "https://m.media-amazon.com/images/M/MV5BODMyZjU2NWQtMTI2ZC00Y2ZkLTllYjItNjNiM2Y1NTIyMmIyXkEyXkFqcGdeQXVyNjYzMDA4MTI@._V1_.jpg", comedian: Comedian.find_by(name: "Theo Von"))
