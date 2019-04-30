@@ -1,9 +1,15 @@
 <h1>List of All Comedians</h1>
 <% @comedians.each do |comedian| %>
-  <h3><%= comedian.name %></h3>
+  <h2><%= comedian.name %></h2>
   <p>
     Age: <%= comedian.age %> <br/>
     City: <%= comedian.city %>
   </p>
+  <strong>Televison Specials:</strong>
+  <ul>
+    <% Televisionspecial.where(comedianid: comedian.id).each do |special| %>
+    <li><%= special.name %>, <%= special.runtime %></li>
+    <% end %>
+  </ul>
   <hr>
 <% end %>
