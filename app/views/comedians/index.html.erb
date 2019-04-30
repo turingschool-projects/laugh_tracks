@@ -2,10 +2,18 @@
 <h1>Comedians</h1>
 <body>
   <% @comedians.each do |comedian| %>
-    <h5><%= comedian.name %></h5>
+    <div id = "<%= comedian.id %>"
+    <h3><%= comedian.name %></h3>
     <ul>
         <li><%= comedian.age %></li>
         <li><%= comedian.city %></li>
     </ul>
+    <h5>Specials:</h5>
+    <% comedian.specials.each do |special| %>
+    <p>
+      Title: <%= special.title %>
+      Run Time: <%= special.run_time %>
+    <% end %>
+    </div>
   <% end %>
 </body>
