@@ -18,6 +18,8 @@
         <td><%= comedian.name %></td>
         <td><%= comedian.age %></td>
         <td><%= comedian.city %></td>
+
+      <td><img src="<%=comedian.image%>"></td>
         <% comedian.specials.each do |special| %>
         <td><%= special.name %></td>
         <% end %>

@@ -9,7 +9,7 @@
 
 
 comedian_list = [
-  [ 1, "George", 18, "Memphis"],
+  [ 1, "George", 18, "Memphis", "https://www.pexels.com/photo/grey-and-white-short-fur-cat-104827/"],
   [ 2, "Bill", 22, "Albuquerque"],
   [ 3, "Kate", 33, "Tucson"],
   [ 4, "Jane", 45, "Salt Lake City"]
@@ -25,8 +25,8 @@ special_list = [
   [ 7, "Kate Never Stops", 33],
   [ 8, "Jane's Best", 4]
 ]
-comedian_list.each do | id, name, age, city|
-  Comedian.create( id: id, name: name, age: age, city: city )
+comedian_list.each do | id, name, age, city, image|
+  Comedian.create( id: id, name: name, age: age, city: city, image: image )
 end
 
 special_list.each do |id, name, comedian_id|

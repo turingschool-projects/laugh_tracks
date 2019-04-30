@@ -1,11 +1,10 @@
-class CreateComedians < ActiveRecord::Migration[5.1]
+class CreateComedianss < ActiveRecord::Migration[5.1]
   def change
-    create_table :comedians do |t|
+    create_table :comediansses do |t|
       t.string :name
       t.integer :age
       t.string :city
       t.string :image
-      t.timestamps
     end
   end
 end
