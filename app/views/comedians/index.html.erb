@@ -1,0 +1,20 @@
+<h1>All Comedians</h1>
+
+<% @comedians.each do |comedian| %>
+<ul>
+  <li><%= comedian.name %></li>
+</ul>
+<ul>
+  <li>Age <%= comedian.age %></li>
+</ul>
+<ul>
+  <li>Born in <%= comedian.birthplace %></li>
+</ul>
+<% comedian.specials.each do |special| %>
+<ul>
+  <%= special.name %>
+  <%= special.runtime_mins %>
+  <img class="img-thumbnail" src="<%= special.image_url %>">
+</ul>
+<% end %>
+<% end %>
