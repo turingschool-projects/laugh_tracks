@@ -1,0 +1,2 @@
+class Televisionspecial < ApplicationRecord
+end
