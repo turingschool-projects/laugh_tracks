@@ -181,6 +181,7 @@
       "/Users/millsprovosty/turing/all_mod_2/projects_mod_2/laugh_tracks/config/routes.rb": [
         1,
         null,
+        1,
         null
       ],
       "/Users/millsprovosty/turing/all_mod_2/projects_mod_2/laugh_tracks/app/helpers/application_helper.rb": [
@@ -195,8 +196,20 @@
         1,
         1,
         null
+      ],
+      "/Users/millsprovosty/turing/all_mod_2/projects_mod_2/laugh_tracks/app/controllers/comedians_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/millsprovosty/turing/all_mod_2/projects_mod_2/laugh_tracks/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1556658884
+    "timestamp": 1556663387
   }
 }
