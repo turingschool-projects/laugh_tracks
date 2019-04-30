@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<h1>Comedians</h1>
+<body>
+  <% @comedians.each do |comedian| %>
+    <h5><%= comedian.name %></h5>
+    <ul>
+        <li><%= comedian.age %></li>
+        <li><%= comedian.city %></li>
+    </ul>
+  <% end %>
+</body>
