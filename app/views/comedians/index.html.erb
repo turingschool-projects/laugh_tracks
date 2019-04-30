@@ -1,8 +1,9 @@
 <%@comedians.each do |comedian|%>
+
+ <p><%= id="img" "#{comedian.thumb_url}"%></p>
+ </div>
   <h2><%= comedian.name %></h2>
   <p><%= comedian.age %></p>
-  save_and_open_page
   <p><%= comedian.birthplace %></p>
 
-  <p><%= comedian.thumb_url %></p>
 <% end %>
