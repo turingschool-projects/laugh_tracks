@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'comedian index page', type: :feature do
   before :each do
-    @jerry = Comedian.create(name: "Jerry", age: 50, city: "no idea")
-    @bob = Comedian.create(name: "Bob", age: 21, city: "some city")
-    @rob = Comedian.create(name: "Rob", age: 30, city: "different city")
+    @jerry = Comedian.create(name: "Jerry", age: 50, city: "no idea", thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jerry_Seinfeld_2016_-_2.jpg/220px-Jerry_Seinfeld_2016_-_2.jpg")
+    @bob = Comedian.create(name: "Bob", age: 21, city: "some city", thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jerry_Seinfeld_2016_-_2.jpg/220px-Jerry_Seinfeld_2016_-_2.jpg")
+    @rob = Comedian.create(name: "Rob", age: 30, city: "different city", thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jerry_Seinfeld_2016_-_2.jpg/220px-Jerry_Seinfeld_2016_-_2.jpg")
   end
   it 'has comedian info' do
 
@@ -31,5 +31,15 @@ RSpec.describe 'comedian index page', type: :feature do
       expect(page).to have_content('idk')
       expect(page).to have_content(100)
     end
+  end
+
+  it 'has thumbnail images for comedians' do
+
+    visit comedians_path
+    
+    within("##{@jerry.id}") do
+      expect(page).to have_xpath("//img[@src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jerry_Seinfeld_2016_-_2.jpg/220px-Jerry_Seinfeld_2016_-_2.jpg']")
+    end
+
   end
 end
