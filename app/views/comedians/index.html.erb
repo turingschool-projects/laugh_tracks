@@ -1,4 +1,4 @@
-<h1>List of All Comedians</h1>
+<h1>List of Comedians</h1>
 <% @comedians.each do |comedian| %>
   <h2><%= comedian.name %></h2>
   <img src="<%= comedian.imageurl %>">
@@ -8,8 +8,10 @@
   </p>
   <strong>Televison Specials:</strong>
   <ul>
-    <% Televisionspecial.where(comedianid: comedian.id).each do |special| %>
-    <li><%= special.name %>, <%= special.runtime %></li>
+    <% @specials.each do |special| %>
+      <% if special.comedianid == comedian.id%>
+        <li><%= special.name %>, <%= special.runtime %></li>
+      <% end %>
     <% end %>
   </ul>
   <hr>
