@@ -2,9 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Laugh Tracks</title>
   </head>
   <body>
-    
+    <ul>
+      <% @comedians.each do |comedian| %>
+      <li><%= comedian.name %></li>
+      <li><%= comedian.age %></li>
+      <li><%= comedian.city %></li>
+      <% end %>
+    </ul>
   </body>
 </html>
