@@ -1,10 +1,21 @@
 <html>
 
-  <section>
-    <% @players.each do |player| %>
+  <div>
+  <% @players.each do |player| %>
+    <section id="player-<%=player.id%>">
       <h2><%= player.name %></h2>
-      <span><%= player.age %></span>
-      <span>Hometown: <%=player.hometown%></span>
-    <%end%>
-  </section>
+      <div><%= player.age %></div>
+      <div>Hometown: <%=player.hometown%></div>
+      <ul id="player-<%=player.id%>-cards">
+      <% player.cards.each do |card| %>
+        <li>
+          <div><%=card.name%></div>
+          <div><%=card.cost%></div>
+          <div><%=card.description%></div>
+        </li>
+      <% end %>
+      </ul>
+    </section>
+  <%end%>
+  </div>
 </html>

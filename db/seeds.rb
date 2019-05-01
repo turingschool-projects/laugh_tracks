@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Player.destroy_all
+
+Player.create(name: "Justin D",  age: 31, hometown:"Florida")
+Player.create(name: "Kurumi D",  age: 31, hometown:"Okinawa")
+Player.create(name: "Mio D",     age: 6,  hometown:"Ginowan")
+
