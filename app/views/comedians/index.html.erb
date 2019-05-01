@@ -1,5 +1,7 @@
-<h1>All Comedians</h1>
-<h2><%= link_to "Add a Comedian", new_comedian_path %></h2>
+<h1>Index page</h1>
+
+<%= link_to "Add a Comedian", new_comedian_path %>
+
 <% @comedians.each do |comedian| %>
 <ul>
   <li><%= comedian.name %></li>

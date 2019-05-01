@@ -3,16 +3,20 @@ require 'rails_helper'
 describe "When I visit new_comedian_path" do
   describe "Fill out the form with comedian data" do
     it "I am redirected to comedians_path and new comedian is listed" do
-      comedian = Comedian.create(name: "Bill Hicks", age: 55, birthplace: "Denver, CO", image_url: "www.google.com")
+      @comedian = Comedian.create(name: "Bill Hicks", age: 55, birthplace: "Denver, CO", image_url: "www.google.com")
 
       visit comedians_path
+
       click_link "Add a Comedian"
+
+      visit new_comedian_path
 
       expect(current_path).to eq(new_comedian_path)
 
-      fill_in 'comedian[name]', with: comedian.name
-      fill_in 'comedian[age]', with: comedian.age
-      fill_in 'comedian[birthplace]', with: comedian.birthplace
+      fill_in "comedian[name]", with: @comedian.name
+      fill_in "comedian[age]", with: @comedian.age
+      fill_in "comedian[birthplace]", with: @comedian.birthplace
+      fill_in "comedian[image_url]", with: @comedian.image_url
       click_on "Submit"
 
       updated_comedian = Comedian.last
