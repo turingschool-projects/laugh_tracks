@@ -1,5 +1,5 @@
-#app/models/comedian.rb
+# app/models/comedian.rb
 
 class Comedian < ApplicationRecord
-  validates_presence_of :name, :age, :city 
+  validates_presence_of :name, :age, :city
 end
