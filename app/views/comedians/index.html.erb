@@ -7,3 +7,15 @@
   <li><a href="/comedians/age?=:Age">Comedian Age Check</a></li>
   <li><a href="/comedians/new">New Comedian</a></li>
 </ul>
+
+
+
+
+<% @comedians.each do |comedian| %>
+<section id="comedian-<%=comedian.id%>">
+  <br>
+    <h2><%= comedian.name %></h2>
+    <p><%= comedian.age %></p>
+    <p><%= comedian.birthplace %></p>
+  <% end %>
+</section>
