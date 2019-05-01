@@ -1,3 +1,5 @@
+# spec/models/comedian_spec.rb
+
 require "rails_helper"
 
 describe Comedian, type: :model do
