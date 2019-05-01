@@ -114,6 +114,15 @@ describe "Comedians index page" do
       expect(page).to have_content("Special count: 1")
       end
     end
+    it "displays a link to create a new comedian" do
+
+      visit comedians_path
+
+      click_link "Add a Comedian"
+
+      expect(current_path).to eq(new_comedian_path)
+
+    end
   end
 end
 
