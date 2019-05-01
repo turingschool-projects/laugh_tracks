@@ -4,7 +4,9 @@
   <% @comedians.each do |comedian| %>
     <div id = "<%= comedian.id %>"
     <h3><%= comedian.name %></h3>
+
     <ul>
+        <li><img src= "<%= comedian.thumbnail %>"></li>
         <li><%= comedian.age %></li>
         <li><%= comedian.city %></li>
     </ul>
