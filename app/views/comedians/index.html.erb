@@ -1,14 +1,13 @@
 <h1> All Comedians </h1>
-<% @comedians.each do |comedian|%>
-<div id="<%=comedian.id%>" >
-<h2><%= comedian.name %></h2>
-<p >Age: <%= comedian.age %> Birthplace: <%=comedian.birthplace %>
-<ul> <h3> Specials </h3>
-  <% comedian.specials.each do |special| %>
-  <li><%= special.name %></li>
-RunTime: <%= special.runtime_mins %>
-<% end  %>
-</ul>
-</p>
-</div>
-<% end %>
+  <% @comedians.each do |comedian|%>
+    <section id="<%=comedian.id%>" >
+      <h2><%= comedian.name %></h2>
+        <p>Age: <%= comedian.age %> Birthplace: <%=comedian.birthplace %> </p>
+      <h3> Specials </h3>
+          <span><ul><% comedian.specials.each do |special| %>
+            <li><%= special.name %>
+            RunTime: <%= special.runtime_mins %></li>
+            <% end  %>
+          </ul></span>
+     </section>
+  <% end %>

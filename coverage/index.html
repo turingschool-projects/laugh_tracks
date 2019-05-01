@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-04-30T20:01:16-06:00">2019-04-30T20:01:16-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-05-01T14:43:51-06:00">2019-05-01T14:43:51-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.11
+         1.12
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>22</b> files in total.
-    <b>75</b> relevant lines. 
-    <span class="green"><b>75</b> lines covered</span> and
+    <b>74</b> relevant lines. 
+    <span class="green"><b>74</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -93,9 +93,9 @@
       <tr>
         <td class="strong"><a href="#3828ca8a6dc5e14b232bb2364ae225e72c382d58" class="src_link" title="app/models/comedian.rb">app/models/comedian.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
         <td>5</td>
-        <td>5</td>
+        <td>3</td>
+        <td>3</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -104,8 +104,8 @@
         <td class="strong"><a href="#d51f91f6c10e0bb52d26d69f3fc1bdd25063c11c" class="src_link" title="app/models/special.rb">app/models/special.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>5</td>
-        <td>4</td>
-        <td>4</td>
+        <td>3</td>
+        <td>3</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -241,9 +241,9 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#9ef2e3a6382620a0ce0e0159edbc80d8b34cb072" class="src_link" title="spec/models/comedians_spec.rb">spec/models/comedians_spec.rb</a></td>
+        <td class="strong"><a href="#453b30b8ae30f8b7ae7837ad36b1eb7115b7db93" class="src_link" title="spec/models/comedian_spec.rb">spec/models/comedian_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>13</td>
+        <td>14</td>
         <td>8</td>
         <td>8</td>
         <td>0</td>
@@ -253,9 +253,9 @@
       <tr>
         <td class="strong"><a href="#462212a4e0d10aefd203cefe53459572f72c72b4" class="src_link" title="spec/models/special_spec.rb">spec/models/special_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
-        <td>5</td>
-        <td>5</td>
+        <td>14</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.4</td>
       </tr>
@@ -457,8 +457,8 @@
     <h3>app/models/comedian.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -487,28 +487,10 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_presence_of :name</code>
+          <code class="ruby">  validates_presence_of :name, :age, :birthplace</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  validates_presence_of :age</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  validates_presence_of :birthplace</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">end</code>
@@ -524,8 +506,8 @@
     <h3>app/models/special.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -545,16 +527,16 @@
           <code class="ruby">  belongs_to :comedian</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="3">
           
-          <code class="ruby">  validates_presence_of :name</code>
+          
+          <code class="ruby">  </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_presence_of :runtime_mins</code>
+          <code class="ruby">  validates_presence_of :name, :runtime_mins</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -1757,9 +1739,9 @@
 </div>
 
       
-        <div class="source_table" id="9ef2e3a6382620a0ce0e0159edbc80d8b34cb072">
+        <div class="source_table" id="453b30b8ae30f8b7ae7837ad36b1eb7115b7db93">
   <div class="header">
-    <h3>spec/models/comedians_spec.rb</h3>
+    <h3>spec/models/comedian_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>8</b> relevant lines. 
@@ -1786,31 +1768,31 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">describe Comedian, type: :model do</code>
+          <code class="ruby">  RSpec.describe Comedian, type: :model do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;validations&quot; do</code>
+          <code class="ruby">    describe &quot;validations&quot; do</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should validate_presence_of :name}</code>
+          <code class="ruby">      it { should validate_presence_of :name}</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should validate_presence_of :age}</code>
+          <code class="ruby">      it { should validate_presence_of :age}</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="7">
           <span class="hits">2</span>
           
-          <code class="ruby">    it { should validate_presence_of :birthplace}</code>
+          <code class="ruby">      it { should validate_presence_of :birthplace}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -1846,6 +1828,12 @@
         <li class="never" data-hits="" data-linenumber="13">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
           <code class="ruby">end</code>
         </li>
       
@@ -1859,8 +1847,8 @@
     <h3>spec/models/special_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1883,34 +1871,70 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">describe Special, type: :model do</code>
+          <code class="ruby">RSpec.describe Special, type: :model do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &quot;validations&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
+        <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
           <code class="ruby">    it { should validate_presence_of :name}</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
+        <li class="covered" data-hits="2" data-linenumber="7">
           <span class="hits">2</span>
           
           <code class="ruby">    it { should validate_presence_of :runtime_mins}</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;relationships&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should belong_to :comedian}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>

@@ -286,7 +286,7 @@
         1,
         null
       ],
-      "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/spec/models/comedians_spec.rb": [
+      "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/spec/models/comedian_spec.rb": [
         1,
         null,
         1,
@@ -298,6 +298,7 @@
         null,
         1,
         2,
+        null,
         null,
         null
       ],
@@ -306,9 +307,6 @@
         1,
         null,
         1,
-        1,
-        1,
-        null,
         null
       ],
       "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/app/models/application_record.rb": [
@@ -320,16 +318,22 @@
         1,
         null,
         1,
+        null,
         1,
         2,
         2,
+        null,
+        null,
+        1,
+        2,
+        null,
         null,
         null
       ],
       "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/app/models/special.rb": [
         1,
         1,
-        1,
+        null,
         1,
         null
       ],
@@ -348,6 +352,6 @@
         null
       ]
     },
-    "timestamp": 1556676076
+    "timestamp": 1556743431
   }
 }
