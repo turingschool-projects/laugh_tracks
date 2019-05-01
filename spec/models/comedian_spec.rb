@@ -1,5 +1,7 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# RSpec.describe Comedian, type: :model do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
+RSpec.describe Comedian, type: :model do
+  describe 'relationships' do
+    it { should have_many :televisionspecials }
+  end
+end

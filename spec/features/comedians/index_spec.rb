@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.describe "comedians index page", type: :feature do
   it "user can see all comedians" do
+  
     comedian_1 = Comedian.create(name: 'John', age: '33', city: 'Denver', imageurl: 'https://m.media-amazon.com/images/M/MV5BMTc2NzQ0MDAwMV5BMl5BanBnXkFtZTcwMzMxNzg1NA@@._V1_UY317_CR11,0,214,317_AL_.jpg')
     comedian_2 = Comedian.create(name: 'Sally', age: '22', city: 'Chicago')
 
@@ -19,9 +20,9 @@ RSpec.describe "comedians index page", type: :feature do
   it "user can see a list of each comedian's TV specials" do
     comedian_1 = Comedian.create(name: 'John', age: '33', city: 'Denver')
     comedian_2 = Comedian.create(name: 'Sally', age: '22', city: 'Chicago')
-    special_1 = Televisionspecial.create(name: 'Late Night', runtime: '120 minutes', comedianid: comedian_1.id)
-    special_2 = Televisionspecial.create(name: 'The Real Late Night', runtime: '95 minutes', comedianid: comedian_1.id)
-    special_3 = Televisionspecial.create(name: 'The Shack', runtime: '13 minutes', comedianid: comedian_2.id)
+    special_1 = comedian_1.televisionspecials.create(name: 'Late Night', runtime: '120 minutes')
+    special_2 = comedian_1.televisionspecials.create(name: 'The Real Late Night', runtime: '95 minutes')
+    special_3 = comedian_2.televisionspecials.create(name: 'The Shack', runtime: '13 minutes')
 
     visit "/comedians"
 
@@ -38,9 +39,9 @@ RSpec.describe "comedians index page", type: :feature do
     comedian_2 = Comedian.create(name: 'Sally', age: '21', city: 'Chicago')
     comedian_3 = Comedian.create(name: 'John', age: '34', city: 'Denver')
     comedian_4 = Comedian.create(name: 'Sally', age: '22', city: 'Chicago')
-    special_1 = Televisionspecial.create(name: 'Late Night', runtime: '120 minutes', comedianid: comedian_1.id)
-    special_2 = Televisionspecial.create(name: 'The Real Late Night', runtime: '95 minutes', comedianid: comedian_1.id)
-    special_3 = Televisionspecial.create(name: 'The Shack', runtime: '13 minutes', comedianid: comedian_2.id)
+    special_1 = comedian_1.televisionspecials.create(name: 'Late Night', runtime: '120 minutes')
+    special_2 = comedian_1.televisionspecials.create(name: 'The Real Late Night', runtime: '95 minutes')
+    special_3 = comedian_2.televisionspecials.create(name: 'The Shack', runtime: '13 minutes')
 
     visit "/comedians?age=34"
 
@@ -68,9 +69,9 @@ RSpec.describe "comedians index page", type: :feature do
   it "user can see a count of each comedians TV specials" do
     comedian_1 = Comedian.create(name: 'John', age: '34', city: 'Denver', imageurl: 'https://m.media-amazon.com/images/M/MV5BMTc2NzQ0MDAwMV5BMl5BanBnXkFtZTcwMzMxNzg1NA@@._V1_UY317_CR11,0,214,317_AL_.jpg')
     comedian_2 = Comedian.create(name: 'Sally', age: '21', city: 'Chicago')
-    special_1 = Televisionspecial.create(name: 'Late Night', runtime: '120 minutes', comedianid: comedian_1.id)
-    special_2 = Televisionspecial.create(name: 'The Real Late Night', runtime: '95 minutes', comedianid: comedian_1.id)
-    special_3 = Televisionspecial.create(name: 'The Shack', runtime: '13 minutes', comedianid: comedian_2.id)
+    special_1 = comedian_1.televisionspecials.create(name: 'Late Night', runtime: '120 minutes')
+    special_2 = comedian_1.televisionspecials.create(name: 'The Real Late Night', runtime: '95 minutes')
+    special_3 = comedian_2.televisionspecials.create(name: 'The Shack', runtime: '13 minutes')
     
     visit "/comedians"
 
