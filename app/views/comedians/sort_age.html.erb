@@ -1,12 +1,3 @@
-<h1>All Comedians</h1>
-<% @comedians.each do |comedian| %>
-<div>
-  <ul id="age-<%= comedian.id %>">
-    <li><%= link_to comedian.age, comedian_age_path(comedian.age) %></li>
-  </ul>
-</div>
-<% end %>
-
 <% @comedians.each do |comedian| %>
 <ul>
   <li><%= comedian.name %></li>
