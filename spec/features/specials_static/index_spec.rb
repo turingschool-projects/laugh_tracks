@@ -16,6 +16,7 @@ RSpec.describe "specials index page", type: :feature do
     expect(page.status_code).to eq(200)
     expect(current_path).to eq("/comedians")
   end
+  
   #unsure of final layout, will target once design is complete.
   # within("div#comedian_list") do
   it "shows specials information" do
@@ -35,5 +36,4 @@ RSpec.describe "specials index page", type: :feature do
       expect(page).to have_content(@special_5.time)
     # end
   end
-
 end

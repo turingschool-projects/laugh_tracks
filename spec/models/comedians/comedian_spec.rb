@@ -8,6 +8,6 @@ RSpec.describe Comedian, type: :model do
   end
 
   describe "relationship" do
-    it {shoud have_many :specials}
+    it { should have_many :specials }
   end
 end

@@ -26,6 +26,5 @@ RSpec.describe "comedian index page", type: :feature do
       expect(page).to have_content(@comedian_2.age)
       expect(page).to have_content(@comedian_2.city)
     # end
-
   end
 end
