@@ -12,5 +12,11 @@
       <li><%= comedian.city %></li>
       <% end %>
     </ul>
+    <ul>
+      <% @specials.each do |special| %>
+      <li><%= special.name %></li>
+      <li><%= special.time %></li>
+      <% end %>
+    </ul>
   </body>
 </html>
