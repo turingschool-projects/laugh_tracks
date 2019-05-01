@@ -6,12 +6,10 @@
     Age: <%= comedian.age %> <br/>
     City: <%= comedian.city %>
   </p>
-  <strong>Televison Specials: <%= @specials.find_all{|special| special.comedianid == comedian.id}.count %></strong>
+  <strong>Televison Specials: <%= comedian.televisionspecials.count %></strong>
   <ul>
-    <% @specials.each do |special| %>
-      <% if special.comedianid == comedian.id%>
-        <li><%= special.name %>, <%= special.runtime %></li>
-      <% end %>
+    <% comedian.televisionspecials.each do |special| %>
+    <li><%= special.name %>, <%= special.runtime %></li>
     <% end %>
   </ul>
   <hr>

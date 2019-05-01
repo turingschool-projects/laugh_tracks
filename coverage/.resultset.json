@@ -191,24 +191,34 @@
         null
       ],
       "/Users/william/turing/2module/projects/laugh_tracks/spec/models/comedian_spec.rb": [
+        1,
         null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/william/turing/2module/projects/laugh_tracks/spec/models/televisionspecial_spec.rb": [
-        null,
-        null,
-        null,
+        1,
+        1,
+        2,
         null,
         null
       ],
       "/Users/william/turing/2module/projects/laugh_tracks/app/models/comedian.rb": [
         1,
+        1,
         null
       ],
       "/Users/william/turing/2module/projects/laugh_tracks/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/william/turing/2module/projects/laugh_tracks/spec/models/televisionspecial_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/william/turing/2module/projects/laugh_tracks/app/models/televisionspecial.rb": [
         1,
         1,
         null
@@ -230,12 +240,8 @@
         1,
         1,
         null
-      ],
-      "/Users/william/turing/2module/projects/laugh_tracks/app/models/televisionspecial.rb": [
-        1,
-        null
       ]
     },
-    "timestamp": 1556681835
+    "timestamp": 1556753326
   }
 }
