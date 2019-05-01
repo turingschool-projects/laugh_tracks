@@ -33,13 +33,28 @@ RSpec.describe 'comedian index page', type: :feature do
     end
   end
 
-  it 'has thumbnail images for comedians' do
 
+  it 'has thumbnail images for comedians' do
     visit comedians_path
-    
+
     within("##{@jerry.id}") do
       expect(page).to have_xpath("//img[@src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jerry_Seinfeld_2016_-_2.jpg/220px-Jerry_Seinfeld_2016_-_2.jpg']")
     end
+  end
+
+  it 'has thumbnail images for comedians' do
+
+     visit comedians_path(:age => @jerry.age)
+
+     expect(page).to have_content("Jerry")
+     expect(page).to_not have_content("Bob")
+     expect(page).to_not have_content("Rob")
+
+     visit '/comedians?age=50'
+
+     expect(page).to have_content("Jerry")
+     expect(page).to_not have_content("Bob")
+     expect(page).to_not have_content("Rob")
 
   end
 end
