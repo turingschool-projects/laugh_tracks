@@ -14,7 +14,20 @@ RSpec.describe "comedian index page", type: :feature do
     expect(current_path).to eq("/comedians")
   end
 
+  it "shows comedian demographics" do
+    visit "/comedians"
 
+    #unsure of final layout, will target once design is complete.
+    # within("div#comedian_list") do
+      expect(page).to have_content(@comedian_1.name)
+      expect(page).to have_content(@comedian_1.age)
+      expect(page).to have_content(@comedian_1.city)
+      expect(page).to have_content(@comedian_2.name)
+      expect(page).to have_content(@comedian_2.age)
+      expect(page).to have_content(@comedian_2.city)
+    # end
+
+  end
 
 #   User Story 1
 #
