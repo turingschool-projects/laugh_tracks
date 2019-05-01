@@ -11,6 +11,9 @@
   <li>Born in <%= comedian.birthplace %></li>
   <li><img class="img-thumbnail" src="<%= comedian.image_url %>"</li>
 </ul>
+<ul id="specials-<%= comedian.id %>">
+  <li>Special count: <%= comedian.special_count %></li>
+</ul>
 <% comedian.specials.each do |special| %>
 <ul>
   <%= special.name %>

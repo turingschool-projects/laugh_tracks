@@ -9,4 +9,8 @@ class Comedian < ApplicationRecord
   def self.ages
     order(:age).pluck(:age).uniq
   end
+
+  def special_count
+    specials.count
+  end
 end
