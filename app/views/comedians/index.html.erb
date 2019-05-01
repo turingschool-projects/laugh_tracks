@@ -3,9 +3,11 @@
   <%= comedian.name %>
   <%= comedian.age %>
   <%= comedian.city %>
+  <img src=<%= comedian.image %> >
   <% comedian.specials.each do |special| %>
   <%= special.name %>
   <%= special.runtime_mins %>
+
   <% end %>
   </section>
 <% end %>
