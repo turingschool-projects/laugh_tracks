@@ -3,5 +3,12 @@
 <div id="<%=comedian.id%>" >
 <h2><%= comedian.name %></h2>
 <p >Age: <%= comedian.age %> Birthplace: <%=comedian.birthplace %>
-<% end %>
+<ul> <h3> Specials </h3>
+  <% comedian.specials.each do |special| %>
+  <li><%= special.name %></li>
+RunTime: <%= special.runtime_mins %>
+<% end  %>
+</ul>
+</p>
 </div>
+<% end %>

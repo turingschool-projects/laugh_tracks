@@ -23,25 +23,28 @@ RSpec.describe 'comedians index page' do
 
   end
 
-  # it "shows specials under comedian with name and runtime" do
-  #   comedian_1 = Comedian.create(name: "Bill Burr", age: 50, birthplace: "Canton, MA")
-  #   comedian_2 = Comedian.create(name: "Louis C.K.", age: 51, birthplace: "Washington, D.C.")
-  #   special_1 = Special.create(name: "Walk Your Way Out", runtime_mins: 77, comedian_id: comedian_1.id)
-  #   special_2 = Special.create(name: "I'm Sorry You Feel That Way", runtime_mins: 80, comedian_id: comedian_1.id)
-  #   special_3 = Special.create(name: "Rocky Mountain High", runtime_mins: 63, comedian_id: 2)
-  #
-  #   within "##{comedian_1.id}" do
-  #     expect(page).to have_content(special_1.name)
-  #     expect(page).to have_content(special_1.runtime_mins)
-  #     expect(page).to have_content(special_2.name)
-  #     expect(page).to have_content(special_2.runtime_mins)
-  #   end
-  #
-  #   within "##{comedian_2}" do
-  #     expect(page).to have_content(special_3.name)
-  #     expect(page).to have_content(special_3.runtime_mins)
-  #   end
-  #
-  # end
+  it "shows specials under comedian with name and runtime" do
+    comedian_1 = Comedian.create(name: "Bill Burr", age: 50, birthplace: "Canton, MA")
+    comedian_2 = Comedian.create(name: "Louis C.K.", age: 51, birthplace: "Washington, D.C.")
+    comedian_1.specials.create(name: "Walk Your Way Out", runtime_mins: 77)
+    comedian_1.specials.create(name: "I'm Sorry You Feel That Way", runtime_mins: 80)
+    comedian_2.specials.create(name: "Rocky Mountain High", runtime_mins: 63)
+
+    visit '/comedians'
+
+    save_and_open_page
+    within "##{comedian_1.id}" do
+      expect(page).to have_content(comedian_1.specials.first.name)
+      expect(page).to have_content(comedian_1.specials.first.runtime_mins)
+      expect(page).to have_content(comedian_1.specials.last.name)
+      expect(page).to have_content(comedian_1.specials.last.runtime_mins)
+    end
+
+    within "##{comedian_2.id}" do
+      expect(page).to have_content(comedian_2.specials.first.runtime_mins)
+      expect(page).to have_content(comedian_2.specials.first.runtime_mins)
+    end
+
+  end
 
 end
