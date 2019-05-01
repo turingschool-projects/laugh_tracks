@@ -4,7 +4,8 @@ class ComediansController < ApplicationController
     @comedians = Comedian.all
   end
 
-  def sort_age
+  def age
     @comedians = Comedian.where(age: params[:age])
   end
+
 end

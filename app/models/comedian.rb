@@ -6,7 +6,7 @@ class Comedian < ApplicationRecord
   validates_presence_of :birthplace
   validates_presence_of :image_url
 
-  def self.available_ages
+  def self.ages
     order(:age).pluck(:age).uniq
   end
 end
