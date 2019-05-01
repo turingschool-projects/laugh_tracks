@@ -3,6 +3,4 @@ Rails.application.routes.draw do
 
   resources :comedians, only: [:index]
 
-  #this the best way of making this route?
-  get "/comedians?age={:age=> :age}", to: 'comedians#index'
 end
