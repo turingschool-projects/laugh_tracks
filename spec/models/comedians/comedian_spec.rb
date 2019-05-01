@@ -6,4 +6,8 @@ RSpec.describe Comedian, type: :model do
     it { should validate_presence_of :age }
     it { should validate_presence_of :city }
   end
+
+  describe "relationship" do
+    it {shoud have_many :specials}
+  end
 end
