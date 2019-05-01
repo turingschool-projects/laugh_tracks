@@ -64,4 +64,24 @@ RSpec.describe "comedians index page", type: :feature do
     expect(page).to have_no_content(special_3.name)
     expect(page).to have_no_content(special_3.runtime)
   end
+
+  it "user can see a count of each comedians TV specials" do
+    comedian_1 = Comedian.create(name: 'John', age: '34', city: 'Denver', imageurl: 'https://m.media-amazon.com/images/M/MV5BMTc2NzQ0MDAwMV5BMl5BanBnXkFtZTcwMzMxNzg1NA@@._V1_UY317_CR11,0,214,317_AL_.jpg')
+    comedian_2 = Comedian.create(name: 'Sally', age: '21', city: 'Chicago')
+    special_1 = Televisionspecial.create(name: 'Late Night', runtime: '120 minutes', comedianid: comedian_1.id)
+    special_2 = Televisionspecial.create(name: 'The Real Late Night', runtime: '95 minutes', comedianid: comedian_1.id)
+    special_3 = Televisionspecial.create(name: 'The Shack', runtime: '13 minutes', comedianid: comedian_2.id)
+    
+    visit "/comedians"
+
+    expect(page).to have_content("Televison Specials: 2")
+    expect(page).to have_content("Televison Specials: 1")
+  end
 end
+
+
+# User Story 5
+
+# As a visitor
+# When I visit `/comedians`
+# For each comedian, I see a count of their TV specials
