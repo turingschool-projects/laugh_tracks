@@ -2,6 +2,7 @@
   <% @comedians.each do |comedian|%>
     <section id="<%=comedian.id%>" >
       <h2><%= comedian.name %></h2>
+        <img class='comedian image' src="<%= comedian.image_url %>" alt=<%= comedian.name %> >
         <p>Age: <%= comedian.age %> Birthplace: <%=comedian.birthplace %> </p>
       <h3> Specials </h3>
           <span><ul><% comedian.specials.each do |special| %>

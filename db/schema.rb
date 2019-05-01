@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20190501012634) do
     t.string "name"
     t.integer "age"
     t.string "birthplace"
+    t.string "image_url"
   end
 
   create_table "specials", force: :cascade do |t|

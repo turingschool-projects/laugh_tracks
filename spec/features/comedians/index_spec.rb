@@ -51,14 +51,17 @@ RSpec.describe 'comedians index page' do
     comedian_1 = Comedian.create(name: "Bill Burr", age: 50, birthplace: "Canton, MA", image_url: "https://image.masslive.com/home/mass-media/width960/img/entertainment/photo/nashville-comedy-festival-21d347107e975672.jpg")
     comedian_2 = Comedian.create(name: "Louis C.K.", age: 51, birthplace: "Washington, D.C.", image_url: "https://media1.fdncms.com/pittsburgh/imager/u/blog/13239255/louis_ck_kuwait_crop_cropped.jpg?cb=1548183367")
 
+    visit '/comedians'
+    
     within "##{comedian_1.id}" do
-      expect(page).to have_xpath("//img[@src='#{comedian_1.image_url}']")
+      expect(page).to have_xpath("img[@src='#{comedian_1.image_url}']")
     end
 
     within "##{comedian_2.id}" do
-      expect(page).to have_xpath("//img[@src='#{comedian_2.image_url}']")
+      expect(page).to have_xpath("img[@src='#{comedian_2.image_url}']")
     end
 
   end
+
 
 end
