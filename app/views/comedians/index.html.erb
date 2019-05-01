@@ -6,7 +6,7 @@
     Age: <%= comedian.age %> <br/>
     City: <%= comedian.city %>
   </p>
-  <strong>Televison Specials:</strong>
+  <strong>Televison Specials: <%= @specials.find_all{|special| special.comedianid == comedian.id}.count %></strong>
   <ul>
     <% @specials.each do |special| %>
       <% if special.comedianid == comedian.id%>
