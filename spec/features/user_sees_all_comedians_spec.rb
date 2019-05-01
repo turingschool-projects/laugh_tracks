@@ -1,9 +1,10 @@
 require "rails_helper"
 
-describe "user sees all comdeians" do
-  describe "they visit /articles" do
-    it "displays all articles" do
+describe "user sees all comedians" do
+  describe "they visit /comedians" do
+    it "displays all comedians" do
 
+      Comedian.destroy_all
       comedian_1 = Comedian.create(name: "george", age: 22, city: 'Montreal')
       comedian_2 = Comedian.create(name: "bob", age: 34, city: 'Austin')
 
