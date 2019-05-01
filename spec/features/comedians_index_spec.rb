@@ -14,15 +14,15 @@ RSpec.describe "comedians index page", type: :feature do
     expect(page).to have_content(@comedian_1.name)
     expect(page).to have_content(@comedian_1.age)
     expect(page).to have_content(@comedian_1.birthplace)
-    save_and_open_page
-    expect(page).to have_content(@comedian_1.thumb_url)
+    expect(page).to have_xpath("//img[contains(@src,'#{@comedian_1.thumb_url}')]")
     expect(page).to have_content(@comedian_2.name)
     expect(page).to have_content(@comedian_2.age)
     expect(page).to have_content(@comedian_2.birthplace)
-    expect(page).to have_content(@comedian_2.thumb_url)
+    expect(page).to have_xpath("//img[contains(@src,'#{@comedian_2.thumb_url}')]")
     expect(page).to have_content(@comedian_3.name)
     expect(page).to have_content(@comedian_3.age)
     expect(page).to have_content(@comedian_3.birthplace)
-    expect(page).to have_content(@comedian_3.thumb_url)
+    expect(page).to have_xpath("//img[contains(@src,'#{@comedian_3.thumb_url}')]")
+      save_and_open_page
   end
 end
