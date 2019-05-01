@@ -25,6 +25,7 @@ RSpec.describe "a vistor visiting the players path" do
     @player_1 = Player.create(name: "Joe", age: 31, hometown: "Springfield, MA")
     @player_2 = Player.create(name: "Jesse", age:41, hometown: "Galaxy, One")
 
+    @player_1.cards.create(name: "Blue Dragon", cost:70, description: "This is the dragon to end all dragons")
   end
   
   it "should see a list of players" do 
@@ -46,6 +47,7 @@ RSpec.describe "a vistor visiting the players path" do
 
   it "should see a list of each players cards with name and mana cost" do
     visit 'players'
+    save_and_open_page
     within "#player-#{player_1.id}-cards" do
       expect(page).to have_content "Cards"
       expect(page).to have_content "Blue Dragon"
