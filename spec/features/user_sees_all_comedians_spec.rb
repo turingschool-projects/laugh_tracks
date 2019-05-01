@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 describe "user sees all comedians" do
+
+  before :each do
+    Comedian.destroy_all
+  end
+
   describe "they visit /comedians" do
     it "displays all comedians" do
         comedian_1 = Comedian.create(name: "Bill Burr", age: 50, birthplace: "Canton, MA", image_url: "https://image.masslive.com/home/mass-media/width960/img/entertainment/photo/nashville-comedy-festival-21d347107e975672.jpg")
@@ -11,5 +16,8 @@ describe "user sees all comedians" do
         expect(page).to have_content(comedian_1.name)
         expect(page).to have_content(comedian_2.name)
     end
+
+
+
   end
 end
