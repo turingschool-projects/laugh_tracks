@@ -1,2 +1,8 @@
 class Player < ApplicationRecord
+  has_many :cards
+
+  validates_presence_of :name
+  validates_presence_of :age
+  validates_presence_of :hometown
+
 end
