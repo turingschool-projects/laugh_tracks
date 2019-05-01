@@ -7,6 +7,6 @@ RSpec.describe Special, type: :model do
   end
 
   describe "relationship" do
-    it { should belong_to :comedians }
+    it { should belong_to :comedian }
   end
 end
