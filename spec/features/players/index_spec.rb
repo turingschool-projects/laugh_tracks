@@ -22,8 +22,8 @@ RSpec.describe "a vistor visiting the players path" do
 =end
     ActiveRecord::Base.connection.reset_pk_sequence! "players"
     
-    @player_1 = Player.create(name: "Joe", age: 31, hometown: "Springfield, MA")
-    @player_2 = Player.create(name: "Jesse", age:41, hometown: "Galaxy, One")
+    @player_1 = Player.create(name: "Joe", age: 31, hometown: "Springfield, MA", image: "https://cdn.dribbble.com/users/567082/screenshots/4356358/profile_picture.png")
+    @player_2 = Player.create(name: "Jesse", age:41, hometown: "Galaxy, One", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcsgCEvJH9nG7sQdxuiB5ZFcYdO77YO3f10Ig-lOdCYxX9HrKb")
 
     @player_1.cards.create(name: "Blue Dragon", cost:70, description: "This is the dragon to end all dragons")
   end
@@ -32,15 +32,17 @@ RSpec.describe "a vistor visiting the players path" do
     visit '/players'
     
     within '#player-1' do
-      expect(page).to have_content("Joe")
-      expect(page).to have_content("31")
-      expect(page).to have_content("Hometown: Springfield, MA")
+      expect(page).to have_content("#{player_1.name}")
+      expect(page).to have_content("#{player_1.age}")
+      expect(page).to have_content("Hometown: #{player_1.hometown}")
+      expect(find("#player-#{player_1.id}-image")[:src]).to have_content(player_1.image)
     end
 
     within "#player-#{player_2.id}"do
       expect(page).to have_content("Jesse")
       expect(page).to have_content("41")
       expect(page).to have_content("Hometown: Galaxy, One")
+      expect(find("#player-#{player_2.id}-image")[:src]).to have_content(player_2.image)
     end
 
   end
