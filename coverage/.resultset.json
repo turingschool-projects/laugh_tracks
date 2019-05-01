@@ -279,22 +279,75 @@
       "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/config/routes.rb": [
         1,
         null,
+        1,
         null
       ],
       "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/app/helpers/application_helper.rb": [
         1,
         null
       ],
+      "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/spec/models/comedians_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
       "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/app/models/comedian.rb": [
         1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/app/models/application_record.rb": [
         1,
         1,
         null
+      ],
+      "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/spec/models/special_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/app/models/special.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/app/controllers/comedians_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/billyurrutia/Turing/mod_2/projects/laugh_tracks/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1556658764
+    "timestamp": 1556674264
   }
 }
