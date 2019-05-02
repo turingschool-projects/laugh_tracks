@@ -1,9 +1,10 @@
-<h1>Comedian<h2>
+<h2>Comedians</h2>
   <% @comedians.each do |comedian| %>
    <div id="comedian-<%= comedian.id %>" >
     <h2><%= comedian.name %></h2>
     <p>Age: <%= comedian.age %></p>
     <p>Born in: <%= comedian.city %></p>
+    <p>Number of appearances: <%= comedian.specials.count %></p>
     <% comedian.specials.each do |special|%>
     <div>
       <p>TV special: <%= special.name %></p>

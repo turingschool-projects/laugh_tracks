@@ -31,10 +31,15 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
     expect(page).to_not have_content(comedian_1.name)
   end
 
+  it "should git a count comedians specials" do
+    comedian = Comedian.create(name: "John", age: 24, city: "Denver", image_url: "google.com")
+    special = comedian.specials.create(name: "FOX", runtime_minutes: 30, image_url: "google.com")
+    special_2 = comedian.specials.create(name: "ABC", runtime_minutes: 60, image_url: "google.com")
+    visit '/comedians'
 
+    expect(page).to have_content("Number of appearances: #{comedian.specials.count}")
+  end
 end
 # As a visitor
 # When I visit `/comedians`
-# Then I also see a list of each comedian's TV specials, including
-#   * Name of the special
-#   * Run Time of the special in minutes
+# For each comedian, I see a count of their TV specials
