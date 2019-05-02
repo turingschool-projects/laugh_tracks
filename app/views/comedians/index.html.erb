@@ -1,7 +1,8 @@
 <h1>Index page</h1>
 <nav>
   <li><%= link_to "Add a Comedian", new_comedian_path %></li>
-  <li id="sort-by-name"><%= link_to "Sort by name, alphabetically", comedians_path({sort: :asc}) %></li>
+  <li id="sort-by-name-asc"><%= link_to "Sort by name, alphabetically", comedians_path({sort: :asc}) %></li>
+  <li id="sort-by-name-desc"><%= link_to "Sort by name, reverse alphabetically", comedians_path({sort: :desc}) %></li>
 </nav>
 <section>
   <div id="comedian-stats">
