@@ -7,7 +7,7 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
 
     expect(page).to have_content("Age: #{comedian.age}")
     expect(page).to have_content(comedian.name)
-    expect(page).to have_content(comedian.city)
+    expect(page).to have_content("Born in: #{comedian.city}")
   end
 
   it "should see comedians speacials and run time" do
@@ -15,8 +15,8 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
     special = comedian.specials.create(name: "FOX", runtime_minutes: 30, image_url: "google.com")
     visit '/comedians'
 
-    expect(page).to have_content(special.name)
-    expect(page).to have_content(special.runtime_minutes)
+    expect(page).to have_content("TV special: #{special.name}")
+    expect(page).to have_content("Run time: #{special.runtime_minutes} minutes")
     expect(page).to have_xpath('//img[@src="google.com"]')
   end
 end
