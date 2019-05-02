@@ -18,8 +18,8 @@ end
     fill_in("player_image", :with => "http://www.image3.png")
     
     expect(current_path).to eq("/players/new")
-
-    click_button("commit")
+    save_and_open_page
+    click_button("Create Player")
     
     expect(current_path).to eq("/players")
 

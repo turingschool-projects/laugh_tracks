@@ -1,10 +1,11 @@
 class PlayersController < ApplicationController
   
   def index
-    @players =  params[:age] ? Player.where(age: params[:age]) : Player.all
+    @players =  params[:age] ? Player.select_by_age(params[:age]) : Player.all
   end
 
   def new
+    @player = Player.new
   end
 
   def create
@@ -16,7 +17,6 @@ class PlayersController < ApplicationController
   private 
   def  player_params
     params.require(:player).permit(:name, :age, :hometown, :image)
-    #params.require(:player).permit(:age)
-    #1params.require(:player).permit(  
   end
+
 end
