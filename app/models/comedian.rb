@@ -13,4 +13,8 @@ class Comedian < ApplicationRecord
   def special_count
     specials.count
   end
+
+  def self.average_age
+    average(:age)
+  end
 end
