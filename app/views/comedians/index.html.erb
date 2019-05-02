@@ -1,5 +1,10 @@
 <div id="statistics">
 
+  <p>Comedians are from: <% @comedians.each do |comedian|  %>
+  <%= "#{comedian.city} \n"  %>
+
+  <% end %> </p>
+
 </div>
 
 <% @comedians.each do |comedian| %>
