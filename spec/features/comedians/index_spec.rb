@@ -78,4 +78,21 @@ RSpec.describe "comedians index page", type: :feature do
     expect(page).to have_content("Televison Specials: 2")
     expect(page).to have_content("Televison Specials: 1")
   end
+
+  it "user can see statistics about comedians on page" do
+    comedian_1 = Comedian.create(name: 'John', age: '34', city: 'Denver')
+    comedian_2 = Comedian.create(name: 'Sally', age: '21', city: 'Chicago')
+    comedian_3 = Comedian.create(name: 'Jason', age: '34', city: 'Denver')
+
+    visit "/comedians"
+
+    expect(page).to have_content("Statistics")
+    expect(page).to have_content("Average Age: 29")
+    expect(page).to have_content("Chicago")
+
+    visit "/comedians?age=34"
+
+    expect(page).to have_content("Average Age: 34")
+    expect(page).to have_content("Denver")
+  end
 end

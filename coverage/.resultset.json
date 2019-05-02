@@ -214,14 +214,6 @@
         1,
         1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       "/Users/william/turing/2module/projects/laugh_tracks/spec/models/comedian_spec.rb": [
@@ -236,6 +228,14 @@
       "/Users/william/turing/2module/projects/laugh_tracks/app/models/comedian.rb": [
         1,
         1,
+        null,
+        1,
+        7,
+        null,
+        null,
+        1,
+        7,
+        null,
         null
       ],
       "/Users/william/turing/2module/projects/laugh_tracks/app/models/application_record.rb": [
@@ -260,12 +260,12 @@
       "/Users/william/turing/2module/projects/laugh_tracks/app/controllers/comedians_controller.rb": [
         1,
         1,
-        5,
-        5,
-        4,
         null,
-        1,
+        7,
+        7,
+        5,
         null,
+        2,
         null,
         null,
         null,
@@ -291,6 +291,6 @@
         null
       ]
     },
-    "timestamp": 1556818472
+    "timestamp": 1556824037
   }
 }

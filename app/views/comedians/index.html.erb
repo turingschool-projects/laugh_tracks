@@ -1,4 +1,13 @@
 <h1>List of Comedians</h1>
+<h2>Statistics</h2>
+<p>Average Age: <%= @comedians.age_average.to_i %> </p>
+<h3>Comedians Home Cities: </h3>
+<ul>
+  <% @comedians.city_unique.each do |comedian| %>
+  <li><%= comedian.city %></li>
+  <% end %>
+</ul>
+<hr>
 <% @comedians.each do |comedian| %>
   <h2 class="comedian"><%= comedian.name %></h2>
   <img src="<%= comedian.imageurl %>">
