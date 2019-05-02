@@ -20,7 +20,7 @@ describe Player, type: :model do
 
     player_1.cards.create(name: "Blue Dragon", cost:70, description: "This is the dragon to end all dragons")
      
-    expect(Player.select_by_age(31)).to  eq([player_1])
+    expect(Player.select_by_age(player_1.age)).to  eq([player_1])
 
     end
   end
