@@ -33,8 +33,4 @@ class Comedian < ApplicationRecord
   def self.order_name_asc
     order(:name)
   end
-
-  def self.order_name_desc
-    order(:name)
-  end
 end

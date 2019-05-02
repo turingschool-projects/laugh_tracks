@@ -61,10 +61,5 @@ describe Comedian, type: :model do
 
       expect(@comedians.order_name_asc).to eq([@comedian_1, @comedian_2, @comedian_3, @comedian_4])
     end
-    it ".order_name_desc" do
-      @comedians = Comedian.all
-
-      expect(@comedians.order_name_desc).to eq([@comedian_4, @comedian_3, @comedian_2, @comedian_1])
-    end
   end
 end

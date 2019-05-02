@@ -202,7 +202,7 @@ describe "Comedians index page" do
       expect(page).to have_content("Average special length: 62 mins")
       end
     end
-    xit "Sorts comedians by name alphabetically" do
+    it "Sorts comedians by name alphabetically" do
 
       visit comedians_path
 
