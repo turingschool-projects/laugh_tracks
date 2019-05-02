@@ -19,13 +19,9 @@ RSpec.describe "specials index page", type: :feature do
     expect(current_path).to eq("/comedians")
   end
 
-  #unsure of final layout, will target once design is complete.
-  # within("div#comedian_list") do
   it "shows specials information" do
     visit "/comedians"
 
-    #unsure of final layout, will target once design is complete.
-    # within("div#comedian_list") do
     within("#special_#{@special_1.id}_info") do
       expect(page).to have_content(@special_1.name)
       expect(page).to have_content(@special_1.time)
@@ -45,7 +41,7 @@ RSpec.describe "specials index page", type: :feature do
       expect(page).to have_content(@special_4.name)
       expect(page).to have_content(@special_4.time)
     end
-    
+
     within("#special_#{@special_5.id}_info") do
       expect(page).to have_content(@special_5.name)
       expect(page).to have_content(@special_5.time)
