@@ -79,10 +79,3 @@ RSpec.describe "comedians index page", type: :feature do
     expect(page).to have_content("Televison Specials: 1")
   end
 end
-
-
-# User Story 5
-
-# As a visitor
-# When I visit `/comedians`
-# For each comedian, I see a count of their TV specials
