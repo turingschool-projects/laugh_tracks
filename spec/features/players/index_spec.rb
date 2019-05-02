@@ -46,7 +46,6 @@ RSpec.describe "a vistor visiting the players index path" do
   it "shows the count of cards per player on page" do
     visit "/players"
     
-    save_and_open_page
     [player_1, player_2].each do |player|
       within "#player-#{player.id}-cards" do
         expect(page).to have_content("Cards: #{player.cards.count}")
