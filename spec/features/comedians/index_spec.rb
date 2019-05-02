@@ -39,7 +39,13 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
 
     expect(page).to have_content("Number of appearances: #{comedian.specials.count}")
   end
+
 end
+
 # As a visitor
-# When I visit `/comedians`
-# For each comedian, I see a count of their TV specials
+# When I visit `/comedians/new`
+# Then I see a form to input a new comedian into the database
+# Including fields for their name, age and city.
+# When the form is successfully submitted and saved,
+# Then I am redirected to `/comedians`
+# And I see the new comedian's data on the page.
