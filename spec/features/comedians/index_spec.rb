@@ -151,10 +151,23 @@ describe "Comedians index page" do
       visit comedians_path
 
       within("#comedian-stats") do
+        expect(page).to have_content("Comedian Statistics")
         expect(page).to have_content("Average Comedian Age: 52")
         expect(page).to have_content("Birthplace Ranges")
         expect(page).to have_content("Canton, MA")
         expect(page).to have_content("Brooklyn, NY")
+        expect(page).to have_content("Newark, NJ")
+        expect(page).to have_content("Washington, D.C.")
+        end
+      end
+      it "displays accurate statistics when filtered by age" do
+
+      visit comedian_age_path(@comedian_4.age)
+
+      within("#comedian-stats") do
+        expect(page).to have_content("Comedian Statistics")
+        expect(page).to have_content("Average Comedian Age: 51")
+        expect(page).to have_content("Birthplace Ranges")
         expect(page).to have_content("Newark, NJ")
         expect(page).to have_content("Washington, D.C.")
       end
@@ -162,7 +175,7 @@ describe "Comedians index page" do
   end
 end
 
-# 
+#
 # User Story 7
 #
 # As a visitor

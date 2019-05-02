@@ -17,4 +17,8 @@ class Comedian < ApplicationRecord
   def self.average_age
     average(:age)
   end
+
+  def self.birthplaces
+    order(:birthplace).pluck(:birthplace)
+  end
 end

@@ -41,5 +41,10 @@ describe Comedian, type: :model do
       @comedians = Comedian.all
       expect(@comedians.average_age).to eq(54)
     end
+    it ".birthplaces" do
+      comedian_5 = Comedian.create(name: "Dave Chappelle", age: 45, birthplace: "Washington, D.C.", image_url: "www.google.com")
+      @comedians = Comedian.all
+      expect(@comedians.birthplaces.uniq).to eq(["Brooklyn, NY" ,"Canton, MA", "Newark, NJ", "Washington, D.C."])
+    end
   end
 end

@@ -2,12 +2,13 @@
 
 <%= link_to "Add a Comedian", new_comedian_path %>
 <div id="comedian-stats">
-  <h2>Average Comedian Age: <%= @comedians.average_age %></h2>
-  <h3>Birthplace Ranges</h3>
-  <% @comedians.birthplaces.each do |city| %>
+  <h2>Comedian Statistics</h2>
+  <p>Average Comedian Age: <%= @comedians.average_age.round %></p>
+  <p>Birthplace Ranges</p>
+  <% @comedians.birthplaces.uniq.each do |city| %>
   <ul>
     <li>
-      <% city %>
+      <%= city %>
     </li>
   </ul>
   <% end %>
