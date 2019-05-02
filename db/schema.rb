@@ -34,3 +34,6 @@ ActiveRecord::Schema.define(version: 20190430225851) do
   end
 
 end
+
+# Each comedian has many specials.
+# Each special beongs to one comedian.
