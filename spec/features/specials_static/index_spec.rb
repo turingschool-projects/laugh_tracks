@@ -3,8 +3,10 @@ require "rails_helper"
 RSpec.describe "specials index page", type: :feature do
 
   before (:each) do
-    comedian_1 = Comedian.create(name: "John Mulany", age: 37, city: "Chicago")
-    comedian_2 = Comedian.create(name: "Mitchell Hedberg", age: 37, city: "Saint Paul")
+    comedian_1 = Comedian.create(name: "John Mulany", age: 37, city: "Chicago", \
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCCUVWI5B-6-80aviR_4WtoJqCsu33NEKB18j_xZ7UT4WpWhQa")
+    comedian_2 = Comedian.create(name: "Mitchell Hedberg", age: 37, city: "Saint Paul", \
+    image: "https://pixel.nymag.com/imgs/daily/vulture/2018/05/02/02-john-mulaney.w700.h700.jpg")
     @special_1 = comedian_1.specials.create(name: "Comedy Central Special", time: 37)
     @special_2 = comedian_1.specials.create(name: "Mitch All Together", time: 43)
     @special_3 = comedian_2.specials.create(name: "Kid Gorgeous at Radio City", time: 65)
