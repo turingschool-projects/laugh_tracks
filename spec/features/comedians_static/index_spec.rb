@@ -20,7 +20,6 @@ RSpec.describe "comedian index page", type: :feature do
 
   it "shows comedian demographics" do
     visit "/comedians"
-
     #unsure of final layout, will target once design is complete.
     # within("div#comedian_list") do
       expect(page).to have_content(@comedian_1.name)
@@ -40,15 +39,12 @@ RSpec.describe "comedian index page", type: :feature do
     #unsure of final layout, will target once design is complete.
     # within("div#comedian_list") do
       actual1 = find("#comedian_#{@comedian_1.id}_thumbnail")[:src]
-      #possible placeholder id
       expect(actual1).to eq(@comedian_1.image)
 
       actual2 = find("#comedian_#{@comedian_2.id}_thumbnail")[:src]
-      #possible placeholder id
       expect(actual2).to eq(@comedian_2.image)
 
       actual3 = find("#comedian_#{@comedian_3.id}_thumbnail")[:src]
-      #possible placeholder id
       expect(actual3).to eq(@comedian_3.image)
     # end
   end
