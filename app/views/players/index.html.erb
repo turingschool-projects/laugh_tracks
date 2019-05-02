@@ -1,6 +1,14 @@
 <html>
 
   <div>
+  <p>Statistics</p>
+  <p>Avg Age: <%=@avg_age.to_i%></p>
+  <p>Hometowns:<% @player_hometowns.each do |player_hometown| %>
+  <%= " " + player_hometown.hometown %>
+<%end%>
+    </p>
+  </div>
+  <div>
   <% @players.each do |player| %>
     <section id="player-<%=player.id%>">
       <h2><%= player.name %></h2>
