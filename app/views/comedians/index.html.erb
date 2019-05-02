@@ -1,4 +1,7 @@
 <h1>Index page</h1>
+<% @ages.each do |age| %>
+  <%= link_to age, comedians_path({sort: {age: :asc}}) %>
+<%  %>
 
 <%= link_to "Add a Comedian", new_comedian_path %>
 <div id="comedian-stats">
@@ -18,7 +21,7 @@
     <li>Total specials <%= @comedians.total_specials %></li>
   </ul>
   <ul>
-    <li>Average special length: <%= @comedians.average_special_length.to_i %> mins</li>
+    <li>Average special length: <%= @comedians.average_special_length.to_i %></li>
   </ul>
   </div>
 </div>

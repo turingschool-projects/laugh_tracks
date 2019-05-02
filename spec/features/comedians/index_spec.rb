@@ -204,3 +204,7 @@ describe "Comedians index page" do
     end
   end
 end
+
+As a user, when I visit `/comedians?sort=name`
+Then I see all previous information, but all comedians are
+sorted alphabetically by the name of the comedians.
