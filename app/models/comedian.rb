@@ -3,7 +3,6 @@ class Comedian < ApplicationRecord
   validates_presence_of :name, :age, :city
 
   def self.average_age
-    # require "pry"; binding.pry
     Comedian.average(:age)
   end
 end
