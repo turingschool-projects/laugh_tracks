@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "a vistor visiting the players path" do
+RSpec.describe "a vistor visiting the players index path" do
   attr_reader :player_1, :player_2
 
   before :each do
@@ -31,34 +31,37 @@ RSpec.describe "a vistor visiting the players path" do
 
   end
 
-  it "should see a list of each players cards with name and mana cost" do
+  it "should see a list of each players cards with name,card cost, and details" do
     visit 'players'
 
     within "#player-#{player_1.id}-cards" do
-      expect(page).to have_content "Cards:"
+      expect(page).to have_content "Cards: "
       expect(page).to have_content "Blue Dragon"
       expect(page).to have_content "70"
       expect(page).to have_content "This is the dragon to end all dragons"
     end
     
   end
-  
-  it "should only shows players based on age" do
-      visit "/players/?age=31"
-
-      expect(page).to have_content(player_1.name)
-      expect(page).to_not have_content(player_2.name)
-  end
-
+ 
   it "shows the count of cards per player on page" do
     visit "/players"
     
-    save_and_open_page
     [player_1, player_2].each do |player|
       within "#player-#{player.id}-cards" do
         expect(page).to have_content("Cards: #{player.cards.count}")
       end
     end
+  end
+
+  describe "A visitor visiting the player path with age param" do 
+  
+    it "should only shows players based on age" do
+      visit "/players/?age=31"
+
+      expect(page).to have_content(player_1.name)
+      expect(page).to_not have_content(player_2.name)
+    end
+
   end
 
 end
