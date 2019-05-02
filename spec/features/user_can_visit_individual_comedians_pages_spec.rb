@@ -20,10 +20,12 @@ describe "user sees one comedian" do
       click_link comedian_1.name
 
       # expect(current_path).to eq("/comedians/#{comedian.id}")
-require "pry"; binding.pry
+save_and_open_page
       expect(page).to have_content(comedian_1.name)
       expect(page).to have_content(comedian_1.age)
       expect(page).to have_content(comedian_1.city)
+      expect(page).to have_link("<< Back to Comedians List")
+
       expect(page).to_not have_content(comedian_2.name)
       expect(page).to_not have_content(comedian_2.age)
       expect(page).to_not have_content(comedian_2.city)
