@@ -5,7 +5,7 @@
   <p>Comedians are from: <% @comedians.each do |comedian|  %>
   <p><%= comedian.city %></p>
   <% end %>
-  <p>Average Age: <%= Comedian.average_age.round(2) %> </p>
+  <p>Average Age: <%= @comedians.average_age.round(2) %> </p>
 </div>
 
 <h2>The Comedians</h2>
@@ -16,11 +16,8 @@
   <p>City: <%= comedian.city %></p>
   <img src=<%= comedian.image %> ><br>
   <p>Number of Specials: <%= comedian.specials.count %></p>
-
   <% comedian.specials.each do |special| %>
   <p><%= special.name %>, Runtime: <%= special.runtime_mins %> mins</p>
-
-
   <% end %>
   </section>
 <% end %>
