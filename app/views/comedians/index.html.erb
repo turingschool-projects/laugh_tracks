@@ -1,0 +1,7 @@
+<h1>All Comedians</h1>
+
+<% @comedians.each do |comedian| %>
+  <h2><%= comedian.name %></h2>
+  
+  <h3>(<%= comedian.age %> years old) <%= comedian.city %></h3>
+<% end %>
