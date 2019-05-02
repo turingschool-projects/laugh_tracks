@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "specials index page", type: :feature do
+RSpec.describe "As a visitor", type: :feature do
 
   before (:each) do
     comedian_1 = Comedian.create(name: "John Mulany", age: 37, city: "Chicago", \
@@ -13,26 +13,28 @@ RSpec.describe "specials index page", type: :feature do
     @special_4 = comedian_2.specials.create(name: "The Comeback Kid", time: 62)
     @special_5 = comedian_2.specials.create(name: "New in Town", time: 60)
   end
+  
+  describe "when I visit /comedians" do
+    it "loads a page" do
+      visit "/comedians"
 
-  it "loads a page" do
-    visit "/comedians"
+      expect(page.status_code).to eq(200)
+      expect(current_path).to eq("/comedians")
+    end
 
-    expect(page.status_code).to eq(200)
-    expect(current_path).to eq("/comedians")
-  end
+    it "shows specials information" do
+      visit "/comedians"
 
-  it "shows specials information" do
-    visit "/comedians"
-
-    expect(page).to have_content(@special_1.name)
-    expect(page).to have_content(@special_1.time)
-    expect(page).to have_content(@special_2.name)
-    expect(page).to have_content(@special_2.time)
-    expect(page).to have_content(@special_3.name)
-    expect(page).to have_content(@special_3.time)
-    expect(page).to have_content(@special_4.name)
-    expect(page).to have_content(@special_4.time)
-    expect(page).to have_content(@special_5.name)
-    expect(page).to have_content(@special_5.time)
+      expect(page).to have_content(@special_1.name)
+      expect(page).to have_content(@special_1.time)
+      expect(page).to have_content(@special_2.name)
+      expect(page).to have_content(@special_2.time)
+      expect(page).to have_content(@special_3.name)
+      expect(page).to have_content(@special_3.time)
+      expect(page).to have_content(@special_4.name)
+      expect(page).to have_content(@special_4.time)
+      expect(page).to have_content(@special_5.name)
+      expect(page).to have_content(@special_5.time)
+    end
   end
 end
