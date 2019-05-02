@@ -9,6 +9,10 @@ class ComediansController < ApplicationController
   def new
   end
 
+  def show
+    @comedian = Comedian.find(params[:id])
+  end
+
   def create
     @comedian = Comedian.new(comedian_params)
     @comedian.save
@@ -18,7 +22,9 @@ class ComediansController < ApplicationController
   private
 
   def comedian_params
-    require "pry"; binding.pry
     params.require(:comedian).permit(:name, :age, :city)
   end
+
+
+
 end

@@ -11,7 +11,7 @@
 <h2>The Comedians</h2>
 <% @comedians.each do |comedian| %>
 <section id="comedian-<%= comedian.id %>">
-  <p>Name: <%= comedian.name %></p>
+  <h3>Name: <%= link_to comedian.name, "/comedians/#{comedian.id}" %></h3>
   <p>Age: <%= comedian.age %></p>
   <p>City: <%= comedian.city %></p>
   <img src=<%= comedian.image %> ><br>
