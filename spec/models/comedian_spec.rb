@@ -37,5 +37,9 @@ describe Comedian, type: :model do
       expect(@comedian_3.special_count).to eq(2)
       expect(@comedian_4.special_count).to eq(2)
     end
+    it ".average_age" do
+      @comedians = Comedian.all
+      expect(@comedians.average_age).to eq(54)
+    end
   end
 end

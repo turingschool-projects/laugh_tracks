@@ -6,6 +6,7 @@ describe "Comedians index page" do
   @comedian_2 = Comedian.create(name: "Jerry Seinfeld", age: 64, birthplace: "Brooklyn, NY", image_url: "https://www.gannett-cdn.com/-mm-/aec403ad632f33650ec1aa7926a673a5a6b987b8/c=420-0-2149-1300/local/-/media/2015/09/17/Westchester/Westchester/635780965457520146--ASBBrd-07-27-2012-PressMon-1-A002-2012-07-26-IMG-People-Seinfeld-7-1-4U1UD.jpg?width=534&height=401&fit=crop")
   @comedian_3 = Comedian.create(name: "Joe Rogan", age: 51, birthplace: "Newark, NJ", image_url: "https://www.maxim.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_1400/MTQ4NDk2MjMzNzY0MjM0Nzc2/joe-rogan.webp")
   @comedian_4 = Comedian.create(name: "Louis C.K.", age: 51, birthplace: "Washington, D.C.", image_url: "https://media1.fdncms.com/pittsburgh/imager/u/blog/13239255/louis_ck_kuwait_crop_cropped.jpg?cb=1548183367")
+  @comedian_5 = Comedian.create(name: "Dave Chappelle", age: 45, birthplace: "Washington, D.C.", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTII3JGyHZiZx-tRsKYcDk8jotJ6kK6yGNiCof1mLfTw5DxekFZtg")
 
   @special_1 = @comedian_1.specials.create(name: "Bill Burr Special", runtime_mins: 55, image_url: "https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_.jpg")
   @special_2 = @comedian_1.specials.create(name: "Bill Burr Special 2", runtime_mins: 60, image_url: "https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_SY1000_SX675_AL_.jpg")
@@ -145,8 +146,31 @@ describe "Comedians index page" do
 
       expect(current_path).to eq(new_comedian_path)
     end
+    it "displays average age, and unique list of cities for all comedians" do
+
+      visit comedians_path
+
+      within("#comedian-stats") do
+        expect(page).to have_content("Average Comedian Age: 52")
+        expect(page).to have_content("Birthplace Ranges")
+        expect(page).to have_content("Canton, MA")
+        expect(page).to have_content("Brooklyn, NY")
+        expect(page).to have_content("Newark, NJ")
+        expect(page).to have_content("Washington, D.C.")
+      end
+    end
   end
 end
 
-
-# - All other information on the page is still expected to be present
+# 
+# User Story 7
+#
+# As a visitor
+# When I visit `/comedians`
+# Then I see an area at the top of the page called 'Statistics'
+# In that 'Statistics' area, I see the following information:
+# - the average age of all comedians on the page (if the page is filtered for specific comedians, the statistics should reflect the new group)
+# - a unique list of cities for each comedian on the page
+#
+# Averaging and uniqueness should be done in ActiveRecord NOT
+# using Ruby
