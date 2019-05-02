@@ -22,11 +22,12 @@ describe "user sees all comedians statistics" do
 
       visit comedians_path
       within("div#statistics") do
+save_and_open_page
+        expect(page).to have_content("Average Age: 40")
+        expect(page).to have_content(bill.city)
+        expect(page).to have_content(joe.city)
 
-        page.has_content?("Average Age: 40")
-        page.has_content?(comedian_1.city)
-        page.has_content?(comedian_2.city)
-    
+
     end
 
     end
