@@ -14,16 +14,15 @@
 <% @comedians.each do |comedian| %>
 <section id="comedian-<%=comedian.id%>">
   <br>
+  <%# require 'pry'; binding.pry %>
     <h2><%= comedian.name %></h2>
     <p><%= comedian.age %></p>
     <p><%= comedian.birthplace %></p>
 
-    <% comedian.specials.each do  %>
-    
+    <% comedian.specials.each do |special|  %>
+
+    <p><%= special.name %></p>
+    <p><%= special.runtime_mins %></p>
     <% end %>
-
-
-    <% require 'pry'; binding.pry %>
   <% end %>
-
 </section>
