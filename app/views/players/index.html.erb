@@ -1,0 +1,23 @@
+<html>
+
+  <div>
+  <% @players.each do |player| %>
+    <section id="player-<%=player.id%>">
+      <h2><%= player.name %></h2>
+      <div><%= player.age %></div>
+      <img class="profile-photo" id="player-<%=player.id%>-image" src="<%=player.image%>"/>
+      <div>Hometown: <%=player.hometown%></div>
+      <ul id="player-<%=player.id%>-cards">
+        <li>Cards: <span><%=player.cards.count%></span></li>
+      <% player.cards.each do |card| %>
+        <li>
+          <div><%=card.name%></div>
+          <div><%=card.cost%></div>
+          <div><%=card.description%></div>
+        </li>
+      <% end %>
+      </ul>
+    </section>
+  <%end%>
+  </div>
+</html>
