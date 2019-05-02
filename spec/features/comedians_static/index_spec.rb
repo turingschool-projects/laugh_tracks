@@ -31,6 +31,23 @@ RSpec.describe "comedian index page", type: :feature do
       expect(page).to have_content(@comedian_2.city)
 <<<<<<< Updated upstream
     # end
+=======
+    end
+  end
+
+  it "shows comedian thumbnail" do
+    visit "/comedians"
+    within("#comedian_#{@comedian_1.id}_info") do
+      actual = find("#comedian_#{@comedian_1.id}_thumbnail")[:src]
+      #possible placeholder id
+      expect(actual).to eq(@comedian_1.image)
+    end
+    within("#comedian_#{@comedian_2.id}_info") do
+      actual = find("#comedian_#{@comedian_2.id}_thumbnail")[:src]
+      #possible placeholder id
+      expect(actual).to eq(@comedian_2.image)
+    end
+>>>>>>> 23a60ba3e55f1f96576f34c0b07c040662b93e22
   end
 
 <<<<<<< HEAD
