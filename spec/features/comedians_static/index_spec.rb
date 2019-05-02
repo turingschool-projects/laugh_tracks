@@ -32,11 +32,15 @@ RSpec.describe "comedian index page", type: :feature do
 
   it "shows comedian thumbnail" do
     visit "/comedians"
-    #unsure of final layout, will target once design is complete.
-    # within("div#comedian_list") do
+    within("#comedian_#{@comedian_1.id}_info") do
       actual = find("#comedian_#{@comedian_1.id}_thumbnail")[:src]
       #possible placeholder id
       expect(actual).to eq(@comedian_1.image)
-    # end
+    end
+    within("#comedian_#{@comedian_2.id}_info") do
+      actual = find("#comedian_#{@comedian_2.id}_thumbnail")[:src]
+      #possible placeholder id
+      expect(actual).to eq(@comedian_2.image)
+    end
   end
 end
