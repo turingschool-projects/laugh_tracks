@@ -3,5 +3,5 @@ class ComediansController < ApplicationController
     @comedians = Comedian.all
   end
 
-
+  
 end
