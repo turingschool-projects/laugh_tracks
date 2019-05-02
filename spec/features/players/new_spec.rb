@@ -16,8 +16,13 @@ end
     fill_in("player_age", :with => "21")
     fill_in("player_hometown", :with => "Trenton, NJ")
     fill_in("player_image", :with => "http://www.image3.png")
+    
+    expect(current_path).to eq("/players/new")
+
     click_button("commit")
-   save_and_open_page
+    
+    expect(current_path).to eq("/players")
+
     player_3 = Player.last
     expect(page).to have_content(player_3.name)
   end
