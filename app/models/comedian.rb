@@ -29,4 +29,12 @@ class Comedian < ApplicationRecord
   def self.average_special_length
     joins(:specials).average(:runtime_mins)
   end
+
+  def self.order_name_asc
+    order(:name)
+  end
+
+  def self.order_name_desc
+    order(:name)
+  end
 end

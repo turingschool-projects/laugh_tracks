@@ -196,15 +196,29 @@ describe "Comedians index page" do
     it "Displays total count of specials, and average runtime of all specials" do
 
       visit comedians_path
-      save_and_open_page
+
       within("#special-stats") do
       expect(page).to have_content("Total specials 7")
       expect(page).to have_content("Average special length: 62 mins")
       end
     end
+    xit "Sorts comedians by name alphabetically" do
+
+      visit comedians_path
+
+      within("#sort-by-name") do
+        click_link "Sort by name, alphabetically"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_1.name}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_5.name}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_2.name}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_3.name}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_4.name}")
+    end
   end
 end
 
-As a user, when I visit `/comedians?sort=name`
-Then I see all previous information, but all comedians are
-sorted alphabetically by the name of the comedians.
+
+# As a user, when I visit `/comedians?sort=name`
+# Then I see all previous information, but all comedians are
+# sorted alphabetically by the name of the comedians.
