@@ -16,7 +16,6 @@ describe "user sees all comedians" do
       visit '/comedians'
 
       within "#comedian-#{bill.id}" do
-        require "pry"; binding.pry
         expect(page).to have_content('3')
       end
       within "#comedian-#{joe.id}" do

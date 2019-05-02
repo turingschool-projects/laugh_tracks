@@ -5,4 +5,8 @@ class ComediansController < ApplicationController
     @specials = Special.all
     @comedians = Comedian.where(age: params[:age]) if params[:age]
   end
+
+  def new
+
+  end
 end

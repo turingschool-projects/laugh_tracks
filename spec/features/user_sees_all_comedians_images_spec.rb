@@ -10,7 +10,6 @@ describe "user sees all comedians images" do
 
 
       visit '/comedians'
-require "pry"; binding
       within "#comedian-#{bill.id}" do
         expect(page).to have_css("img[src*='https://image.masslive.com/home/mass-media/width960/img/entertainment/photo/nashville-comedy-festival-21d347107e975672.jpg']")
       end
