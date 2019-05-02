@@ -1,7 +1,9 @@
 class PlayersController < ApplicationController
   
   def index
-    @players =  params[:age] ? Player.select_by_age(params[:age]) : Player.all
+    @players = params[:age] ? Player.select_by_age(params[:age]) : Player.all
+    @avg_age = @players.avg_age
+    @player_hometowns = @players.hometowns
   end
 
   def new
