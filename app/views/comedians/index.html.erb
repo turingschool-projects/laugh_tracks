@@ -1,7 +1,18 @@
 <h1>Index page</h1>
 
 <%= link_to "Add a Comedian", new_comedian_path %>
-
+<div id="comedian-stats">
+  <h2>Comedian Statistics</h2>
+  <p>Average Comedian Age: <%= @comedians.average_age.round %></p>
+  <p>Birthplace Ranges</p>
+  <% @comedians.birthplaces.uniq.each do |city| %>
+  <ul>
+    <li>
+      <%= city %>
+    </li>
+  </ul>
+  <% end %>
+</div>
 <% @comedians.each do |comedian| %>
 <ul>
   <li><%= comedian.name %></li>
