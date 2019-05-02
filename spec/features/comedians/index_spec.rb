@@ -27,10 +27,12 @@ describe "Comedians index page" do
       expect(page).to have_content(@comedian_1.name)
       expect(page).to have_content("Age #{@comedian_1.age}")
       expect(page).to have_content("Born in #{@comedian_1.birthplace}")
+      expect(page).to have_xpath('//img[@src="https://image.masslive.com/home/mass-media/width960/img/entertainment/photo/nashville-comedy-festival-21d347107e975672.jpg"]')
 
       expect(page).to have_content(@comedian_2.name)
       expect(page).to have_content("Age #{@comedian_2.age}")
       expect(page).to have_content("Born in #{@comedian_2.birthplace}")
+      expect(page).to have_xpath('//img[@src="https://www.gannett-cdn.com/-mm-/aec403ad632f33650ec1aa7926a673a5a6b987b8/c=420-0-2149-1300/local/-/media/2015/09/17/Westchester/Westchester/635780965457520146--ASBBrd-07-27-2012-PressMon-1-A002-2012-07-26-IMG-People-Seinfeld-7-1-4U1UD.jpg?width=534&height=401&fit=crop"]')
     end
     it "I see a list of each comedians specials, name, runtime and image" do
 
@@ -76,7 +78,8 @@ describe "Comedians index page" do
       within("#age-#{@comedian_4.id}") do
       click_link(@comedian_4.age)
       end
-      expect(current_path).to eq(comedian_age_path(@comedian_4.age))
+
+      expect(current_path).to eq(comedians_path)
 
       expect(page).to have_content(@comedian_3.name)
       expect(page).to have_content("Age #{@comedian_3.age}")
@@ -162,15 +165,46 @@ describe "Comedians index page" do
       end
       it "displays accurate statistics when filtered by age" do
 
-      visit comedian_age_path(@comedian_4.age)
+        visit comedians_path
 
-      within("#comedian-stats") do
+        within("#age-#{@comedian_4.id}") do
+        click_link(@comedian_4.age)
+        end
+
+        within("#comedian-stats") do
         expect(page).to have_content("Comedian Statistics")
         expect(page).to have_content("Average Comedian Age: 51")
         expect(page).to have_content("Birthplace Ranges")
         expect(page).to have_content("Newark, NJ")
         expect(page).to have_content("Washington, D.C.")
+        end
+      end
+      it "each comedians name is a link to comedian show page" do
+
+        visit comedians_path
+
+        expect(page).to have_link(@comedian_1.name)
+        expect(page).to have_link(@comedian_2.name)
+        expect(page).to have_link(@comedian_4.name)
+        expect(page).to have_link(@comedian_5.name)
+
+        within("#comedian-#{@comedian_3.id}") do
+          click_link @comedian_3.name
+        end
+        expect(current_path).to eq(comedian_path(@comedian_3))
+    end
+    it "Displays total count of specials, and average runtime of all specials" do
+
+      visit comedians_path
+      save_and_open_page
+      within("#special-stats") do
+      expect(page).to have_content("Total specials 7")
+      expect(page).to have_content("Average special length: 62 mins")
       end
     end
   end
 end
+
+As a user, when I visit `/comedians?sort=name`
+Then I see all previous information, but all comedians are
+sorted alphabetically by the name of the comedians.

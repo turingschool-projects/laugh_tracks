@@ -46,5 +46,15 @@ describe Comedian, type: :model do
       @comedians = Comedian.all
       expect(@comedians.birthplaces.uniq).to eq(["Brooklyn, NY" ,"Canton, MA", "Newark, NJ", "Washington, D.C."])
     end
+    it ".total_specials" do
+      @comedians = Comedian.all
+
+      expect(@comedians.total_specials).to eq(8)
+    end
+    it ".average_special_length" do
+      @comedians = Comedian.all
+
+      expect(@comedians.average_special_length.to_i).to eq(70)
+    end
   end
 end

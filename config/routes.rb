@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :comedians, only: [:index, :new, :create]
+  resources :comedians, only: [:index, :show, :new, :create]
 
-  get '/comedians/:age', to: 'comedians#age', as: 'comedian_age'
 end

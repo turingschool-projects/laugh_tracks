@@ -1,0 +1,15 @@
+<h1><%= @comedian.name %> Show Page</h1>
+
+<ul id="com-info">
+  <li><%= @comedian.name %></li>
+  <li>Age <%= @comedian.age %></li>
+  <li>Born in <%= @comedian.birthplace %></li>
+  <li><img class="img-thumbnail" src="<%= @comedian.image_url %>"</li>
+</ul>
+<% @comedian.specials.each do |special| %>
+<ul id="special-<%= special.id %>">
+  <li><%= special.name %></li>
+  <li><%= special.runtime_mins %></li>
+  <li><img class="img-thumbnail" src="<%= special.image_url %>"</li>
+</ul>
+<% end %>

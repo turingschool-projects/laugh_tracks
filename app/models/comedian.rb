@@ -21,4 +21,12 @@ class Comedian < ApplicationRecord
   def self.birthplaces
     order(:birthplace).pluck(:birthplace)
   end
+
+  def self.total_specials
+    joins(:specials).count
+  end
+
+  def self.average_special_length
+    joins(:specials).average(:runtime_mins)
+  end
 end

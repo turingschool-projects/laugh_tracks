@@ -1,7 +1,15 @@
 class ComediansController < ApplicationController
 
   def index
-    @comedians = Comedian.all
+    if params[:age]
+      @comedians = Comedian.where(age: params[:age])
+    else
+      @comedians = Comedian.all
+    end
+  end
+
+  def show
+    @comedian = Comedian.find(params[:id])
   end
 
   def new
@@ -11,10 +19,6 @@ class ComediansController < ApplicationController
   def create
     @comedian = Comedian.create(comedian_params)
     redirect_to comedians_path
-  end
-
-  def age
-    @comedians = Comedian.where(age: params[:age])
   end
 
   private
