@@ -19,17 +19,27 @@ RSpec.describe "comedian index page", type: :feature do
   it "shows comedian demographics" do
     visit "/comedians"
 
-    #unsure of final layout, will target once design is complete.
-    # within("div#comedian_list") do
+    within("#comedian_#{@comedian_1.id}_info") do
       expect(page).to have_content(@comedian_1.name)
       expect(page).to have_content(@comedian_1.age)
       expect(page).to have_content(@comedian_1.city)
+    end
+    
+    within("#comedian_#{@comedian_2.id}_info") do
       expect(page).to have_content(@comedian_2.name)
       expect(page).to have_content(@comedian_2.age)
       expect(page).to have_content(@comedian_2.city)
+<<<<<<< Updated upstream
     # end
   end
 
+<<<<<<< HEAD
+=======
+=======
+    end
+  end
+
+>>>>>>> 700b03fad40febba09c79a6596e39af8f23d2033
   it "shows comedian thumbnail" do
     visit "/comedians"
     within("#comedian_#{@comedian_1.id}_info") do
@@ -42,5 +52,9 @@ RSpec.describe "comedian index page", type: :feature do
       #possible placeholder id
       expect(actual).to eq(@comedian_2.image)
     end
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> 700b03fad40febba09c79a6596e39af8f23d2033
   end
 end
