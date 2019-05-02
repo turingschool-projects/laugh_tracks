@@ -12,6 +12,15 @@
     </li>
   </ul>
   <% end %>
+  <div id="special-stats">
+  <h3>Special Statistics</h3>
+  <ul>
+    <li>Total specials <%= @comedians.total_specials %></li>
+  </ul>
+  <ul>
+    <li>Average special length: <%= @comedians.average_special_length.to_i %> mins</li>
+  </ul>
+  </div>
 </div>
 <% @comedians.each do |comedian| %>
 <ul id="comedian-<%= comedian.id %>">

@@ -4,6 +4,7 @@
   <li><%= @comedian.name %></li>
   <li>Age <%= @comedian.age %></li>
   <li>Born in <%= @comedian.birthplace %></li>
+  <li><img class="img-thumbnail" src="<%= @comedian.image_url %>"</li>
 </ul>
 <% @comedian.specials.each do |special| %>
 <ul id="special-<%= special.id %>">
