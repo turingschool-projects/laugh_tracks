@@ -38,7 +38,7 @@ RSpec.describe "a vistor visiting the players path" do
       expect(find("#player-#{player_1.id}-image")[:src]).to have_content(player_1.image)
     end
 
-    within "#player-#{player_2.id}"do
+    within "#player-#{player_2.id}" do
       expect(page).to have_content("Jesse")
       expect(page).to have_content("41")
       expect(page).to have_content("Hometown: Galaxy, One")
@@ -49,13 +49,22 @@ RSpec.describe "a vistor visiting the players path" do
 
   it "should see a list of each players cards with name and mana cost" do
     visit 'players'
-    save_and_open_page
+
     within "#player-#{player_1.id}-cards" do
       expect(page).to have_content "Cards"
       expect(page).to have_content "Blue Dragon"
       expect(page).to have_content "70"
       expect(page).to have_content "This is the dragon to end all dragons"
     end
+    
+  end
+  
+  it "should only shows players based on age" do
+      visit "/players/?age=31"
+      save_and_open_page
+
+      expect(page).to have_content(player_1.name)
+      expect(page).to_not have_content(player_2.name)
 
   end
 
