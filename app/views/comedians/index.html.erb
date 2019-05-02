@@ -9,7 +9,7 @@
   <strong>Televison Specials: <%= comedian.televisionspecials.count %></strong>
   <ul>
     <% comedian.televisionspecials.each do |special| %>
-    <li><%= special.name %>, <%= special.runtime %></li>
+    <li><%= special.name %>, Length: <%= special.runtime %> Minutes</li>
     <% end %>
   </ul>
   <hr>
