@@ -1,6 +1,6 @@
 <h1>Comedian<h2>
-
   <% @comedians.each do |comedian| %>
+   <div id="comedian-<%= comedian.id %>" >
     <h2><%= comedian.name %></h2>
     <p>Age: <%= comedian.age %></p>
     <p>Born in: <%= comedian.city %></p>
@@ -10,5 +10,6 @@
       <p>Run time: <%= special.runtime_minutes %> minutes</p>
       <img src="<%= special.image_url %>">
     </div>
+  </div>
     <% end %>
   <% end %>
