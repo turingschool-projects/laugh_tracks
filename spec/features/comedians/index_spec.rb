@@ -171,6 +171,31 @@ describe "Comedians index page" do
         expect(page).to have_content("Newark, NJ")
         expect(page).to have_content("Washington, D.C.")
       end
+      it "each comedians name is a link to comedian show page" do
+
+        visit comedians_path
+
+        expect(page).to have_link(@comedian_1.name)
+        expect(page).to have_link(@comedian_2.name)
+        expect(page).to have_link(@comedian_4.name)
+        expect(page).to have_link(@comedian_5.name)
+
+        within("#{comedian-info}") do
+          click_link @comedian_3.name
+        end
+
+        expect(current_path).to eq(comedian_path(@comedian_3))
+      end
     end
   end
 end
+As a user, when I visit `/comedians`,
+I see all previous information
+And each comedian's name is a link to a page that only shows
+that comedian's information and TV specials.
+
+For example, comedian #4 in your database would have a page like
+`/comedians/4`
+
+- Testing should check that only this one comedian's information
+  is on the page.
