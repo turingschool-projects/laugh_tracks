@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Special.destroy_all
 Comedian.destroy_all
 
 comedian_1 = Comedian.create!(name: "Bill Burr", age: 50, birthplace: "Canton, MA", image_url: "https://image.masslive.com/home/mass-media/width960/img/entertainment/photo/nashville-comedy-festival-21d347107e975672.jpg")
-comedian_2 = Comedian.create!(name: "Joe Rogan", age: 51, birthplace: "Newark, NJ", image_url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwil2d6_-YvhAhUR0IMKHSTACf4QjRx6BAgBEAU&url=https%3A%2F%2Fwaaf.radio.com%2Fblogs%2Fanthony-capobianco%2F13-rockers-have-appeared-joe-rogan-experience&psig=AOvVaw1DfyJPblSkSVLayC7G5let&ust=1553007377857892")
+comedian_2 = Comedian.create!(name: "Joe Rogan", age: 51, birthplace: "Newark, NJ", image_url: "https://pbs.twimg.com/profile_images/552307347851210752/vrXDcTFC_400x400.jpeg")
 comedian_3 = Comedian.create!(name: "Louis C.K.", age: 51, birthplace: "Washington, D.C.", image_url: "https://media1.fdncms.com/pittsburgh/imager/u/blog/13239255/louis_ck_kuwait_crop_cropped.jpg?cb=1548183367")
 comedian_4 = Comedian.create!(name: "Joey Diaz", age: 55, birthplace: "Havana, Cuba", image_url: "https://comedycentral.mtvnimages.com/images/ccstandup/comedians/800x600/JoeyDiaz_800x600.jpg?quality=0.91&width=320&height=320&crop=true")
 comedian_5 = Comedian.create!(name: "Chad Daniels", age: 43, birthplace: "Fergus Falls, MN", image_url: "https://www.rumorscomedyclub.com/wp-content/uploads/2016/09/Chad-2019-bio.jpg")

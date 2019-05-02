@@ -15,6 +15,7 @@
 <section id="comedian-<%=comedian.id%>">
   <br>
   <%# require 'pry'; binding.pry %>
+    <img src=  <%= comedian.image_url %> alt= <%= comedian.name.delete(" ") %> >
     <h2><%= comedian.name %></h2>
     <p><%= comedian.age %></p>
     <p><%= comedian.birthplace %></p>
