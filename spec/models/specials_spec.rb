@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe Comedian, type: :model do
+RSpec.describe Special, type: :model do
   describe "validations" do
     it { should validate_presence_of :name }
-    it { should validate_presence_of :age }
-    it { should validate_presence_of :city }
+    it { should validate_presence_of :runtime_minutes }
     it { should validate_presence_of :image_url }
   end
+
   describe "relationships" do
-    it { should have_many :specials }
+    it { should belong_to :comedian }
   end
 end
