@@ -331,6 +331,17 @@
         2,
         null,
         null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/masud/Documents/MOD2/tcg_player_tracks/app/models/player.rb": [
@@ -341,6 +352,11 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/masud/Documents/MOD2/tcg_player_tracks/app/controllers/players_controller.rb": [
@@ -357,6 +373,6 @@
         null
       ]
     },
-    "timestamp": 1556808780
+    "timestamp": 1556821341
   }
 }
