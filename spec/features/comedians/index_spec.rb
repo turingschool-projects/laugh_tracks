@@ -88,7 +88,6 @@ describe "Comedians index page" do
       expect(page).to have_content(@special_6.runtime_mins)
       expect(page).to have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BNjI4OGY5MTktZjNiNC00MTgyLTlhZGMtMzBhYzcyZTI5YTljXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_SY1000_SX750_AL_.jpg"]')
 
-
       expect(page).to have_content(@comedian_4.name)
       expect(page).to have_content("Age #{@comedian_4.age}")
       expect(page).to have_content("Born in #{@comedian_4.birthplace}")
@@ -96,6 +95,30 @@ describe "Comedians index page" do
       expect(page).to have_content(@special_7.name)
       expect(page).to have_content(@special_7.runtime_mins)
       expect(page).to have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BNTQyODYyNzcxN15BMl5BanBnXkFtZTgwOTA3MzcwMzE@._V1_.jpg"]')
+
+      expect(page).to_not have_content(@comedian_1.name)
+      expect(page).to_not have_content("Age #{@comedian_1.age}")
+      expect(page).to_not have_content("Born in #{@comedian_1.birthplace}")
+
+      expect(page).to_not have_content(@special_1.name)
+      expect(page).to_not have_content(@special_1.runtime_mins)
+      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_.jpg"]')
+      expect(page).to_not have_content(@special_2.name)
+      expect(page).to_not have_content(@special_2.runtime_mins)
+      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_SY1000_SX675_AL_.jpg"]')
+
+      expect(page).to_not have_content(@comedian_2.name)
+      expect(page).to_not have_content("Age #{@comedian_2.age}")
+      expect(page).to_not have_content("Born in #{@comedian_2.birthplace}")
+
+      expect(page).to_not have_content(@special_3.name)
+      expect(page).to_not have_content(@special_3.runtime_mins)
+      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BODMyZjU2NWQtMTI2ZC00Y2ZkLTllYjItNjNiM2Y1NTIyMmIyXkEyXkFqcGdeQXVyNjYzMDA4MTI@._V1_.jpg"]')
+      expect(page).to_not have_content(@special_4.name)
+      expect(page).to_not have_content(@special_4.runtime_mins)
+      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BOTc2N2I0Y2UtOTgyYy00MTU3LTk1YzItZGIwMDcxY2JkMGQzXkEyXkFqcGdeQXVyMjQzNzk2ODk@._V1_.jpg"]')
+
+
     end
     it "displays a count of tv specials for each comedian" do
 
@@ -113,6 +136,14 @@ describe "Comedians index page" do
       within("#specials-#{@comedian_4.id}") do
       expect(page).to have_content("Special count: 1")
       end
+    end
+    it "displays a link to create a new comedian" do
+
+      visit comedians_path
+
+      click_link "Add a Comedian"
+
+      expect(current_path).to eq(new_comedian_path)
     end
   end
 end
