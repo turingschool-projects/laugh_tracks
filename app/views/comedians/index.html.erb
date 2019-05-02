@@ -14,11 +14,11 @@
   <% end %>
 </div>
 <% @comedians.each do |comedian| %>
-<ul id="comedian-info">
-  <li><%= comedian.name %></li>
+<ul id="comedian-<%= comedian.id %>">
+  <li><%= link_to comedian.name, comedian_path(comedian) %></li>
 </ul>
 <ul id="age-<%= comedian.id %>">
-  <li>Age <%= link_to comedian.age, comedian_age_path(comedian.age) %></li>
+  <li>Age <%= link_to comedian.age, comedians_path({:age=>"#{comedian.age}"})%></li>
 </ul>
 <ul>
   <li>Born in <%= comedian.birthplace %></li>

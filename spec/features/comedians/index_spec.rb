@@ -76,7 +76,8 @@ describe "Comedians index page" do
       within("#age-#{@comedian_4.id}") do
       click_link(@comedian_4.age)
       end
-      expect(current_path).to eq(comedian_age_path(@comedian_4.age))
+
+      expect(current_path).to eq(comedians_path)
 
       expect(page).to have_content(@comedian_3.name)
       expect(page).to have_content("Age #{@comedian_3.age}")
@@ -162,14 +163,19 @@ describe "Comedians index page" do
       end
       it "displays accurate statistics when filtered by age" do
 
-      visit comedian_age_path(@comedian_4.age)
+        visit comedians_path
 
-      within("#comedian-stats") do
+        within("#age-#{@comedian_4.id}") do
+        click_link(@comedian_4.age)
+        end
+
+        within("#comedian-stats") do
         expect(page).to have_content("Comedian Statistics")
         expect(page).to have_content("Average Comedian Age: 51")
         expect(page).to have_content("Birthplace Ranges")
         expect(page).to have_content("Newark, NJ")
         expect(page).to have_content("Washington, D.C.")
+        end
       end
       it "each comedians name is a link to comedian show page" do
 
@@ -180,22 +186,10 @@ describe "Comedians index page" do
         expect(page).to have_link(@comedian_4.name)
         expect(page).to have_link(@comedian_5.name)
 
-        within("#{comedian-info}") do
+        within("#comedian-#{@comedian_3.id}") do
           click_link @comedian_3.name
         end
-
         expect(current_path).to eq(comedian_path(@comedian_3))
-      end
     end
   end
 end
-As a user, when I visit `/comedians`,
-I see all previous information
-And each comedian's name is a link to a page that only shows
-that comedian's information and TV specials.
-
-For example, comedian #4 in your database would have a page like
-`/comedians/4`
-
-- Testing should check that only this one comedian's information
-  is on the page.
