@@ -26,16 +26,29 @@ RSpec.describe "specials index page", type: :feature do
 
     #unsure of final layout, will target once design is complete.
     # within("div#comedian_list") do
+    within("#special_#{@special_1.id}_info") do
       expect(page).to have_content(@special_1.name)
       expect(page).to have_content(@special_1.time)
+    end
+
+    within("#special_#{@special_2.id}_info") do
       expect(page).to have_content(@special_2.name)
       expect(page).to have_content(@special_2.time)
+    end
+
+    within("#special_#{@special_3.id}_info") do
       expect(page).to have_content(@special_3.name)
       expect(page).to have_content(@special_3.time)
+    end
+
+    within("#special_#{@special_4.id}_info") do
       expect(page).to have_content(@special_4.name)
       expect(page).to have_content(@special_4.time)
+    end
+    
+    within("#special_#{@special_5.id}_info") do
       expect(page).to have_content(@special_5.name)
       expect(page).to have_content(@special_5.time)
-    # end
+    end
   end
 end
