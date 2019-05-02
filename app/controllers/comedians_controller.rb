@@ -18,7 +18,6 @@ class ComediansController < ApplicationController
   private
 
   def comedian_params
-    require "pry"; binding.pry
     params.require(:comedian).permit(:name, :age, :city)
   end
 end
