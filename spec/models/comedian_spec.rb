@@ -13,4 +13,12 @@ describe Comedian do
 
   end
 
+  describe ".average_age" do
+    it "returns the average age of comedians" do
+      comedian_1 = Comedian.create(name: "george", age: 20, city: 'Montreal')
+      comedian_2 = Comedian.create(name: "bob", age: 60, city: 'Austin')
+      expect(Comedian.average_age).to eq(40)
+
+    end
+  end
 end
