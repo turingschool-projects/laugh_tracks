@@ -1,8 +1,12 @@
 <%@comedians.each do |comedian|%>
-  <div id="<%comedian.id%>">
-   <p><img src="<%= comedian.thumb_url%>" alt="Comedian's Face" width="200"></p>
- </div>
-  <h2><%= comedian.name %></h2>
-  <p><%= comedian.age %></p>
-  <p><%= comedian.birthplace %></p>
+  <div id="Comedian-<%= comedian.id %>">
+    <p><img src="<%= comedian.thumb_url%>" alt="Comedian Pic" width="200"></p>
+    <h2><%= comedian.name %></h2>
+    <p><%= "Age: #{comedian.age}" %></p>
+    <p><%= "Birthplace: #{comedian.birthplace}" %></p>
+    <% comedian.specials.each do |special| %>
+      <p> <%= "Special Name: #{special.name}" %></p>
+      <p><%= "Run Time: #{special.runtime} minutes" %></p>
+    <% end %>
+  </div>
 <% end %>
