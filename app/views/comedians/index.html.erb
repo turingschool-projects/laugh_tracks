@@ -2,6 +2,13 @@
 
   <% @comedians.each do |comedian| %>
     <h2><%= comedian.name %></h2>
-    <p><%= comedian.age %></p>
-    <p><%= comedian.city %></p>
+    <p>Age: <%= comedian.age %></p>
+    <p>Born in: <%= comedian.city %></p>
+    <% comedian.specials.each do |special|%>
+    <div>
+      <p>TV special: <%= special.name %></p>
+      <p>Run time: <%= special.runtime_minutes %> minutes</p>
+      <img src="<%= special.image_url %>">
+    </div>
+    <% end %>
   <% end %>
