@@ -11,9 +11,9 @@ require "rails_helper"
 describe "user can create a comedian do " do
   describe "when they visit /comedians/new" do
     it "shows a form to input a new comedian" do
-      
+
       visit '/comedians/new'
-      require "pry"; binding.pry
+
       fill_in "comedian[name]", with: "Tom Hanks"
       fill_in "comedian[age]",  with: "22"
       fill_in "comedian[city]",  with: "Denver"
