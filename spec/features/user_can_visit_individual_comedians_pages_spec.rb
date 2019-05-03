@@ -19,8 +19,7 @@ describe "user sees one comedian" do
       visit '/comedians'
       click_link comedian_1.name
 
-      # expect(current_path).to eq("/comedians/#{comedian.id}")
-save_and_open_page
+
       expect(page).to have_content(comedian_1.name)
       expect(page).to have_content(comedian_1.age)
       expect(page).to have_content(comedian_1.city)
