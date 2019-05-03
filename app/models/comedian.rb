@@ -10,8 +10,7 @@ class Comedian < ApplicationRecord
   end
 
   def specials_count
-    specials.count
+    self.specials.count
   end
 
-  
 end
