@@ -1,12 +1,13 @@
 <%@comedians.each do |comedian|%>
-  <div id="Comedian-<%= comedian.id %>">
+  <div class="comedian-card" id="Comedian-<%= comedian.id %>">
     <p><img src="<%= comedian.thumb_url%>" alt="Comedian Pic" width="200"></p>
     <h2><%= comedian.name %></h2>
-    <p><%= "Age: #{comedian.age}" %></p>
-    <p><%= "Birthplace: #{comedian.birthplace}" %></p>
+    <p>Age: <%= comedian.age %></p>
+    <p>Birthplace: <%= comedian.birthplace %></p>
+
     <% comedian.specials.each do |special| %>
-      <p> <%= "Special Name: #{special.name}" %></p>
-      <p><%= "Run Time: #{special.runtime} minutes" %></p>
+      <p>Special Name: <%= special.name %></p>
+      <p>Run Time: <%= special.runtime %> minutes</p>
     <% end %>
   </div>
 <% end %>

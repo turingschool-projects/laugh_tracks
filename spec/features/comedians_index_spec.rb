@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "comedians index page", type: :feature do
   before :each do
     @comedian_1 = Comedian.create(name:"Maria Bamford", age: 49,  birthplace: "Port Hueneme, CA", thumb_url: "http://pixel.nymag.com/imgs/daily/vulture/2016/02/23/23-maria-bamford.w1200.h630.jpg")
-    
-    @comedian_2 = Comedian.create(name: "Dave Chappelle", age: 45, birthplace: "Washington, D.C.", thumb_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTII3JGyHZiZx-tRsKYcDk8jotJ6kK6yGNiCof1mLfTw5DxekFZtg")
+
+    @comedian_2 = Comedian.create(name: "Dave Chappelle", age: 49, birthplace: "Washington, D.C.", thumb_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTII3JGyHZiZx-tRsKYcDk8jotJ6kK6yGNiCof1mLfTw5DxekFZtg")
 
     @comedian_3 = Comedian.create(name: "Louis C.K.", age: 51, birthplace: "Washington, D.C.", thumb_url: "https://media1.fdncms.com/pittsburgh/imager/u/blog/13239255/louis_ck_kuwait_crop_cropped.jpg?cb=1548183367")
 
@@ -33,7 +33,7 @@ RSpec.describe "comedians index page", type: :feature do
     expect(page).to have_content(@comedian_3.age)
     expect(page).to have_content(@comedian_3.birthplace)
     expect(page).to have_xpath("//img[contains(@src,'#{@comedian_3.thumb_url}')]")
-    #save_and_open_page
+    save_and_open_page
   end
 
   it "shows name and runtime of all specials" do
@@ -49,8 +49,29 @@ RSpec.describe "comedians index page", type: :feature do
 
       expect(page).to_not have_content(@special_3.name)
       expect(page).to_not have_content(@special_3.runtime)
+
+    end
+  end
+
+    it "shows list of comedians by age critera" do
+      visit '/comedians?age=49'
+
+      within("#Comedian-#{@comedian_1.id}") do
+        expect(page).to have_content(@comedian_1.name)
+        expect(page).to have_content(@comedian_1.age)
+        expect(page).to have_content(@comedian_1.birthplace)
+        expect(page).to have_xpath("//img[contains(@src,'#{@comedian_1.thumb_url}')]")
+      end
+
+      within("#Comedian-#{@comedian_2.id}") do
+        expect(page).to have_content(@comedian_2.name)
+        expect(page).to have_content(@comedian_2.age)
+        expect(page).to have_content(@comedian_2.birthplace)
+        expect(page).to have_xpath("//img[contains(@src,'#{@comedian_2.thumb_url}')]")
+      end
+
+        expect(page).to_not have_content(@comedian_3.name)
     end
 
-    save_and_open_page
+    
   end
-end
