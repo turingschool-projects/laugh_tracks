@@ -10,9 +10,9 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
     visit '/comedians'
 
     within("#comedian-#{comedian.id}") do
-      expect(page).to have_content("Age: #{comedian.age}")
-      expect(page).to have_content(comedian.name)
-      expect(page).to have_content("Born in: #{comedian.city}")
+    expect(page).to have_content("Age: #{comedian.age}")
+    expect(page).to have_content(comedian.name)
+    expect(page).to have_content("Born in: #{comedian.city}")
     end
   end
 
@@ -44,6 +44,24 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
     expect(page).to have_content("Number of appearances: #{comedian.specials.count}")
   end
 
-  
+  it "the user sees statistics with average age" do
+    comedian_1 = Comedian.create(name: "John", age: 24, city: "Denver", image_url: "google.com")
+    comedian_2 = Comedian.create(name: "Paul", age: 34, city: "Denver", image_url: "google.com")
+    visit '/comedians'
+
+    expect(page).to have_content("Average age of comedians: 29")
+  end
+  # User Story 7
+  #
+  # As a visitor
+  # When I visit `/comedians`
+  # Then I see an area at the top of the page called 'Statistics'
+  # In that 'Statistics' area, I see the following information:
+  # - the average age of all comedians on the page (if the page is
+  # filtered for specific comedians, the statistics should reflect the new group)
+  # - a unique list of cities for each comedian on the page
+  #
+  # Averaging and uniqueness should be done in ActiveRecord NOT
+  # using Ruby
 
 end
