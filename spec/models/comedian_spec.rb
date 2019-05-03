@@ -56,15 +56,15 @@ describe Comedian, type: :model do
 
       expect(@comedians.average_special_length.to_i).to eq(70)
     end
-    it ".order_name_asc" do
+    it ".order_name" do
       @comedians = Comedian.all
 
-      expect(@comedians.order_name_asc).to eq([@comedian_1, @comedian_2, @comedian_3, @comedian_4])
+      expect(@comedians.order_name("asc")).to eq([@comedian_1, @comedian_2, @comedian_3, @comedian_4])
     end
     it ".order_name_desc" do
       @comedian = Comedian.all
 
-      expect(@comedian.order_name_desc).to eq([@comedian_4, @comedian_3, @comedian_2, @comedian_1])  
+      expect(@comedian.order_name("desc")).to eq([@comedian_4, @comedian_3, @comedian_2, @comedian_1])  
     end
   end
 end
