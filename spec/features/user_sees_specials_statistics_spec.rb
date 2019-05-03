@@ -15,8 +15,8 @@ describe "user sees all comedians statistics" do
       visit comedians_path
 
       within("div#statistics") do
-        expect(page).to have_content("Average Runtime: 70 min")
-        expect(page).to have_content("Specials Count: 3")
+        expect(page).to have_content("Average Runtime: 70.0 min")
+        expect(page).to have_content("Specials Count: 4")
       end
 
     end
