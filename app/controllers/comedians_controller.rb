@@ -8,6 +8,8 @@ class ComediansController < ApplicationController
       @comedians = Comedian.order_name(params[:name])
     elsif params[:birthplace]
       @comedians = Comedian.order_bp(params[:birthplace])
+    elsif params[:ages]
+      @comedians = Comedian.order_age(params[:ages])
     else
       @comedians = Comedian.all
     end

@@ -5,6 +5,8 @@
   <li id="sort-by-name-desc"><%= link_to "Sort by name, reverse alphabetically", comedians_path({name: :desc}) %></li>
   <li id="sort-by-city-asc"><%= link_to "Sort by birthplace, alphabetically", comedians_path({birthplace: :asc}) %></li>
   <li id="sort-by-city-desc"><%= link_to "Sort by birthplace, reverse alphabetically", comedians_path({birthplace: :desc}) %></li>
+  <li id="sort-by-age-asc"><%= link_to "Youngest First", comedians_path({ages: :asc}) %></li>
+  <li id="sort-by-age-desc"><%= link_to "Oldest First", comedians_path({ages: :desc}) %></li>
 </nav>
 <section>
   <div id="comedian-stats">

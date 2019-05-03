@@ -246,5 +246,27 @@ describe "Comedians index page" do
       expect(page.all('.comedians')[3]).to have_content("#{@comedian_1.birthplace}")
       expect(page.all('.comedians')[4]).to have_content("#{@comedian_2.birthplace}")
     end
+    it "Sorts comedians by age" do
+
+      visit comedians_path
+
+      within("#sort-by-age-asc") do
+      click_link "Youngest First"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_5.age}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_1.age}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_3.age}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_4.age}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_2.age}")
+
+      within("#sort-by-age-desc") do
+        click_link "Oldest First"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_2.age}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_4.age}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_3.age}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_1.age}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_5.age}")
+    end
   end
 end

@@ -37,4 +37,8 @@ class Comedian < ApplicationRecord
   def self.order_bp(order)
     order(birthplace: :"#{order}")
   end
+
+  def self.order_age(order)
+    order(age: :"#{order}")
+  end
 end

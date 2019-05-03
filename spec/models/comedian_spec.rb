@@ -68,5 +68,13 @@ describe Comedian, type: :model do
       expect(@comedians.order_bp("asc")).to eq([@comedian_2, @comedian_1, @comedian_3, @comedian_4])
       expect(@comedians.order_bp("desc")).to eq([@comedian_4, @comedian_3, @comedian_1, @comedian_2])
     end
+    it ".order_age" do
+      @comedians = Comedian.all
+
+
+
+      expect(@comedians.order_age("asc")).to eq([@comedian_1, @comedian_4, @comedian_3, @comedian_2])
+      expect(@comedians.order_age("desc")).to eq([@comedian_2, @comedian_4, @comedian_3, @comedian_1])
+    end
   end
 end
