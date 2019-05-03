@@ -4,7 +4,7 @@
     <h2><%= comedian.name %></h2>
     <p>Age: <%= comedian.age %></p>
     <p>Birthplace: <%= comedian.birthplace %></p>
-
+    <p>Specials Count: <%= comedian.specials_count %> </p>
     <% comedian.specials.each do |special| %>
       <p>Special Name: <%= special.name %></p>
       <p>Run Time: <%= special.runtime %> minutes</p>

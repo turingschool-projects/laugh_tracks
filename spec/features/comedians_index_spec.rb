@@ -73,5 +73,19 @@ RSpec.describe "comedians index page", type: :feature do
         expect(page).to_not have_content(@comedian_3.name)
     end
 
-    
+    it "shows the specials count" do
+      visit '/comedians'
+
+      within("#Comedian-#{@comedian_1.id}") do
+        expect(page).to have_content(@comedian_1.specials_count)
+      end
+
+      within("#Comedian-#{@comedian_2.id}") do
+        expect(page).to have_content(@comedian_2.specials_count)
+      end 
+
+      within("#Comedian-#{@comedian_3.id}") do
+        expect(page).to have_content(@comedian_3.specials_count)
+      end
+    end
   end
