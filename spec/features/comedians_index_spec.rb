@@ -82,10 +82,10 @@ RSpec.describe "comedians index page", type: :feature do
 
       within("#Comedian-#{@comedian_2.id}") do
         expect(page).to have_content(@comedian_2.specials_count)
-      end 
+      end
 
       within("#Comedian-#{@comedian_3.id}") do
         expect(page).to have_content(@comedian_3.specials_count)
       end
     end
-  end
+end
