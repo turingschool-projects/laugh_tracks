@@ -4,6 +4,8 @@ class ComediansController < ApplicationController
     @comedians = Comedian.all
     @specials = Special.all
     @comedians = Comedian.where(age: params[:age]) if params[:age]
+    # require "pry"; binding.pry
+    @comedians = Comedian.name_sort if params[:sort]
   end
 
   def new
