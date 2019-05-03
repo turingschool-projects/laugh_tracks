@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "an unauthenticated user visiting welcome page" do
+  before :each do
+    Special.destroy_all
+    Comedian.destroy_all
+  end
   it "should see a comedians age, name and city" do
     comedian = Comedian.create(name: "John", age: 24, city: "Denver", image_url: "google.com")
     visit '/comedians'
@@ -40,12 +44,6 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
     expect(page).to have_content("Number of appearances: #{comedian.specials.count}")
   end
 
-end
+  
 
-# As a visitor
-# When I visit `/comedians/new`
-# Then I see a form to input a new comedian into the database
-# Including fields for their name, age and city.
-# When the form is successfully submitted and saved,
-# Then I am redirected to `/comedians`
-# And I see the new comedian's data on the page.
+end
