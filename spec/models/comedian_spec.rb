@@ -18,7 +18,15 @@ describe Comedian do
       comedian_1 = Comedian.create(name: "george", age: 20, city: 'Montreal')
       comedian_2 = Comedian.create(name: "bob", age: 60, city: 'Austin')
       expect(Comedian.average_age).to eq(40)
-
     end
   end
+
+  describe ".name_sort" do
+    it "returns comedians sorted by name" do
+      comedian_1 = Comedian.create(name: "george", age: 20, city: 'Montreal')
+      comedian_2 = Comedian.create(name: "bob", age: 60, city: 'Austin')
+      expect(Comedian.name_sort).to eq([comedian_2, comedian_1])
+    end
+  end
+
 end

@@ -5,4 +5,8 @@ class Comedian < ApplicationRecord
   def self.average_age
     Comedian.average(:age)
   end
+
+  def self.name_sort
+    Comedian.order(:name)
+  end
 end
