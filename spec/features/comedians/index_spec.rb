@@ -224,5 +224,27 @@ describe "Comedians index page" do
       expect(page.all('.comedians')[3]).to have_content("#{@comedian_5.name}")
       expect(page.all('.comedians')[4]).to have_content("#{@comedian_1.name}")
     end
+    it "Sorts comedians by alphabetically and reverse by comedian birthplace" do
+
+      visit comedians_path
+
+      within("#sort-by-city-asc") do
+        click_link "Sort by birthplace, alphabetically"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_2.birthplace}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_1.birthplace}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_3.birthplace}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_4.birthplace}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_5.birthplace}")
+
+      within("#sort-by-city-desc") do
+        click_link "Sort by birthplace, reverse alphabetically"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_5.birthplace}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_4.birthplace}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_3.birthplace}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_1.birthplace}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_2.birthplace}")
+    end
   end
 end

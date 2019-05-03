@@ -1,10 +1,13 @@
 class ComediansController < ApplicationController
 
   def index
+
     if params[:age]
       @comedians = Comedian.where(age: params[:age])
-    elsif params[:sort]
-      @comedians = Comedian.order_name(params[:sort])
+    elsif params[:name]
+      @comedians = Comedian.order_name(params[:name])
+    elsif params[:birthplace]
+      @comedians = Comedian.order_bp(params[:birthplace])
     else
       @comedians = Comedian.all
     end

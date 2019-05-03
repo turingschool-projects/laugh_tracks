@@ -60,11 +60,13 @@ describe Comedian, type: :model do
       @comedians = Comedian.all
 
       expect(@comedians.order_name("asc")).to eq([@comedian_1, @comedian_2, @comedian_3, @comedian_4])
+      expect(@comedians.order_name("desc")).to eq([@comedian_4, @comedian_3, @comedian_2, @comedian_1])
     end
-    it ".order_name_desc" do
-      @comedian = Comedian.all
+    it ".order_bp" do
+      @comedians = Comedian.all
 
-      expect(@comedian.order_name("desc")).to eq([@comedian_4, @comedian_3, @comedian_2, @comedian_1])  
+      expect(@comedians.order_bp("asc")).to eq([@comedian_2, @comedian_1, @comedian_3, @comedian_4])
+      expect(@comedians.order_bp("desc")).to eq([@comedian_4, @comedian_3, @comedian_1, @comedian_2])
     end
   end
 end
