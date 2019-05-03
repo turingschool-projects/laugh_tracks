@@ -62,68 +62,7 @@ describe "Comedians index page" do
       expect(page).to have_xpath('//img[@src="https://image.masslive.com/home/mass-media/width960/img/entertainment/photo/nashville-comedy-festival-21d347107e975672.jpg"]')
       expect(page).to have_xpath('//img[@src="https://www.gannett-cdn.com/-mm-/aec403ad632f33650ec1aa7926a673a5a6b987b8/c=420-0-2149-1300/local/-/media/2015/09/17/Westchester/Westchester/635780965457520146--ASBBrd-07-27-2012-PressMon-1-A002-2012-07-26-IMG-People-Seinfeld-7-1-4U1UD.jpg?width=534&height=401&fit=crop"]')
     end
-    it "I can filter comedians on the page by age" do
 
-      visit comedians_path
-
-      within("#age-#{@comedian_1.id}") do
-      expect(page).to have_link(@comedian_1.age)
-      end
-      within("#age-#{@comedian_2.id}") do
-      expect(page).to have_link(@comedian_2.age)
-      end
-      within("#age-#{@comedian_3.id}") do
-      expect(page).to have_link(@comedian_3.age)
-      end
-      within("#age-#{@comedian_4.id}") do
-      click_link(@comedian_4.age)
-      end
-
-      expect(current_path).to eq(comedians_path)
-
-      expect(page).to have_content(@comedian_3.name)
-      expect(page).to have_content("Age #{@comedian_3.age}")
-      expect(page).to have_content("Born in #{@comedian_3.birthplace}")
-
-      expect(page).to have_content(@special_5.name)
-      expect(page).to have_content(@special_5.runtime_mins)
-      expect(page).to have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BYTE0M2FkNGMtYjYxNi00MDRkLWE0YWUtNWI4NWU3NWIzMWIzXkEyXkFqcGdeQXVyMzE5NzI0NjE@._V1_.jpg"]')
-      expect(page).to have_content(@special_6.name)
-      expect(page).to have_content(@special_6.runtime_mins)
-      expect(page).to have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BNjI4OGY5MTktZjNiNC00MTgyLTlhZGMtMzBhYzcyZTI5YTljXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_SY1000_SX750_AL_.jpg"]')
-
-      expect(page).to have_content(@comedian_4.name)
-      expect(page).to have_content("Age #{@comedian_4.age}")
-      expect(page).to have_content("Born in #{@comedian_4.birthplace}")
-
-      expect(page).to have_content(@special_7.name)
-      expect(page).to have_content(@special_7.runtime_mins)
-      expect(page).to have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BNTQyODYyNzcxN15BMl5BanBnXkFtZTgwOTA3MzcwMzE@._V1_.jpg"]')
-
-      expect(page).to_not have_content(@comedian_1.name)
-      expect(page).to_not have_content("Age #{@comedian_1.age}")
-      expect(page).to_not have_content("Born in #{@comedian_1.birthplace}")
-
-      expect(page).to_not have_content(@special_1.name)
-      expect(page).to_not have_content(@special_1.runtime_mins)
-      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_.jpg"]')
-      expect(page).to_not have_content(@special_2.name)
-      expect(page).to_not have_content(@special_2.runtime_mins)
-      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_SY1000_SX675_AL_.jpg"]')
-
-      expect(page).to_not have_content(@comedian_2.name)
-      expect(page).to_not have_content("Age #{@comedian_2.age}")
-      expect(page).to_not have_content("Born in #{@comedian_2.birthplace}")
-
-      expect(page).to_not have_content(@special_3.name)
-      expect(page).to_not have_content(@special_3.runtime_mins)
-      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BODMyZjU2NWQtMTI2ZC00Y2ZkLTllYjItNjNiM2Y1NTIyMmIyXkEyXkFqcGdeQXVyNjYzMDA4MTI@._V1_.jpg"]')
-      expect(page).to_not have_content(@special_4.name)
-      expect(page).to_not have_content(@special_4.runtime_mins)
-      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BOTc2N2I0Y2UtOTgyYy00MTU3LTk1YzItZGIwMDcxY2JkMGQzXkEyXkFqcGdeQXVyMjQzNzk2ODk@._V1_.jpg"]')
-
-
-    end
     it "displays a count of tv specials for each comedian" do
 
       visit comedians_path
@@ -163,21 +102,7 @@ describe "Comedians index page" do
         expect(page).to have_content("Washington, D.C.")
         end
       end
-      it "displays accurate statistics when filtered by age" do
 
-        visit comedians_path
-
-        within("#age-#{@comedian_4.id}") do
-        click_link(@comedian_4.age)
-        end
-
-        within("#comedian-stats") do
-        expect(page).to have_content("Comedian Statistics")
-        expect(page).to have_content("Average Comedian Age: 51")
-        expect(page).to have_content("Birthplace Ranges")
-        expect(page).to have_content("Newark, NJ")
-        expect(page).to have_content("Washington, D.C.")
-        end
       end
       it "each comedians name is a link to comedian show page" do
 
@@ -267,6 +192,84 @@ describe "Comedians index page" do
       expect(page.all('.comedians')[2]).to have_content("#{@comedian_3.age}")
       expect(page.all('.comedians')[3]).to have_content("#{@comedian_1.age}")
       expect(page.all('.comedians')[4]).to have_content("#{@comedian_5.age}")
+    end
+    it "I can filter comedians on the page by age" do
+
+      visit comedians_path
+
+      within("#filter-age-45") do
+      expect(page).to have_link(45)
+      end
+      within("#filter-age-50") do
+      expect(page).to have_link(50)
+      end
+      within("#filter-age-64") do
+      expect(page).to have_link(64)
+      end
+      within("#filter-age-51") do
+      click_link(51)
+      end
+
+
+      expect(current_path).to eq(comedians_path)
+
+      expect(page).to have_content(@comedian_3.name)
+      expect(page).to have_content("Age #{@comedian_3.age}")
+      expect(page).to have_content("Born in #{@comedian_3.birthplace}")
+
+      expect(page).to have_content(@special_5.name)
+      expect(page).to have_content(@special_5.runtime_mins)
+      expect(page).to have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BYTE0M2FkNGMtYjYxNi00MDRkLWE0YWUtNWI4NWU3NWIzMWIzXkEyXkFqcGdeQXVyMzE5NzI0NjE@._V1_.jpg"]')
+      expect(page).to have_content(@special_6.name)
+      expect(page).to have_content(@special_6.runtime_mins)
+      expect(page).to have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BNjI4OGY5MTktZjNiNC00MTgyLTlhZGMtMzBhYzcyZTI5YTljXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_SY1000_SX750_AL_.jpg"]')
+
+      expect(page).to have_content(@comedian_4.name)
+      expect(page).to have_content("Age #{@comedian_4.age}")
+      expect(page).to have_content("Born in #{@comedian_4.birthplace}")
+
+      expect(page).to have_content(@special_7.name)
+      expect(page).to have_content(@special_7.runtime_mins)
+      expect(page).to have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BNTQyODYyNzcxN15BMl5BanBnXkFtZTgwOTA3MzcwMzE@._V1_.jpg"]')
+
+      expect(page).to_not have_content(@comedian_1.name)
+      expect(page).to_not have_content("Age #{@comedian_1.age}")
+      expect(page).to_not have_content("Born in #{@comedian_1.birthplace}")
+
+      expect(page).to_not have_content(@special_1.name)
+      expect(page).to_not have_content(@special_1.runtime_mins)
+      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_.jpg"]')
+      expect(page).to_not have_content(@special_2.name)
+      expect(page).to_not have_content(@special_2.runtime_mins)
+      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_SY1000_SX675_AL_.jpg"]')
+
+      expect(page).to_not have_content(@comedian_2.name)
+      expect(page).to_not have_content("Age #{@comedian_2.age}")
+      expect(page).to_not have_content("Born in #{@comedian_2.birthplace}")
+
+      expect(page).to_not have_content(@special_3.name)
+      expect(page).to_not have_content(@special_3.runtime_mins)
+      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BODMyZjU2NWQtMTI2ZC00Y2ZkLTllYjItNjNiM2Y1NTIyMmIyXkEyXkFqcGdeQXVyNjYzMDA4MTI@._V1_.jpg"]')
+      expect(page).to_not have_content(@special_4.name)
+      expect(page).to_not have_content(@special_4.runtime_mins)
+      expect(page).to_not have_xpath('//img[@src="https://m.media-amazon.com/images/M/MV5BOTc2N2I0Y2UtOTgyYy00MTU3LTk1YzItZGIwMDcxY2JkMGQzXkEyXkFqcGdeQXVyMjQzNzk2ODk@._V1_.jpg"]')
+
+
+    end
+    it "displays accurate statistics when filtered by age" do
+
+      visit comedians_path
+
+      within("#filter-age-51") do
+      click_link(51)
+      end
+
+      within("#comedian-stats") do
+      expect(page).to have_content("Comedian Statistics")
+      expect(page).to have_content("Average Comedian Age: 51")
+      expect(page).to have_content("Birthplace Ranges")
+      expect(page).to have_content("Newark, NJ")
+      expect(page).to have_content("Washington, D.C.")
     end
   end
 end
