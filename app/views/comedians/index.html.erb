@@ -1,49 +1,45 @@
 <h1>Index page</h1>
-<% @ages.each do |age| %>
-  <%= link_to age, comedians_path({sort: {age: :asc}}) %>
-<%  %>
-
-<%= link_to "Add a Comedian", new_comedian_path %>
-<div id="comedian-stats">
-  <h2>Comedian Statistics</h2>
-  <p>Average Comedian Age: <%= @comedians.average_age.round %></p>
-  <p>Birthplace Ranges</p>
-  <% @comedians.birthplaces.uniq.each do |city| %>
-  <ul>
-    <li>
-      <%= city %>
-    </li>
-  </ul>
-  <% end %>
-  <div id="special-stats">
-  <h3>Special Statistics</h3>
-  <ul>
-    <li>Total specials <%= @comedians.total_specials %></li>
-  </ul>
-  <ul>
-    <li>Average special length: <%= @comedians.average_special_length.to_i %></li>
-  </ul>
+<nav>
+  <li><%= link_to "Add a Comedian", new_comedian_path %></li>
+  <li id="sort-by-name-asc"><%= link_to "Sort by name, alphabetically", comedians_path({name: :asc}) %></li>
+  <li id="sort-by-name-desc"><%= link_to "Sort by name, reverse alphabetically", comedians_path({name: :desc}) %></li>
+  <li id="sort-by-city-asc"><%= link_to "Sort by birthplace, alphabetically", comedians_path({birthplace: :asc}) %></li>
+  <li id="sort-by-city-desc"><%= link_to "Sort by birthplace, reverse alphabetically", comedians_path({birthplace: :desc}) %></li>
+  <li id="sort-by-age-asc"><%= link_to "Youngest First", comedians_path({ages: :asc}) %></li>
+  <li id="sort-by-age-desc"><%= link_to "Oldest First", comedians_path({ages: :desc}) %></li>
+</nav>
+<section>
+  <div id="comedian-stats">
+    <h2>Comedian Statistics</h2>
+      <p>Average Comedian Age: <%= @comedians.average_age.round %></p>
+      <p>Birthplace Ranges</p>
+      <% @comedians.birthplaces.uniq.each do |city| %>
+      <li><%= city %></li>
+      <% end %>
   </div>
-</div>
+  <div id="special-stats">
+    <h3>Special Statistics</h3>
+      <li>Total specials <%= @comedians.total_specials %></li>
+      <li>Average special length: <%= @comedians.average_special_length.to_i %> mins</li>
+  </div>
+</section>
+
 <% @comedians.each do |comedian| %>
-<ul id="comedian-<%= comedian.id %>">
-  <li><%= link_to comedian.name, comedian_path(comedian) %></li>
-</ul>
-<ul id="age-<%= comedian.id %>">
-  <li>Age <%= link_to comedian.age, comedians_path({:age=>"#{comedian.age}"})%></li>
-</ul>
-<ul>
-  <li>Born in <%= comedian.birthplace %></li>
-  <li><img class="img-thumbnail" src="<%= comedian.image_url %>"</li>
-</ul>
-<ul id="specials-<%= comedian.id %>">
-  <li>Special count: <%= comedian.special_count %></li>
-</ul>
-<% comedian.specials.each do |special| %>
-<ul>
-  <%= special.name %>
-  <%= special.runtime_mins %>
-  <img class="img-thumbnail" src="<%= special.image_url %>" alt='comedian'>
-</ul>
-<% end %>
+<section>
+  <div class="comedians">
+    <h4 id="comedian-<%= comedian.id %>"><%= link_to comedian.name, comedian_path(comedian) %></h4>
+      <li id="age-<%= comedian.id %>">Age <%= link_to comedian.age, comedians_path({:age=>"#{comedian.age}"})%></li>
+      <li>Born in <%= comedian.birthplace %></li>
+      <li><img class="img-thumbnail" src="<%= comedian.image_url %>"</li>
+      <li id="specials-<%= comedian.id %>">Special count: <%= comedian.special_count %></li>
+  </div>
+  <% comedian.specials.each do |special| %>
+  <div>
+    <h5>Special Information</h5>
+    <li><%= special.name %></li>
+    <li><%= special.runtime_mins %></li>
+    <img class="img-thumbnail" src="<%= special.image_url %>" alt='comedian'>
+  </div>
+  <% end %>
+</section>
 <% end %>

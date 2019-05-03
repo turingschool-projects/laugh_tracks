@@ -29,4 +29,16 @@ class Comedian < ApplicationRecord
   def self.average_special_length
     joins(:specials).average(:runtime_mins)
   end
+
+  def self.order_name(order)
+    order(name: :"#{order}")
+  end
+
+  def self.order_bp(order)
+    order(birthplace: :"#{order}")
+  end
+
+  def self.order_age(order)
+    order(age: :"#{order}")
+  end
 end

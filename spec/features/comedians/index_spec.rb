@@ -196,15 +196,77 @@ describe "Comedians index page" do
     it "Displays total count of specials, and average runtime of all specials" do
 
       visit comedians_path
-      save_and_open_page
+
       within("#special-stats") do
       expect(page).to have_content("Total specials 7")
       expect(page).to have_content("Average special length: 62 mins")
       end
     end
+    it "Sorts comedians by name alphabetically asc, and desc" do
+
+      visit comedians_path
+
+      within("#sort-by-name-asc") do
+        click_link "Sort by name, alphabetically"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_1.name}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_5.name}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_2.name}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_3.name}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_4.name}")
+
+      within("#sort-by-name-desc") do
+        click_link "Sort by name, reverse alphabetically"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_4.name}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_3.name}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_2.name}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_5.name}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_1.name}")
+    end
+    it "Sorts comedians by alphabetically and reverse by comedian birthplace" do
+
+      visit comedians_path
+
+      within("#sort-by-city-asc") do
+        click_link "Sort by birthplace, alphabetically"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_2.birthplace}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_1.birthplace}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_3.birthplace}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_4.birthplace}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_5.birthplace}")
+
+      within("#sort-by-city-desc") do
+        click_link "Sort by birthplace, reverse alphabetically"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_5.birthplace}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_4.birthplace}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_3.birthplace}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_1.birthplace}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_2.birthplace}")
+    end
+    it "Sorts comedians by age" do
+
+      visit comedians_path
+
+      within("#sort-by-age-asc") do
+      click_link "Youngest First"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_5.age}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_1.age}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_3.age}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_4.age}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_2.age}")
+
+      within("#sort-by-age-desc") do
+        click_link "Oldest First"
+      end
+      expect(page.all('.comedians')[0]).to have_content("#{@comedian_2.age}")
+      expect(page.all('.comedians')[1]).to have_content("#{@comedian_4.age}")
+      expect(page.all('.comedians')[2]).to have_content("#{@comedian_3.age}")
+      expect(page.all('.comedians')[3]).to have_content("#{@comedian_1.age}")
+      expect(page.all('.comedians')[4]).to have_content("#{@comedian_5.age}")
+    end
   end
 end
-
-As a user, when I visit `/comedians?sort=name`
-Then I see all previous information, but all comedians are
-sorted alphabetically by the name of the comedians.
