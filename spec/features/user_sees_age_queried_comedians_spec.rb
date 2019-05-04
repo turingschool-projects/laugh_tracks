@@ -8,7 +8,6 @@ describe "user sees age-queried comedians" do
       comedian_2 = Comedian.create(name: "bob", age: 34, city: 'Austin')
 
       visit '/comedians?age=22'
-
       expect(page).to have_content(comedian_1.name)
       expect(page).to have_content(comedian_1.age)
       expect(page).to have_content(comedian_1.city)
