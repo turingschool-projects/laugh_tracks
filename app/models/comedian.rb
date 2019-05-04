@@ -18,7 +18,7 @@ class Comedian < ApplicationRecord
   end
 
   def self.unique_cities
-    Comedian.distinct.pluck(:city)
+    Comedian.select(:city).distinct.pluck(:city)
   end
 
 end
