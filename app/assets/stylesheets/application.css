@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.comedian_img {
+  height: 250px;
+  /* width: 15%; */
+}
