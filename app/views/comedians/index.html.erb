@@ -2,7 +2,7 @@
 
 <section id="comedians">
   <% @comedians.each do |comedian| %>
-    <div class="comedian-<%= comedian.id %>">
+    <div id="comedian-<%= comedian.id %>">
       <h1> <%= comedian.name %> </h1>
       <img class="comedian_img" src="<%=comedian.img_url%>"> </img>
       <p>
@@ -11,9 +11,9 @@
       </p>
 
       <h3 class="specials">Specials</h3>
+          <p>Number of specials: <%= comedian.specials.count %></p>
           <% comedian.specials.each do |special| %>
-            <p><%= special.name %></p>
-            <p>     Runtime <%= special.run_time %> mins</p>
+            <p>"<%= special.name %>"     Runtime <%= special.run_time %> mins</p>
           <% end %>
     </div>
 

@@ -54,5 +54,31 @@ RSpec.describe "user sees all comedians" do
       expect(page).to_not have_content(comedian_2.name)
     end
 
+    # User Story 5
+    # As a visitor
+    # When I visit `/comedians`
+    # For each comedian, I see a count of their TV specials
+    it "displays number of specials each comedian has" do
+      comedian_1 = Comedian.create!(name: "Corn Dog", age: 25, city: "Washington D.C.")
+      comedian_2 = Comedian.create!(name: "Chris Davis", age: 35, city: "Texas $")
+
+      special_1 = comedian_1.specials.create(name: "Corn Dog Live", run_time: 60)
+      special_2 = comedian_1.specials.create(name: "Corn Dog Live Again", run_time: 62)
+      special_3 = comedian_1.specials.create(name: "Corn Dog Taped Previously Again", run_time: 61)
+      special_4 = comedian_2.specials.create(name: "CD: Live at MSG", run_time: 50)
+
+      visit '/comedians'
+
+      within "#comedian-#{comedian_1.id}" do
+        expect(page).to have_content "Number of specials: 3"
+      end
+
+      within "#comedian-#{comedian_2.id}" do
+        expect(page).to have_content "Number of specials: 1"
+      end
+    end
+
+    
+
   end
 end

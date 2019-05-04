@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-05-04T15:17:45-06:00">2019-05-04T15:17:45-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-05-04T16:22:37-06:00">2019-05-04T16:22:37-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.46%</span></span>
+    (<span class="covered_percent"><span class="green">96.88%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         1.0
+         0.98
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>20</b> files in total.
-    <b>65</b> relevant lines. 
-    <span class="green"><b>64</b> lines covered</span> and
-    <span class="red"><b>1</b> lines missed </span>
+    <b>64</b> relevant lines. 
+    <span class="green"><b>62</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -92,12 +92,12 @@
       
       <tr>
         <td class="strong"><a href="#1c72378d1ed2450afb1b7729867691b401a16f4f" class="src_link" title="app/models/comedian.rb">app/models/comedian.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>13</td>
-        <td>6</td>
-        <td>6</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td class="red strong">80.0 %</td>
+        <td>12</td>
+        <td>5</td>
+        <td>4</td>
+        <td>1</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -359,8 +359,8 @@
           <code class="ruby">    if params[:age] == nil</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
           <code class="ruby">      @comedians = Comedian.all</code>
         </li>
@@ -371,8 +371,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="10">
+          
           
           <code class="ruby">      @comedians = Comedian.by_age(params[:age])</code>
         </li>
@@ -477,11 +477,11 @@
         <div class="source_table" id="1c72378d1ed2450afb1b7729867691b401a16f4f">
   <div class="header">
     <h3>app/models/comedian.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">80.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>5</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -536,31 +536,25 @@
           <code class="ruby">  def self.by_age(age)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="9">
           
-          <code class="ruby">    require &quot;pry&quot;; binding.pry</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
           
           <code class="ruby">    where(age: age.to_i)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">end</code>
