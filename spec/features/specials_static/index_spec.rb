@@ -38,8 +38,6 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to have_content(@special_4.time)
       expect(page).to have_content(@special_5.name)
       expect(page).to have_content(@special_5.time)
-
-      save_and_open_page
     end
   end
 end
