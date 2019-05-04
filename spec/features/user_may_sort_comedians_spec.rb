@@ -30,7 +30,7 @@ describe "user may see sorted comedians" do
       comedian_2 = Comedian.create(name: "bob", age: 34, city: 'Austin')
       comedian_3 = Comedian.create(name: "xena", age: 39, city: 'Montreal')
       visit '/comedians?sort=age'
-      expect(/Age: 34(.|\n)*Age: 39(.|\n)*Age: 102/).to match(page.body)
+      expect(/Age: 34(.|\n)*Age: 39(.|\n)*Age: 104/).to match(page.body)
     end
   end
 
