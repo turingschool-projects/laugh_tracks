@@ -24,14 +24,14 @@ RSpec.describe "As a visitor", type: :feature do
       #unsure of final layout, will target once design is complete.
       # within("div#comedian_list") do
         expect(page).to have_content(@comedian_1.name)
-        expect(page).to have_content(@comedian_1.age)
-        expect(page).to have_content(@comedian_1.city)
+        expect(page).to have_content("Age: #{@comedian_1.age}")
+        expect(page).to have_content("Hometown: #{@comedian_1.city}")
         expect(page).to have_content(@comedian_2.name)
-        expect(page).to have_content(@comedian_2.age)
-        expect(page).to have_content(@comedian_2.city)
+        expect(page).to have_content("Age: #{@comedian_2.age}")
+        expect(page).to have_content("Hometown: #{@comedian_2.city}")
         expect(page).to have_content(@comedian_3.name)
-        expect(page).to have_content(@comedian_3.age)
-        expect(page).to have_content(@comedian_3.city)
+        expect(page).to have_content("Age: #{@comedian_3.age}")
+        expect(page).to have_content("Hometown: #{@comedian_3.city}")
       # end
     end
 
