@@ -44,7 +44,13 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
     expect(page).to have_content("Number of appearances: #{comedian.specials_count}")
   end
 
-  xit "the user sees statistics with average age" do
+  it "the user sees statistics" do
+    visit '/comedians'
+
+    expect(page).to have_content("Statistics")
+  end
+  
+  it "the user sees statistics with average age" do
     comedian_1 = Comedian.create(name: "John", age: 24, city: "Denver", image_url: "google.com")
     comedian_2 = Comedian.create(name: "Paul", age: 34, city: "Denver", image_url: "google.com")
     visit '/comedians'

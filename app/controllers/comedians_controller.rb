@@ -26,4 +26,6 @@ class ComediansController < ApplicationController
     params.require(:comedian).permit(:name, :age, :city)
   end
 
+  
+
 end
