@@ -49,13 +49,22 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
 
     expect(page).to have_content("Statistics")
   end
-  
+
   it "the user sees statistics with average age" do
     comedian_1 = Comedian.create(name: "John", age: 24, city: "Denver", image_url: "google.com")
     comedian_2 = Comedian.create(name: "Paul", age: 34, city: "Denver", image_url: "google.com")
     visit '/comedians'
 
     expect(page).to have_content("Average age of comedians: 29")
+  end
+
+  it "the user sees statistics with unique cities" do 
+    comedian_1 = Comedian.create(name: "John", age: 24, city: "Denver", image_url: "google.com")
+    comedian_2 = Comedian.create(name: "Paul", age: 34, city: "Denver", image_url: "google.com")
+    comedian_3 = Comedian.create(name: "Alex", age: 20, city: "Los Angeles", image_url: "google.com")
+    visit '/comedians'
+
+    expect(page).to have_content("Cities of comedians: Denver, Los Angeles")
   end
   # User Story 7
   #
