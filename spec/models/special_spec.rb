@@ -8,4 +8,9 @@ describe Special, type: :model do
     it {should validate_presence_of(:run_time)}
     it {should validate_presence_of(:comedian_id)}
   end
+
+  describe 'relationships' do
+    it { should belong_to :comedian }
+  end
+  
 end

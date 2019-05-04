@@ -40,6 +40,7 @@ group :development, :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'active_designer'
+  gem 'simplecov'
 end
 
 group :development do

@@ -8,4 +8,9 @@ describe Comedian, type: :model do
     it {should validate_presence_of(:age)}
     it {should validate_presence_of(:city)}
   end
+
+  describe 'relationships' do
+    it { should have_many :specials }
+  end
+  
 end
