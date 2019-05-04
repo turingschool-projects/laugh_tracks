@@ -1,11 +1,15 @@
 class ComediansController < ApplicationController
 
+
   def index
     @comedians = Comedian.all
     @specials = Special.all
     @comedians = Comedian.where(age: params[:age]) if params[:age]
-    # require "pry"; binding.pry
-    @comedians = Comedian.name_sort if params[:sort]
+
+    @comedians = Comedian.name_sort if params[:sort] == "name"
+
+    @comedians = Comedian.city_sort if params[:sort] == "city"
+
   end
 
   def new
