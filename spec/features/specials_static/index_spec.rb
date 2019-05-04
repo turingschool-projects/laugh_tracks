@@ -29,6 +29,7 @@ RSpec.describe "As a visitor", type: :feature do
       visit "/comedians"
 
       expect(page).to have_content(@special_1.name)
+<<<<<<< HEAD
       expect(page).to have_content(@special_1.time)
       expect(page).to have_content(@special_2.name)
       expect(page).to have_content(@special_2.time)
@@ -46,6 +47,17 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to have_content(@comedian_1.specials.count)
       expect(page).to have_content(@comedian_2.specials.count)
       expect(page).to have_content(@comedian_3.specials.count)
+=======
+      expect(page).to have_content("Runtime: #{@special_1.time}")
+      expect(page).to have_content(@special_2.name)
+      expect(page).to have_content("Runtime: #{@special_2.time}")
+      expect(page).to have_content(@special_3.name)
+      expect(page).to have_content("Runtime: #{@special_3.time}")
+      expect(page).to have_content(@special_4.name)
+      expect(page).to have_content("Runtime: #{@special_4.time}")
+      expect(page).to have_content(@special_5.name)
+      expect(page).to have_content("Runtime: #{@special_5.time}")
+>>>>>>> 500da017665c163fd844f13d2ce115818c21433d
     end
   end
 end
