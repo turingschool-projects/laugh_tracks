@@ -7,18 +7,18 @@ RSpec.describe Comedian, type: :model do
     it { should validate_presence_of :city }
   end
 
-
-
   describe "relationships" do
     it { should have_many :specials }
   end
 
   describe "instance_methods" do
-    before :each do
-      @comedian_1 = Comedian.create!(name: "John", age: 24, city: "Denver", image_url: "google.com")
-      @comedian_2 = Comedian.create!(name: "Paul", age: 34, city: "Denver", image_url: "google.com")
-      @comedian_1.specials.create!(name: "FOX", runtime_minutes: 30, image_url: "google.com")
-      @comedian_1.specials.create!(name: "ABC", runtime_minutes: 60, image_url: "google.com")
+    before :all do
+      Special.destroy_all
+        Comedian.destroy_all
+      @comedian_1 = Comedian.create(name: "John", age: 24, city: "Denver", image_url: "google.com")
+      @comedian_2 = Comedian.create(name: "Paul", age: 34, city: "Denver", image_url: "google.com")
+      @comedian_1.specials.create(name: "FOX", runtime_minutes: 30, image_url: "google.com")
+      @comedian_1.specials.create(name: "ABC", runtime_minutes: 60, image_url: "google.com")
     end
 
     it "specials_count" do
@@ -28,5 +28,11 @@ RSpec.describe Comedian, type: :model do
     end
   end
 
-  #write test for comedian age
+  describe "class_methods" do
+    it "average_age" do
+      expect = Comedian.average_age
+      expected = 29
+      expect(expect).to eq(expected)
+    end
+  end
 end
