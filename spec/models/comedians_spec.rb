@@ -36,9 +36,10 @@ RSpec.describe Comedian, type: :model do
       expect(expect).to eq(expected)
     end
 
-    it "unique_cities" do
+    it "cities" do
+      # binding.pry
       expect = Comedian.unique_cities
-      expected = "Dener", "Los Angeles"
+      expected = ["Denver", "Los Angeles"]
       expect(expect).to eq(expected)
     end
   end
