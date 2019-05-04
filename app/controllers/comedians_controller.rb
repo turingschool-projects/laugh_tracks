@@ -1,7 +1,6 @@
 class ComediansController < ApplicationController
 
   def index
-
     if params[:age]
       @comedians = Comedian.where(age: params[:age])
     elsif params[:name]

@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+/* .img-fluid {
+  max-width: 50%;
+}
+
+body {
+  background-color: orange;
+}
+
+#bar {
+  background-color: grey;
+  width: 100%;
+} */
