@@ -17,4 +17,6 @@ class Comedian < ApplicationRecord
     Comedian.average(:age).to_i
   end
 
+
+
 end
