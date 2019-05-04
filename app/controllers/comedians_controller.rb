@@ -8,6 +8,7 @@ class ComediansController < ApplicationController
       @comedians = Comedian.comedian_age(age)
     end
     @specials = Special.all
+    @unique_cities = Comedian.unique_cities
   end
 
   def new
@@ -26,6 +27,6 @@ class ComediansController < ApplicationController
     params.require(:comedian).permit(:name, :age, :city)
   end
 
-  
+
 
 end
