@@ -8,12 +8,12 @@
     <ul>
       <% @comedians.each do |comedian| %>
         <li><%= comedian.name %></li>
-        <li><%= comedian.age %></li>
-        <li><%= comedian.city %></li>
+        <li>Age: <%= comedian.age %></li>
+        <li>Hometown: <%= comedian.city %></li>
         <li><img id="comedian_<%= comedian.id %>_thumbnail" src="<%= comedian.image %>" alt="Picture of <%= comedian.name %>"></li>
         <% comedian.specials.each do |special| %>
           <li><%= special.name %> - By <%= comedian.name %></li>
-          <li><%= special.time %></li>
+          <li>Runtime: <%= special.time %></li>
         <% end %>
       <% end %>
     </ul>

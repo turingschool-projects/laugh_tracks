@@ -29,12 +29,7 @@ RSpec.describe "As a visitor", type: :feature do
       visit "/comedians"
 
       expect(page).to have_content(@special_1.name)
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-      expect(page).to have_content(@special_1.time)
-=======
       expect(page).to have_content("Runtime: #{@special_1.time}")
->>>>>>> Stashed changes
       expect(page).to have_content(@special_2.name)
       expect(page).to have_content("Runtime: #{@special_2.time}")
       expect(page).to have_content(@special_3.name)
@@ -48,26 +43,9 @@ RSpec.describe "As a visitor", type: :feature do
     it "shows a count of specials" do
       visit "/comedians"
 
-<<<<<<< Updated upstream
-      expect(page).to have_content(@comedian_1.specials.count)
-      expect(page).to have_content(@comedian_2.specials.count)
-      expect(page).to have_content(@comedian_3.specials.count)
-=======
-      expect(page).to have_content("Runtime: #{@special_1.time}")
-      expect(page).to have_content(@special_2.name)
-      expect(page).to have_content("Runtime: #{@special_2.time}")
-      expect(page).to have_content(@special_3.name)
-      expect(page).to have_content("Runtime: #{@special_3.time}")
-      expect(page).to have_content(@special_4.name)
-      expect(page).to have_content("Runtime: #{@special_4.time}")
-      expect(page).to have_content(@special_5.name)
-      expect(page).to have_content("Runtime: #{@special_5.time}")
->>>>>>> 500da017665c163fd844f13d2ce115818c21433d
-=======
       expect(page).to have_content("Total specials: #{@comedian_1.specials.count}")
       expect(page).to have_content("Total specials: #{@comedian_2.specials.count}")
       expect(page).to have_content("Total specials: #{@comedian_3.specials.count}")
->>>>>>> Stashed changes
     end
   end
 end
