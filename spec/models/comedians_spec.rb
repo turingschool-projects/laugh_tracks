@@ -11,5 +11,28 @@ RSpec.describe Comedian, type: :model do
     it { should have_many :specials }
   end
 
-  #write test for comedian age
+  describe "instance_methods" do
+    before :all do
+      Special.destroy_all
+        Comedian.destroy_all
+      @comedian_1 = Comedian.create(name: "John", age: 24, city: "Denver", image_url: "google.com")
+      @comedian_2 = Comedian.create(name: "Paul", age: 34, city: "Denver", image_url: "google.com")
+      @comedian_1.specials.create(name: "FOX", runtime_minutes: 30, image_url: "google.com")
+      @comedian_1.specials.create(name: "ABC", runtime_minutes: 60, image_url: "google.com")
+    end
+
+    it "specials_count" do
+      expect = @comedian_1.specials_count
+      expected = 2
+      expect(expect).to eq(expected)
+    end
+  end
+
+  describe "class_methods" do
+    it "average_age" do
+      expect = Comedian.average_age
+      expected = 29
+      expect(expect).to eq(expected)
+    end
+  end
 end

@@ -10,8 +10,11 @@ class Comedian < ApplicationRecord
   end
 
   def specials_count
-    specials.count
+    self.specials.count
   end
 
-  
+  def self.average_age
+    Comedian.average(:age).to_i
+  end
+
 end

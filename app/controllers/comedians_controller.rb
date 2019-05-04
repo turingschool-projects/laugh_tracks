@@ -1,10 +1,10 @@
 class ComediansController < ApplicationController
   def index
     age = params[:age]
+    # binding.pry
     if age.nil?
       @comedians = Comedian.all
     else
-      # binding.pry
       @comedians = Comedian.comedian_age(age)
     end
     @specials = Special.all
@@ -25,5 +25,7 @@ class ComediansController < ApplicationController
   def comedian_params
     params.require(:comedian).permit(:name, :age, :city)
   end
+
+  
 
 end

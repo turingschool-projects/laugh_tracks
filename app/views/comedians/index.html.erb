@@ -1,4 +1,6 @@
 <h2>Comedians</h2>
+<h1>Statistics</h1>
+  <p><%= "Average age of comedians: #{@comedians.average_age}" %></p>
   <% @comedians.each do |comedian| %>
    <div id="comedian-<%= comedian.id %>" >
     <h2><%= comedian.name %></h2>
