@@ -11,6 +11,7 @@
         <li>Age: <%= comedian.age %></li>
         <li>Hometown: <%= comedian.city %></li>
         <li><img id="comedian_<%= comedian.id %>_thumbnail" src="<%= comedian.image %>" alt="Picture of <%= comedian.name %>"></li>
+        <li>Total specials: <%= comedian.specials_count %></li>
         <% comedian.specials.each do |special| %>
           <li><%= special.name %> - By <%= comedian.name %></li>
           <li>Runtime: <%= special.time %></li>
