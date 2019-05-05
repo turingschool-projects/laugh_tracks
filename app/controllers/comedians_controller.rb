@@ -6,4 +6,8 @@ class ComediansController < ApplicationController
       @comedians = Comedian.by_age(params[:age])
     end
   end
+
+  def new
+    @comedian = Comedian.new
+  end
 end
