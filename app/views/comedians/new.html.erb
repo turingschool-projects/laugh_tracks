@@ -1,13 +1,16 @@
 <%= form_for @comedian do |f| %>
   <h1>New Comedian</h1>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, required: true %>
   <br>
   <%= f.label :age %>
-  <%= f.text_field :age %>
+  <%= f.text_field :age, required: true %>
   <br>
   <%= f.label :city %>
-  <%= f.text_field :city %>
+  <%= f.text_field :city, required: true %>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image, value: "https://www.serenbooks.com/sites/default/files/default_images/default-user-image.png"%>
   <br>
   <%= f.submit %>
 <% end %>

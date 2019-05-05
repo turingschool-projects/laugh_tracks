@@ -14,7 +14,7 @@ RSpec.describe "When I visit /comedians/new" do
 
       expect(page).to have_content("Name")
       expect(page).to have_content("Age")
-      expect(page).to have_content("Hometown")
+      expect(page).to have_content("City")
     end
 
     it "can create a new comedian" do
