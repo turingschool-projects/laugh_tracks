@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Laugh Tracks</title>
-  </head>
-  <body>
-    <ul>
-      <% @comedians.each do |comedian| %>
-        <li><%= comedian.name %></li>
-        <li>Age: <%= comedian.age %></li>
-        <li>Hometown: <%= comedian.city %></li>
-        <li><img id="comedian_<%= comedian.id %>_thumbnail" src="<%= comedian.image %>" alt="Picture of <%= comedian.name %>"></li>
-        <li>Total specials: <%= comedian.specials_count %></li>
-        <% comedian.specials.each do |special| %>
-          <li><%= special.name %> - By <%= comedian.name %></li>
-          <li>Runtime: <%= special.time %></li>
-        <% end %>
-      <% end %>
-    </ul>
-    <ul>
-    </ul>
-  </body>
-</html>
+<ul>
+  <% @comedians.each do |comedian| %>
+    <li><%= comedian.name %></li>
+    <li>Age: <%= comedian.age %></li>
+    <li>Hometown: <%= comedian.city %></li>
+    <li><img id="comedian_<%= comedian.id %>_thumbnail" src="<%= comedian.image %>" alt="Picture of <%= comedian.name %>"></li>
+    <li>Total specials: <%= comedian.specials_count %></li>
+    <% comedian.specials.each do |special| %>
+      <li><%= special.name %> - By <%= comedian.name %></li>
+      <li>Runtime: <%= special.time %></li>
+    <% end %>
+  <% end %>
+</ul>
