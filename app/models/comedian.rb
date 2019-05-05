@@ -6,10 +6,6 @@ class Comedian < ApplicationRecord
   validates_presence_of :birthplace
   validates_presence_of :image_url
 
-  def self.ages
-    order(:age).pluck(:age).uniq
-  end
-
   def special_count
     specials.count
   end
@@ -40,5 +36,9 @@ class Comedian < ApplicationRecord
 
   def self.order_age(order)
     order(age: :"#{order}")
+  end
+
+  def self.available_ages
+    order(:age).pluck(:age)
   end
 end

@@ -13,3 +13,103 @@
  *= require_tree .
  *= require_self
  */
+nav {
+  color: white;
+}
+
+h4 {
+  color: blue;
+}
+
+h2 {
+  text-align: center;
+  /* background-color: DodgerBlue; */
+  color: black;
+  font-family: serif;
+}
+
+a {
+  color: blue;
+}
+
+body {
+  background-attachment: fixed;
+  background-image: url("http://wuming.me/wp-content/uploads/web-page-background-color-15138-new-colors.jpg");
+}
+
+/* .text {
+  color: white;
+  font-family: serif;
+  text-align: center;
+}
+
+.title {
+  color: orange;
+  text-align: center;
+}
+
+
+
+.list {
+  color: white;
+  font-family: serif;
+} */
+p {
+  color: orange;
+}
+
+#show-pic {
+  border-radius: 30%;
+}
+
+#link-back {
+  text-align: center;
+}
+
+#title-form {
+  text-align: left;
+  color: orange;
+}
+
+.card-img-top {
+  width: 30%;
+}
+
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 5%;
+}
+
+.form-title {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 5%;
+  padding-left: 38%;
+}
+
+.form-input {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 5%;
+  padding-left: 10%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#title {
+  color: orange;
+}
+
+.book-title {
+  color: orange;
+}
+
+.book-card {
+  width: 25%;
+  padding: 2%;
+  align-items: center;
+}

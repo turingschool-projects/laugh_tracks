@@ -26,10 +26,6 @@ describe Comedian, type: :model do
       @special_7 = Special.create(name: "Hilarious", runtime_mins: 88, image_url: "https://m.media-amazon.com/images/M/MV5BNTQyODYyNzcxN15BMl5BanBnXkFtZTgwOTA3MzcwMzE@._V1_.jpg", comedian: Comedian.find_by(name: "Louis C.K."))
       @special_8 = Special.create(name: "Jerry Before Seinfeld", runtime_mins: 62, image_url: "https://m.media-amazon.com/images/M/MV5BOTc2N2I0Y2UtOTgyYy00MTU3LTk1YzItZGIwMDcxY2JkMGQzXkEyXkFqcGdeQXVyMjQzNzk2ODk@._V1_.jpg", comedian: Comedian.find_by(name: "Jerry Seinfeld"))
     end
-    it ".ages returns unique list of ages" do
-      @comedians = Comedian.all
-      expect(@comedians.ages).to eq([50, 51, 64])
-    end
     it ".special_count returns the number of specials per comedian" do
 
       expect(@comedian_1.special_count).to eq(3)
@@ -71,10 +67,13 @@ describe Comedian, type: :model do
     it ".order_age" do
       @comedians = Comedian.all
 
-
-
       expect(@comedians.order_age("asc")).to eq([@comedian_1, @comedian_4, @comedian_3, @comedian_2])
       expect(@comedians.order_age("desc")).to eq([@comedian_2, @comedian_4, @comedian_3, @comedian_1])
+    end
+    it ".available_ages" do
+      @comedians = Comedian.all
+
+      expect(@comedians.available_ages.uniq).to eq([50, 51, 64])
     end
   end
 end
