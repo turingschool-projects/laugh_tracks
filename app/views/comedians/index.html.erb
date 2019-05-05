@@ -1,98 +1,76 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+  <h1 class="navbar-brand">Laugh Tracks</h1>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <%= link_to "Add a Comedian", new_comedian_path, {class: "nav-link"} %>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Sort and Filter
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-menu" id="sort-filter" aria-labelledby="navbarDropdown">
+          <%= link_to "Sort by name, alphabetically", comedians_path({name: :asc}), { class: "dropdown-item", id: "sort-by-name-asc" } %>
+          <%= link_to "Sort by name, reverse alphabetically", comedians_path({name: :desc}), { class: "dropdown-item", id: "sort-by-name-desc" } %>
+          <%= link_to "Sort by birthplace, alphabetically", comedians_path({birthplace: :asc}), { class: "dropdown-item", id: "sort-by-city-asc" } %>
+          <%= link_to "Sort by birthplace, reverse alphabetically", comedians_path({birthplace: :desc}), { class: "dropdown-item", id: "sort-by-city-desc" }%>
+          <%= link_to "Youngest First", comedians_path({ages: :asc}), { class: "dropdown-item", id: "sort-by-age-asc" } %>
+          <%= link_to "Oldest First", comedians_path({ages: :desc}), { class: "dropdown-item", id: "sort-by-age-desc" } %>
+          <%= link_to "Reset Filters", comedians_path, { class: "dropdown-item", id: "back-to-all" } %>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Filter by age
+        </a>
+        <div class="dropdown-menu" id="filter-age" aria-labelledby="navbarDropdown">
+          <% @comedians.available_ages.uniq.each do |age| %>
+          <%= link_to age, comedians_path({age: "#{age}"}), { class: "dropdown-item" } %>
+          <% end %>
+          <%= link_to "Reset Filters", comedians_path, { class: "dropdown-item", id: "back-to-all" } %>
+        </div>
       </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      <li class="nav-item dropdown" id="comedian-stats">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Comedian Statistics
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <p class="dropdown-item" >Average Comedian Age: <%= @comedians.average_age.round %></p>
+          <p class="dropdown-item" >Birthplace Ranges</p>
+          <% @comedians.birthplaces.uniq.each do |city| %>
+          <p class="dropdown-item" ><%= city %></p>
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Special Statistics
+        </a>
+        <div class="dropdown-menu" id="special-stats" aria-labelledby="navbarDropdown">
+          <p class="dropdown-item" >Total specials <%= @comedians.total_specials %></p>
+          <p class="dropdown-item" >Average special length: <%= @comedians.average_special_length.to_i %> mins</p>
+        </div>
+      </li>
   </div>
 </nav>
 
-
-    <div class="col">
-      <h2>Sort and Filter</h2>
-        <li><%= link_to "Add a Comedian", new_comedian_path %></li>
-        <li id="sort-by-name-asc"><%= link_to "Sort by name, alphabetically", comedians_path({name: :asc}) %></li>
-        <li id="sort-by-name-desc"><%= link_to "Sort by name, reverse alphabetically", comedians_path({name: :desc}) %></li>
-        <li id="sort-by-city-asc"><%= link_to "Sort by birthplace, alphabetically", comedians_path({birthplace: :asc}) %></li>
-        <li id="sort-by-city-desc"><%= link_to "Sort by birthplace, reverse alphabetically", comedians_path({birthplace: :desc}) %></li>
-        <li id="sort-by-age-asc"><%= link_to "Youngest First", comedians_path({ages: :asc}) %></li>
-        <li id="sort-by-age-desc"><%= link_to "Oldest First", comedians_path({ages: :desc}) %></li>
-        <li id="back-to-all"><%= link_to "Reset Filters", comedians_path %></li>
-    </div>
-
-
-    <div class="col">
-      <h2>Filter by age</h2>
-        <% @comedians.available_ages.uniq.each do |age| %>
-        <li id="filter-age-<%= age %>"><%= link_to age, comedians_path({age: "#{age}"}) %></li>
-        <% end %>
-    </div>
-
-    <div class="col" id="comedian-stats">
-      <h2>Comedian Statistics</h2>
-        <p>Average Comedian Age: <%= @comedians.average_age.round %></p>
-        <p>Birthplace Ranges</p>
-        <% @comedians.birthplaces.uniq.each do |city| %>
-        <li><%= city %></li>
-        <% end %>
-    </div>
-
-    <div class="col" id="special-stats">
-      <h2>Special Statistics</h2>
-        <li>Total specials <%= @comedians.total_specials %></li>
-        <li>Average special length: <%= @comedians.average_special_length.to_i %> mins</li>
-    </div>
-  </div>
-
-  <% @comedians.each do |comedian| %>
-
 <div class="container">
-  <div class="row">
-
-    <div class="comedians col">
-      <h2 id="comedian-<%= comedian.id %>"><%= link_to comedian.name, comedian_path(comedian) %></h2>
-        <li>Age <%= comedian.age %></li>
-        <li>Born in <%= comedian.birthplace %></li>
-        <li><img class="rounded float-left img-fluid" src="<%= comedian.image_url %>"</li>
-        <li id="specials-<%= comedian.id %>">Special count: <%= comedian.special_count %></li>
+<% @comedians.each do |comedian| %>
+<div class="book-card">
+  <div class="comedians">
+  <div class="grid-item">
+    <h2 class="book-title" id="comedian-<%= comedian.id %>"><%= link_to comedian.name, comedian_path(comedian) %></h2>
+    <img class="img-thumbnail" src="<%= comedian.image_url %>">
+      <p class="text">Age <%= comedian.age %></p>
+      <p class="text">Born in <%= comedian.birthplace %></p>
+      <p class="text"id="specials-<%= comedian.id %>">Special count: <%= comedian.special_count %></p>
+      <h4 class="title">Special Information</h4>
+      <% comedian.specials.each do |special| %>
+      <p class="text"><%= special.name %></p>
+      <p class="text"><%= special.runtime_mins %> mins</p>
+      <% end %>
     </div>
-
-    <% comedian.specials.each do |special| %>
-    <div class="col">
-      <h2>Special Information</h2>
-        <li><%= special.name %></li>
-        <li><%= special.runtime_mins %></li>
-      <img class="img-thumbnail" src="<%= special.image_url %>" alt='comedian'>
-    </div>
-    <% end %>
-    <% end %>
-
   </div>
+</div>
+<% end %>
 </div>

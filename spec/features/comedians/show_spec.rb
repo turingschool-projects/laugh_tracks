@@ -14,9 +14,10 @@ describe "Comedian Show Page" do
     it "only shows that comedian's information and TV specials." do
 
       visit comedian_path(@comedian_2)
-
-      within("#com-info") do
+      within(".com-name") do
       expect(page).to have_content(@comedian_2.name)
+      end
+      within("#com-info") do
       expect(page).to have_content("Age #{@comedian_2.age}")
       expect(page).to have_content("Born in #{@comedian_2.birthplace}")
       expect(page).to have_xpath('//img[@src="https://www.maxim.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_1400/MTQ4NDk2MjMzNzY0MjM0Nzc2/joe-rogan.webp"]')

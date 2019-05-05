@@ -1,15 +1,39 @@
-<h1><%= @comedian.name %> Show Page</h1>
+<div class="container-fluid show-con">
+  <div class="row">
+    <div class="col-sm">
+      <img class="img-thumbnail" id="show-pic" src="<%= @comedian.image_url %>">
+    </div>
+    <div class="col-sm com-name">
+      <h1 id="title"><%= @comedian.name %> Show Page</h1>
+      <h2 id="show-link"><%= link_to "Back to Index", comedians_path %></h2>
+    </div>
+    <div class="col-sm">
+      <ul id="com-info">
+        <p>Age <%= @comedian.age %></p>
+        <p>Born in <%= @comedian.birthplace %></p>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<ul id="com-info">
-  <li><%= @comedian.name %></li>
-  <li>Age <%= @comedian.age %></li>
-  <li>Born in <%= @comedian.birthplace %></li>
-  <li><img class="img-thumbnail" src="<%= @comedian.image_url %>"</li>
-</ul>
+<div class="container-fluid form-title">
+  <div class="row">
+    <div class="col-sm">
+      <h3 id="title">Special Info</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
 <% @comedian.specials.each do |special| %>
-<ul id="special-<%= special.id %>">
-  <li><%= special.name %></li>
-  <li><%= special.runtime_mins %></li>
-  <li><img class="img-thumbnail" src="<%= special.image_url %>"</li>
-</ul>
+<div class="book-card">
+  <div class="comedians">
+  <div class="grid-item" id="special-<%= special.id %>">
+    <h2 class="book-title"><%= special.name %></h2>
+    <img class="img-thumbnail" src="<%= special.image_url %>">
+      <p class="text"><%= special.runtime_mins %> Minutes</p>
+    </div>
+  </div>
+</div>
 <% end %>
+</div>

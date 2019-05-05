@@ -1,29 +1,44 @@
 
+
+<div class="container-fluid form-title">
+  <div class="row">
+    <div class="col-sm">
+      <h3 id="title-form">New Comedian Form</h3>
+      <h5 id="link-back"><%= link_to "Back to Index", comedians_path %></h5>
+    </div>
+  </div>
+</div>
+
 <% if @comedian.errors.any? %>
 <% @comedian.errors.full_messages.each do |message| %>
 <li><%= message %></li>
 <% end %>
 <% end %>
 
-<%= form_for @comedian do |f| %>
-<ul>
-
-  <li><%= f.label :name %></li><br/>
-  <li><%= f.text_field :name %></li>
-</ul>
-<ul>
-  <li><%= f.label :age %></li><br/>
-  <li><%= f.number_field :age %></li>
-</ul>
-<ul>
-  <li><%= f.label :birthplace %></li><br/>
-  <li><%= f.text_field :birthplace %></li>
-</ul>
-<ul>
-  <li><%= f.label :image_url %></li><br/>
-  <li><%= f.text_field :image_url %></li>
-</ul>
-<ul>
-  <li><%= f.submit :Submit %></li>
-</ul>
-<% end %>
+<div class="container form-input">
+  <%= form_for @comedian do |f| %>
+    <div class="row">
+      <ul class="col-sm">
+        <p><%= f.label :name %></p><br/>
+        <p><%= f.text_field :name %></p>
+      </ul>
+      <ul class="col-sm">
+        <p><%= f.label :age %></p><br/>
+        <p><%= f.number_field :age %></p>
+      </ul>
+      <ul class="col-sm">
+        <p><%= f.label :birthplace %></p><br/>
+        <p><%= f.text_field :birthplace %></p>
+      </ul>
+      <ul class="col-sm">
+        <p><%= f.label :image_url %></p><br/>
+        <p><%= f.text_field :image_url %></p>
+      </ul>
+    </div>
+    <div class="row">
+      <ul class="col-sm">
+        <p><%= f.submit :Submit %></p>
+      </ul>
+    </div>
+  <% end %>
+</div>
