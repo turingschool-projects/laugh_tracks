@@ -16,7 +16,7 @@ class Player < ApplicationRecord
 
   def self.hometowns
     #look at 'collect' and 'select' and 'pluck'
-    self.select(:hometown).distinct
+    self.select(:hometown).distinct.pluck(:hometown)
   end
 
 end

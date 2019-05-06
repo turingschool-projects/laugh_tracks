@@ -1,16 +1,16 @@
 <html>
 
-  <div>
-  <p>Statistics</p>
+  <div id="stats-area">
+  <h2>Statistics</h2>
   <p>Avg Age: <%=@avg_age.to_i%></p>
   <p>Hometowns:<% @player_hometowns.each do |player_hometown| %>
-  <%= " " + player_hometown.hometown %>
+  <%= " " + player_hometown %>
 <%end%>
     </p>
   </div>
-  <div>
+  <div id="player-area">
   <% @players.each do |player| %>
-    <section id="player-<%=player.id%>">
+    <section id="player-<%=player.id%>" class="player-card">
       <h2><%= player.name %></h2>
       <div><%= player.age %></div>
       <img class="profile-photo" id="player-<%=player.id%>-image" src="<%=player.image%>"/>

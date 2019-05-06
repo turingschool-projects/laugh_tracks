@@ -60,6 +60,7 @@ RSpec.describe "a vistor visiting the players index path" do
     it "should only shows players based on age" do
       visit "/players/?age=31"
 
+      save_and_open_page
       expect(page).to have_content(player_1.name)
       expect(page).to_not have_content(player_2.name)
     end

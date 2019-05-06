@@ -14,6 +14,57 @@
  *= require_self
  */
 
+body {
+    background-color:lightgrey;
+}
+
 img {
     height:200px;
+    width:300px;
+}
+
+#stats-area {
+    background-color: #9f9fb7;    
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+#player-area {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+.player-card {
+    border: 1px #948080 solid;
+    border-radius: 10px;
+    margin-bottom: 19px;
+    text-align:center;
+    max-width: 300px;
+}
+.player-card h2 {
+    background-color: rgba(0,0,0,.3);
+}
+
+.player-card ul {
+    height:100px;
+    list-style: none;
+    overflow:auto;
+}
+
+.player-card li {
+    border: 1px #948080 solid;
+    border-radius:10px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: grid;
+    margin: 50vh 40vw;
+}
+form * {
+    margin: 0 auto;
 }
