@@ -11,3 +11,9 @@
     <% end %>
   <% end %>
 </ul>
+<ul>
+  <li>Average age: <%= @comedians.first.average_age(params[:age]).round(1) %></li>
+  <li>All hometowns: <% @comedians.first.get_hometowns(params[:age]).each do |comedian| %>
+  <%= comedian.city %>,
+  <% end %></li>
+</ul>
