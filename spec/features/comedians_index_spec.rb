@@ -18,7 +18,7 @@ RSpec.describe "comedians index page", type: :feature do
   it "shows all comedians" do
 
     visit '/comedians'
-
+  save_and_open_page
     expect(page).to have_content(@comedian_1.name)
     expect(page).to have_content(@comedian_1.age)
     expect(page).to have_content(@comedian_1.birthplace)

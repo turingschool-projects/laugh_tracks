@@ -1,18 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Comedian, type: :model do
-
-  describe 'validations' do
-    it { should validate_presence_of :name }
-    it { should validate_presence_of :age }
-    it { should validate_presence_of :birthplace }
-    it { should validate_presence_of :thumb_url }
-  end
-
-  describe 'relationships' do
-    it { should have_many :specials }
-  end
-
+RSpec.describe "as a user to the comedian statistics page", type: :feature do
   before :each do
     @comedian_1 = Comedian.create(name:"Maria Bamford", age: 49,  birthplace: "Port Hueneme, CA", thumb_url: "http://pixel.nymag.com/imgs/daily/vulture/2016/02/23/23-maria-bamford.w1200.h630.jpg")
 
@@ -23,9 +11,18 @@ RSpec.describe Comedian, type: :model do
     @comedians = Comedian.all
   end
 
-    describe 'statistics' do
-      it '.average_age' do
-      expect(@comedians.average_age).to eq(49.67)
-    end
+  it "displays an area at the top of the page called 'Statistics'" do
+    visit '/comedians'
+    expect(page).to have_content("Statistics")
+  end
+
+  it "shows the average age of all comedians on the page" do
+    visit '/comedians'
+    expect(page).to have_content("#{@comedians.average_age}")
+  end
+
+  xit "displays a unique list of cities for each comedian on the page" do
+    visit '/comedians'
+    expect(page).to have_content("#{@comedians.display_cities}")
   end
 end
