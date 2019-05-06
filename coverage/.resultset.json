@@ -1,0 +1,67 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/loom/turing/2module/projects/laugh_tracks/spec/models/comedian_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/loom/turing/2module/projects/laugh_tracks/app/models/comedian.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/loom/turing/2module/projects/laugh_tracks/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/loom/turing/2module/projects/laugh_tracks/spec/models/special_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/loom/turing/2module/projects/laugh_tracks/app/models/special.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/loom/turing/2module/projects/laugh_tracks/app/controllers/comedians_controller.rb": [
+        1,
+        1,
+        5,
+        null,
+        null,
+        null
+      ],
+      "/Users/loom/turing/2module/projects/laugh_tracks/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1557093532
+  }
+}

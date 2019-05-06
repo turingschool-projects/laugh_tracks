@@ -1,0 +1,19 @@
+<h1>All Comedians</h1>
+
+<% @comedians.each do |comedian| %>
+<section id#= 'comedian_<%= comedian.id %>'>
+  <h2><%= comedian.name %></h2>
+  <img src="<%= comedian.image_url %>" alt="<% comedian.image_url %>" height="200" width="200" />
+    <p>Age: <%= comedian.age %><br></br>
+    Birthplace: <%= comedian.birthplace %><br></br>
+    Specials: <%= comedian.specials.count %>
+  </p>
+<p>
+  <% comedian.specials.each do |special| %>
+  <ul>
+    <li><%= special.name %> - <%= special.run_time%>min</li>
+    </ul>
+    <% end %>
+  </p>
+</section>
+<% end %>
