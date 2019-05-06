@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :comedians
-
+  get '/', to: 'comedians#welcome'
   # get  '/comedians', to: 'comedians#index'
   # get  '/comedians/new', to: 'comedians#new'
   # post '/comedians', to: 'comedians#create'
