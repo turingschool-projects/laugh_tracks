@@ -7,13 +7,13 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Sort and Filter
+          Sort By
         </a>
         <div class="dropdown-menu" id="sort-filter" aria-labelledby="navbarDropdown">
-          <%= link_to "Sort by name, alphabetically", comedians_path({name: :asc}), { class: "dropdown-item", id: "sort-by-name-asc" } %>
-          <%= link_to "Sort by name, reverse alphabetically", comedians_path({name: :desc}), { class: "dropdown-item", id: "sort-by-name-desc" } %>
-          <%= link_to "Sort by birthplace, alphabetically", comedians_path({birthplace: :asc}), { class: "dropdown-item", id: "sort-by-city-asc" } %>
-          <%= link_to "Sort by birthplace, reverse alphabetically", comedians_path({birthplace: :desc}), { class: "dropdown-item", id: "sort-by-city-desc" }%>
+          <%= link_to "Name Ascending", comedians_path({name: :asc}), { class: "dropdown-item", id: "sort-by-name-asc" } %>
+          <%= link_to "Name Descending", comedians_path({name: :desc}), { class: "dropdown-item", id: "sort-by-name-desc" } %>
+          <%= link_to "Birth City Ascending", comedians_path({birthplace: :asc}), { class: "dropdown-item", id: "sort-by-city-asc" } %>
+          <%= link_to "Birth City Descending", comedians_path({birthplace: :desc}), { class: "dropdown-item", id: "sort-by-city-desc" }%>
           <%= link_to "Youngest First", comedians_path({ages: :asc}), { class: "dropdown-item", id: "sort-by-age-asc" } %>
           <%= link_to "Oldest First", comedians_path({ages: :desc}), { class: "dropdown-item", id: "sort-by-age-desc" } %>
           <%= link_to "Reset Filters", comedians_path, { class: "dropdown-item", id: "back-to-all" } %>

@@ -132,7 +132,7 @@ describe "Comedians index page" do
       visit comedians_path
 
       within("#sort-filter") do
-        click_link "Sort by name, alphabetically"
+        click_link "Name Ascending"
       end
       expect(page.all('.comedians')[0]).to have_content("#{@comedian_1.name}")
       expect(page.all('.comedians')[1]).to have_content("#{@comedian_5.name}")
@@ -141,7 +141,7 @@ describe "Comedians index page" do
       expect(page.all('.comedians')[4]).to have_content("#{@comedian_4.name}")
 
       within("#sort-filter") do
-        click_link "Sort by name, reverse alphabetically"
+        click_link "Name Descending"
       end
       expect(page.all('.comedians')[0]).to have_content("#{@comedian_4.name}")
       expect(page.all('.comedians')[1]).to have_content("#{@comedian_3.name}")
@@ -154,7 +154,7 @@ describe "Comedians index page" do
       visit comedians_path
 
       within("#sort-filter") do
-        click_link "Sort by birthplace, alphabetically"
+        click_link "Birth City Ascending"
       end
       expect(page.all('.comedians')[0]).to have_content("#{@comedian_2.birthplace}")
       expect(page.all('.comedians')[1]).to have_content("#{@comedian_1.birthplace}")
@@ -163,7 +163,7 @@ describe "Comedians index page" do
       expect(page.all('.comedians')[4]).to have_content("#{@comedian_5.birthplace}")
 
       within("#sort-filter") do
-        click_link "Sort by birthplace, reverse alphabetically"
+        click_link "Birth City Descending"
       end
       expect(page.all('.comedians')[0]).to have_content("#{@comedian_5.birthplace}")
       expect(page.all('.comedians')[1]).to have_content("#{@comedian_4.birthplace}")

@@ -32,6 +32,7 @@ a {
   color: blue;
 }
 
+
 body {
   background-attachment: fixed;
   background-image: url("http://wuming.me/wp-content/uploads/web-page-background-color-15138-new-colors.jpg");
@@ -102,6 +103,10 @@ p {
 
 #title {
   color: orange;
+}
+
+#show-link {
+  padding-right: 18%;
 }
 
 .book-title {
