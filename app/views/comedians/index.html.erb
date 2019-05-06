@@ -1,25 +1,37 @@
-<h1>List of Comedians</h1>
-<h2>Statistics</h2>
-<p>Average Age: <%= @comedians.age_average.to_i %> </p>
-<h3>Comedians Home Cities: </h3>
-<ul>
+<div class="jumbotron">
+  <h1>List of Comedians</h1>
+  <h2>Statistics: </h2>
+  <p>Average Age: <%= @comedians.age_average.to_i %> </p>
+  <h3>Comedians Home Cities: </h3>
   <% @comedians.city_unique.each do |comedian| %>
-  <li><%= comedian.city %></li>
+  <button type="button" class="btn btn-outline-info"><%= comedian.city %></button>
   <% end %>
-</ul>
-<hr>
-<% @comedians.each do |comedian| %>
-  <h2 class="comedian"><%= comedian.name %></h2>
-  <img src="<%= comedian.imageurl %>">
-  <p>
-    Age: <%= comedian.age %> <br/>
-    City: <%= comedian.city %>
-  </p>
-  <strong>Televison Specials: <%= comedian.televisionspecials.count %></strong>
-  <ul>
-    <% comedian.televisionspecials.each do |special| %>
-    <li><%= special.name %>, Length: <%= special.runtime %> Minutes</li>
-    <% end %>
-  </ul>
-  <hr>
-<% end %>
+</div>
+
+<main role="main">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <% @comedians.each do |comedian| %>
+          <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4 shadow-sm">
+              <h2 class="comedian"><%= comedian.name %></h2>
+              <img class="card-img-top" src="<%= comedian.imageurl %>">
+              <div class="card-body">
+                <p class="card-text">
+                  Age: <%= comedian.age %> <br/>
+                  City: <%= comedian.city %> <br/>
+                  <strong>Televison Specials: <%= comedian.televisionspecials.count %></strong>
+                  <ul>
+                    <% comedian.televisionspecials.each do |special| %>
+                    <li><%= special.name %>, Length: <%= special.runtime %> Minutes</li>
+                    <% end %>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</main>

@@ -12,7 +12,7 @@ comedian = Comedian.create(name: 'Daniel Tosh', age: 44, city: 'Denver', imageur
 comedian.televisionspecials.create(name: 'The Love Guru', runtime: '68')
 comedian.televisionspecials.create(name: 'Happy Thoughts', runtime: '60')
 comedian.televisionspecials.create(name: 'Completely Serious', runtime: '75')
-comedian = Comedian.create(name:'Aziz', age: 36, city: 'Columbia', imageurl:'https://m.media-amazon.com/images/M/MV5BMjE5NzYwNDQwN15BMl5BanBnXkFtZTgwNDA2NjQwODE@._V1_UX214_CR0,0,214,317_AL_.jpg')
+comedian = Comedian.create(name:'Aziz Ansari', age: 36, city: 'Columbia', imageurl:'https://m.media-amazon.com/images/M/MV5BMjE5NzYwNDQwN15BMl5BanBnXkFtZTgwNDA2NjQwODE@._V1_UX214_CR0,0,214,317_AL_.jpg')
 comedian.televisionspecials.create(name: 'Looking for Work', runtime: '25')
 comedian.televisionspecials.create(name: 'Dangerously Delicious', runtime: '111')
 comedian.televisionspecials.create(name: 'Buried Alive', runtime: '68')
