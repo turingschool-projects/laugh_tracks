@@ -39,6 +39,8 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers'
+  gem 'active_designer'
+  gem 'simplecov'
 end
 
 group :development do
