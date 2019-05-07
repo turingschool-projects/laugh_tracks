@@ -4,5 +4,9 @@
     <h2><%= band.name %></h2>
     <li><%= band.city %></li>
     <li><%= band.age %></li>
+    <% band.albums.each do |album| %>
+      <%= album.name %>
+      <%= album.track_count %>
+    <% end %>
   <% end %>
 </div>
